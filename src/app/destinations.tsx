@@ -84,7 +84,7 @@ const DestinationsSection: React.FC = () => {
           Explore Our Destinations
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Discover the world's most remarkable wildlife sanctuaries and cultural heritage sites
+          Discover the world s most remarkable wildlife sanctuaries and cultural heritage sites
         </p>
       </div>
       
