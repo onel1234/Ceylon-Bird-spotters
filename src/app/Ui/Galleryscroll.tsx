@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import { useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";

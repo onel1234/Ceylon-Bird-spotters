@@ -4,7 +4,7 @@
 
 /* Apply the default font */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins, sans-serif';
 }
 
 /* Define custom properties for light and dark themes */
