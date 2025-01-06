@@ -15,22 +15,29 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "Working with this team has been an absolute pleasure. Their attention to detail and dedication to excellence is unmatched.",
-    name: "Mahinda Mahaththaya",
-    designation: "CEO, TechCorp",
-    image: "/images/mahinda.jpg"  
+    quote: "I really enjoyed my first taste of Sri Lanka and it is definitely a country I would come back to see different places",
+    name: "Lucy",
+    designation: "Leeds, Uk",
+    image: "/wildlife/Elephant (1).jpg"  
   },
   {
-    quote: "They transformed our vision into reality. The results exceeded our expectations in every way possible.",
-    name: "Sajtih Premadasa",
-    designation: "CTO, InnovateLabs",
-    image: "/images/sajith.jpg"  
+    quote: "Thank you for a thoroughly enjoyable and rewarding fortnight. ",
+    name: "Paul Southerland",
+    designation: "Melbourne, Austraila",
+    image: "/wildlife/mirissa4.jpg"  
   },
   {
-    quote: "Their expertise and professionalism made our project a huge success. I couldn't recommend them more highly.",
-    name: "Ranjan Ramanayaka",
-    designation: "Product Manager, StartupX",
-    image: "/images/ranjan.jpg" 
+    quote: "Thank so much, for such an informative and relaxing trip for such a hectic schedule",
+    name: "Andy",
+    designation: "Yorkshire, England",
+    image: "/wildlife/vic1.jpg" 
+   
+  },
+  {
+    quote: "This is our second trip to Sri Lanka an I was anxious it might not be as good as our first",
+    name: "Roberts",
+    designation: "Lincoinshire, England",
+    image: "/wildlife/Leopard (11).jpg" 
    
   }
 ];

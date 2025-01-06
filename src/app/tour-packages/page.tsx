@@ -2,148 +2,155 @@
 import React from "react";
 import { Tabs } from "../Ui/Tabs";
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "../NavbarFn";
 
-// Define interfaces for the component props
+interface ItineraryDay {
+  day: number;
+  location: string;
+  pageRoute: string;
+}
+
 interface TourPackageProps {
   title: string;
-  price: string;
-  duration: string;
-  highlights: string[];
   description: string;
   imageUrl: string;
+  itinerary?: ItineraryDay[];
 }
 
 const TourPackage: React.FC<TourPackageProps> = ({ 
   title, 
-  price, 
-  duration, 
-  highlights, 
   description, 
-  imageUrl 
+  imageUrl,
+  itinerary = []
 }) => (
-  <div className="flex flex-col md:flex-row gap-8 p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
-    <div className="w-full md:w-1/2">
+  <div className="flex flex-col bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+    {/* Cover Image Container */}
+    <div className="relative w-full h-[300px]">
       <Image
         src={imageUrl}
         alt={title}
-        width={600}
-        height={400}
-        className="rounded-lg object-cover w-full h-[400px]"
+        fill
+        className="object-cover"
+        priority
       />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50">
+        <h2 className="absolute bottom-6 left-6 text-3xl font-bold text-white">
+          {title}
+        </h2>
+      </div>
     </div>
-    <div className="w-full md:w-1/2 space-y-4">
-      <div className="flex justify-between items-center">
-        <h2 className="text-2xl font-bold text-gray-800 dark:text-white">{title}</h2>
-        <span className="text-xl font-semibold text-blue-600 dark:text-blue-400">{price}</span>
+
+    {/* Content Container */}
+    <div className="flex flex-col p-6 gap-8">
+      {/* Description and Book Now */}
+      <div className="space-y-4">
+        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+          {description}
+        </p>
+        <Link 
+          href="/booking"
+          className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+        >
+          Book Now
+        </Link>
       </div>
-      <div className="flex items-center gap-2">
-        <span className="text-gray-600 dark:text-gray-300">Duration:</span>
-        <span className="font-medium text-gray-800 dark:text-white">{duration}</span>
+
+      {/* Main Tour Section */}
+      <div className="space-y-6">
+        <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">
+          Main Tour
+        </h3>
+        <div className="flex flex-wrap md:flex-nowrap gap-4">
+          {/* Grid Section */}
+          <div className="w-full md:w-[35%] grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {itinerary.map((day) => (
+              <Link
+                key={day.day}
+                href={day.pageRoute}
+                className="block p-4 bg-blue-100 hover:bg-blue-200 text-center text-blue-800 rounded-lg transition-colors"
+              >
+                <div className="text-lg font-semibold">Day {day.day}</div>
+                <div className="text-sm">{day.location}</div>
+              </Link>
+            ))}
+          </div>
+
+          {/* Image Section */}
+          <div className="relative w-full md:w-[65%] h-[1200px] bg-gray-100 dark:bg-gray-700 rounded-lg overflow-hidden">
+            <Image
+              src="/culture/tour1.jpg" // Replace with the actual image URL
+              alt="Tour Highlights"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
       </div>
-      <div className="space-y-2">
-        <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Highlights</h3>
-        <ul className="list-disc pl-5 space-y-1 text-gray-600 dark:text-gray-300">
-          {highlights.map((highlight: string, index: number) => (
-            <li key={index}>{highlight}</li>
-          ))}
-        </ul>
-      </div>
-      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">{description}</p>
-      <button className="w-full md:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors">
-        Book Now
-      </button>
     </div>
   </div>
 );
 
-interface TabData {
-  title: string;
-  value: string;
-  content: React.ReactNode;
-}
+const TOUR_DATA = {
+  mountain: {
+    title: "Big Games of Sri Lanka and migratory watch in the North",
+    imageUrl: "/wildlife/tour1.jpg",
+    description: "This tour is mainly designed for trying the Sri Lankan Leopard and the Sloth Bear in the largest and the oldest national park – “Wilpattu” in the North West of Sri Lanka and, to witness the fascinating wintering bird life in Mannar Island in the north of Sri Lanka. Additionally, the dry zone bird species and the Sigiriya ancient rock fortress – the world-famous archaeological site also been put together to add a further dimension to the itinerary. This is an exciting bird and mammal-watching tour and contains a big opportunity for Sri Lankan Leopard and Northern wintering birds. If you are interested in the wider natural history of Sri Lanka Let’s Discover Nature’s Wonders Together.",
+    itinerary: [
+      { day: 1, location: "Kandy", pageRoute: "/destinations/kandy" },
+      { day: 2, location: "Nuwara Eliya", pageRoute: "/destinations/nuwara-eliya" },
+      { day: 2, location: "Nuwara Eliya", pageRoute: "/destinations/nuwara-eliya" },
+      { day: 2, location: "Nuwara Eliya", pageRoute: "/destinations/nuwara-eliya" },
+      { day: 2, location: "Nuwara Eliya", pageRoute: "/destinations/nuwara-eliya" },
+      { day: 2, location: "Nuwara Eliya", pageRoute: "/destinations/nuwara-eliya" },
+      { day: 2, location: "Nuwara Eliya", pageRoute: "/destinations/nuwara-eliya" },
+      { day: 2, location: "Nuwara Eliya", pageRoute: "/destinations/nuwara-eliya" },
+      { day: 2, location: "Nuwara Eliya", pageRoute: "/destinations/nuwara-eliya" },
+    ]
+  },
+  coastal: {
+    title: "Coastal Paradise Package",
+    imageUrl: "/images/cb2.jpg",
+    description: "Discover the ultimate beach getaway along Sri Lanka's pristine coastlines. Experience the perfect blend of relaxation and adventure with pristine beaches and vibrant marine life.",
+    itinerary: [
+      { day: 1, location: "Galle", pageRoute: "/destinations/galle" },
+      { day: 2, location: "Mirissa", pageRoute: "/destinations/mirissa" },
+    ]
+  },
+  cultural: {
+    title: "Cultural Heritage Package",
+    imageUrl: "/images/sajith.jpg",
+    description: "Immerse yourself in Sri Lanka's rich cultural heritage. Explore ancient temples, traditional villages, and historical sites while experiencing authentic local customs and traditions.",
+    itinerary: [
+      { day: 1, location: "Anuradhapura", pageRoute: "/destinations/anuradhapura" },
+      { day: 2, location: "Polonnaruwa", pageRoute: "/destinations/polonnaruwa" },
+    ]
+  },
+  safari: {
+    title: "Adventure Safari Package",
+    imageUrl: "/images/cb3.jpg",
+    description: "Experience the thrill of wildlife in Sri Lanka's national parks. Encounter elephants, leopards, and exotic birds in their natural habitat while staying in comfortable eco-friendly accommodations.",
+    itinerary: [
+      { day: 1, location: "Yala", pageRoute: "/destinations/yala" },
+      { day: 2, location: "Udawalawe", pageRoute: "/destinations/udawalawe" },
+    ]
+  }
+} as const;
 
 const TourPackages: React.FC = () => {
-  const tabData: TabData[] = [
-    {
-      title: "Mountain Explorer",
-      value: "mountain",
-      content: (
-        <TourPackage
-          title="Mountain Explorer Package"
-          price="$2,499"
-          duration="7 Days / 6 Nights"
-          imageUrl="/images/cbs1.jpg"
-          highlights={[
-            "Guided hiking through pristine alpine trails",
-            "Luxury mountain lodge accommodation",
-            "Professional photography sessions",
-            "Local cuisine experiences",
-          ]}
-          description="Embark on an unforgettable journey through majestic mountain landscapes with our Mountain Explorer Package. This carefully crafted adventure combines thrilling outdoor activities with comfortable accommodations and authentic cultural experiences. Trek through ancient forests, witness breathtaking sunrises over snow-capped peaks, and immerse yourself in local mountain communities. Our experienced guides ensure your safety while sharing their deep knowledge of the region's flora, fauna, and geology. Each evening, retire to our carefully selected mountain lodges where you can relax in comfort while enjoying gourmet local cuisine. This package is perfect for both experienced hikers and newcomers to mountain adventures, with customizable trail options to suit your skill level."
-        />
-      ),
-    },
-    {
-      title: "Coastal Paradise",
-      value: "coastal",
-      content: (
-        <TourPackage
-          title="Coastal Paradise Package"
-          price="$3,299"
-          duration="10 Days / 9 Nights"
-          imageUrl="/images/cb2.jpg" // Changed from mahinda.jpg
-          highlights={[
-            "Private beach access",
-            "Sunset sailing adventures",
-            "Snorkeling with marine life",
-            "Beachfront villa accommodation",
-          ]}
-          description="Discover the ultimate beach getaway with our Coastal Paradise Package. Experience the perfect blend of relaxation and adventure along pristine coastlines. Wake up to the sound of gentle waves in your luxury beachfront villa, spend your days exploring vibrant coral reefs, and unwind with sunset sailing cruises. Our package includes guided snorkeling tours where you'll encounter diverse marine life in their natural habitat. Expert local guides share their knowledge of coastal ecosystems while ensuring your comfort and safety. Evenings feature fresh seafood dining experiences and cultural performances under the stars. This package is ideal for those seeking both tranquility and marine adventures, with activities suitable for all experience levels."
-        />
-      ),
-    },
-    {
-      title: "Cultural Heritage",
-      value: "cultural",
-      content: (
-        <TourPackage
-          title="Cultural Heritage Package"
-          price="$2,799"
-          duration="8 Days / 7 Nights"
-          imageUrl="/images/sajith.jpg"
-          highlights={[
-            "Traditional craft workshops",
-            "Historical site visits",
-            "Local home cooking classes",
-            "Festival celebrations",
-          ]}
-          description="Immerse yourself in rich cultural traditions with our Cultural Heritage Package. This thoughtfully designed tour takes you through the heart of local communities, where ancient traditions meet modern life. Participate in authentic craft workshops led by master artisans, explore UNESCO World Heritage sites with expert historians, and learn traditional cooking methods from local families. Stay in carefully selected boutique hotels that reflect the region's architectural heritage while providing modern comforts. Experience traditional festivals, music, and dance performances that bring history to life. This package offers a perfect balance of guided experiences and free time to explore, ensuring a deep connection with local culture and traditions."
-        />
-      ),
-    },
-    {
-      title: "Adventure Safari",
-      value: "safari",
-      content: (
-        <TourPackage
-          title="Adventure Safari Package"
-          price="$3,999"
-          duration="12 Days / 11 Nights"
-          imageUrl="/images/cb3.jpg"
-          highlights={[
-            "Wildlife photography tours",
-            "Luxury tented camps",
-            "Expert naturalist guides",
-            "Bush breakfast experiences",
-          ]}
-          description="Experience the thrill of the wild with our Adventure Safari Package. Journey through diverse ecosystems where you'll encounter magnificent wildlife in their natural habitat. Stay in exclusive tented camps that combine authentic safari atmosphere with modern luxury. Our expert naturalist guides lead daily game drives, sharing their extensive knowledge of local wildlife, tracking techniques, and conservation efforts. Enjoy unique experiences like bush breakfasts with panoramic savanna views and evening storytelling around the campfire. This package includes specialized photography sessions during optimal wildlife viewing hours, comfortable transportation in custom safari vehicles, and all-inclusive luxury accommodation. Perfect for nature enthusiasts and adventure seekers looking for an immersive wildlife experience."
-        />
-      ),
-    },
-  
-    // ... rest of the tabData remains the same
-  ];
+  const tabData = Object.entries(TOUR_DATA).map(([key, data]) => ({
+    title: data.title,
+    value: key,
+    content: (
+      <TourPackage
+        key={key}
+        title={data.title}
+        description={data.description}
+        imageUrl={data.imageUrl}
+        itinerary={data.itinerary}
+      />
+    ),
+  }));
 
   return (
     <>

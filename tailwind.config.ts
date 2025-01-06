@@ -11,6 +11,16 @@ export default {
   theme: {
     extend: {
       colors: {
+        primary: {
+          DEFAULT: "#1a1a1a", // Modern black
+          light: "#333333", // Slightly lighter black
+          dark: "#0d0d0d", // Slightly darker black
+        },
+        accent: {
+          DEFAULT: "#007bff", // Modern blue
+          light: "#3399ff", // Lighter blue
+          dark: "#0056b3", // Darker blue
+        },
         background: "var(--background)",
         foreground: "var(--foreground)",
       },

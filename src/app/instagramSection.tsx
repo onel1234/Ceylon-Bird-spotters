@@ -8,11 +8,15 @@ const InstagramSection = () => {
   // Sample Instagram posts - replace with your actual Instagram posts
  
   const instagramPosts = [
-    { id: 1, src: "/images/mahinda.jpg", alt: "Instagram post 1" },
-    { id: 2, src: "/images/image1.jpg", alt: "Instagram post 2" },
-    { id: 3, src: "/images/cbs1.jpg", alt: "Instagram post 3" },
-    { id: 4, src: "/images/cb2.jpg", alt: "Instagram post 4" },
-    { id: 5, src: "/images/cb3.jpg", alt: "Instagram post 5" },
+    { id: 1, src: "/wildlife/ins1.jpg", alt: "Instagram post 1" },
+    { id: 11, src: "/wildlife/ins2.jpg", alt: "Instagram post 2" },
+    { id: 3, src: "/wildlife/ins3.jpg", alt: "Instagram post 3" },
+    { id: 4, src: "/wildlife/ins4.jpg", alt: "Instagram post 4" },
+    { id: 5, src: "/wildlife/ins5.jpg", alt: "Instagram post 5" },
+    { id: 6, src: "/wildlife/ins6.jpg", alt: "Instagram post 6" },
+    { id: 7, src: "/wildlife/ins7.jpg", alt: "Instagram post 7" },
+    { id: 8, src: "/wildlife/ins8.jpg", alt: "Instagram post 8" },
+    { id: 9, src: "/wildlife/ins9.jpg", alt: "Instagram post 9" },
    
     // Add more posts as needed
   ];
@@ -23,14 +27,14 @@ const InstagramSection = () => {
         {/* Instagram Header */}
         <div className="flex flex-col items-center mb-12">
           <Link 
-            href="https://instagram.com/yourusername" 
+            href="https://instagram.com/ceylonbirdspotters" 
             target="_blank"
             className="flex items-center gap-2 text-white hover:text-pink-500 transition-colors duration-300"
           >
             <Instagram size={32} />
             <h2 className="text-3xl font-bold">Follow Us on Instagram</h2>
           </Link>
-          <p className="text-gray-400 mt-4">@yourusername</p>
+          <p className="text-gray-400 mt-4">@Ceylonbirdspotters</p>
         </div>
 
         {/* Instagram Posts Slider */}

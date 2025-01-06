@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const nextConfig: NextConfig = {
   images: {
     domains: ['assets.aceternity.com'], // Add external image domain here
@@ -8,4 +9,3 @@ const nextConfig: NextConfig = {
   /* other config options here */
 };
 
-export default nextConfig;

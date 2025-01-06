@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
@@ -232,9 +233,10 @@ const ImagesSlider = ({
 
 const HeroSection = () => {
   const images = [
-    "/images/cbs1.jpg",
-    "/images/cb2.jpg",
-    "/images/cb3.jpg",
+    "/images/slide1 (2).jpg",
+    "/images/slide2.jpg",
+    "/images/slide3.jpg",
+    "/images/slide1.jpg",
 
     
   ];
@@ -257,8 +259,9 @@ const HeroSection = () => {
             }}
             className="z-50 flex flex-col justify-center items-center"
           >
-            <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
-              The Ultimate <br /> Wildlife Experience <br />
+            <motion.p className="font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
+              <span className="text-xl md:text-6xl block mb-2">Discover Nature's Wonders</span>
+              <span className="text-base md:text-2xl">Embark on your avian journey with Ceylon Bird Spotters</span>
             </motion.p>
           </motion.div>
         </ImagesSlider>

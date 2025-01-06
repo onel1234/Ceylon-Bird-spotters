@@ -1,9 +1,14 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
+import Image from 'next/image';
 
 interface Location {
   name: string;
   description: string;
+  imageUrl: string;
+  path: string; // Replacing 'path' with 'path' for static routing
 }
 
 interface DestinationCardProps {
@@ -21,60 +26,161 @@ const DestinationCard: React.FC<DestinationCardProps> = ({ title, locations }) =
       <div className="p-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {locations.map((location: Location, index: number) => (
-            <motion.div
-              key={location.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.02 }}
-              className="bg-gray-50 dark:bg-gray-700 p-4 rounded-xl"
-            >
-              <div className="flex items-start space-x-4">
-                <div className="h-12 w-12 flex-shrink-0 rounded-lg bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center">
-                  <span className="text-white text-lg font-semibold">{location.name[0]}</span>
+            <Link href={location.path} key={location.name}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+                className="bg-gray-50 dark:bg-gray-700 p-4 rounded-xl cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors"
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="relative h-16 w-16 flex-shrink-0 rounded-lg overflow-hidden">
+                    <Image
+                      src={location.imageUrl}
+                      alt={location.name}
+                      fill
+                      className="object-cover"
+                      sizes="64px"
+                    />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      {location.name}
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+                      {location.description}
+                    </p>
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                    {location.name}
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
-                    {location.description}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>
     </div>
   );
-};
+}
 
 const DestinationsSection: React.FC = () => {
   const wildlifeDestinations: Location[] = [
-    { name: "Serengeti National Park", description: "Tanzania's iconic safari destination with the great migration" },
-    { name: "Ranthambore", description: "India's famous tiger reserve with ancient ruins" },
-    { name: "Galapagos Islands", description: "Ecuador's unique wildlife sanctuary with endemic species" },
-    { name: "Kruger National Park", description: "South Africa's premier big five wildlife destination" },
-    { name: "Yellowstone", description: "America's first national park with diverse wildlife" },
-    { name: "Borneo Rainforest", description: "Home to orangutans and diverse tropical wildlife" },
-    { name: "Arctic National Park", description: "Polar bears and arctic wildlife viewing" },
-    { name: "Amazon Rainforest", description: "World's largest rainforest ecosystem" },
-    { name: "Great Barrier Reef", description: "Australia's marine wildlife wonderland" },
-    { name: "Madagascar", description: "Unique lemurs and endemic wildlife species" }
+    { 
+      name: "Sinharaja Forest", 
+      description: "A UNESCO World Heritage site, Sinharaja Forest Reserve is a verdant haven teeming with endemic flora and fauna, perfect for eco-enthusiasts.",
+      imageUrl: "/images/sinharaja.jpg",
+      path: "sinharaja-forest"
+    },
+    { 
+      name: "Kitulgala-Kelani Valley Forest", 
+      description: "Famous for white-water rafting and lush greenery, Kitulgala offers a thrilling escape into nature's embrace.",
+      imageUrl: "/images/kitulgala.jpg",
+      path: "kitulgala"
+    },
+    { 
+      name: "Mirissa", 
+      description: "Renowned for whale watching and pristine beaches, Mirissa is a coastal paradise waiting to be explored.",
+      imageUrl: "/images/mirissa.jpg",
+      path: "mirissa"
+    },
+    { 
+      name: "Yala National Park", 
+      description: "Home to the elusive leopard and diverse wildlife, Yala offers an unparalleled safari experience.",
+      imageUrl: "/images/yala.jpg",
+      path: "yala-national-park"
+    },
+    { 
+      name: "Victoria National Park", 
+      description: "This scenic haven is perfect for hiking and bird watching, with breathtaking views of lush landscapes.",
+      imageUrl: "/images/victoria.jpg",
+      path: "victoria-national-park"
+    },
+    { 
+      name: "Udawalawe National Park", 
+      description: "Renowned for its large elephant population, Udawalawe is a must-visit for wildlife enthusiasts.",
+      imageUrl: "/images/udawala.jpg",
+      path: "udawalawe-national-park"
+    },
+    { 
+      name: "Bundala National Park", 
+      description: "A Ramsar Wetland, Bundala is a paradise for bird watchers with its vibrant avian diversity.",
+      imageUrl: "/images/bundala.jpg",
+      path: "bundala-national-park"
+    },
+    { 
+      name: "Lunugamwehera National Park", 
+      description: "A tranquil sanctuary blending forests and savannahs, Lunugamwehera is perfect for those seeking solitude amidst nature.",
+      imageUrl: "/images/lunugamvehera.jpg",
+      path: "lunugamwehera"
+    },
+    { 
+      name: "Minneriya National Park", 
+      description: "Witness the incredible 'Gathering' of elephants at Minneriya, a spectacle like no other.",
+      imageUrl: "/images/minneriya.jpg",
+      path: "minneriya-national-park"
+    },
+    { 
+      name: "Mannar Island", 
+      description: "A hidden gem known for its pristine beaches, migratory birds, and rich cultural history.",
+      imageUrl: "/images/mannar.jpg",
+      path: "mannar-island"
+    },
+    { 
+      name: "Anawilundawa Sanctuary", 
+      description: "This Ramsar Wetland is a tranquil retreat, ideal for bird watching and immersing in serene wetlands.",
+      imageUrl: "/images/anawilundawa.jpg",
+      path: "anawilundawa"
+    },
+    { 
+      name: "Nuwara Eliya", 
+      description: "Known as 'Little England,' Nuwara Eliya charms visitors with its cool climate, lush tea estates, and colonial architecture.",
+      imageUrl: "/images/nuwara-eliya.jpg",
+      path: "nuwara-eliya"
+    },
+    { 
+      name: "Horton Plains National Park", 
+      description: "An eco-tourist's dream, Horton Plains features misty grasslands, dense forests, and the famous World's End viewpoint.",
+      imageUrl: "/images/hortonplains.jpg",
+      path: "horton-plains"
+    }
   ];
 
   const culturalDestinations: Location[] = [
-    { name: "Kyoto", description: "Japan's cultural heart with ancient temples and traditions" },
-    { name: "Petra", description: "Jordan's ancient rock-carved architectural wonder" },
-    { name: "Varanasi", description: "India's spiritual capital on the Ganges River" },
-    { name: "Cusco", description: "Peru's Incan capital with rich heritage" },
-    { name: "Istanbul", description: "Turkey's cultural bridge between East and West" },
-    { name: "Fez", description: "Morocco's medieval medina and cultural center" },
-    { name: "Angkor Wat", description: "Cambodia's ancient temple complex" },
-    { name: "Rome", description: "Italy's eternal city of history and culture" },
-    { name: "Luxor", description: "Egypt's open-air museum of ancient wonders" },
-    { name: "Chiang Mai", description: "Thailand's northern cultural capital" }
+    { 
+      name: "Kandy", 
+      description: "Home to the Temple of the Tooth, Kandy is the cultural heart of Sri Lanka, steeped in history and spirituality.",
+      imageUrl: "/images/kandy.jpg",
+      path: "kandy"
+    },
+    { 
+      name: "Sigiriya", 
+      description: "Rising majestically above the plains, Sigiriya is an ancient rock fortress with stunning frescoes and breathtaking views.",
+      imageUrl: "/images/sigiriya.jpg",
+      path: "sigiriya"
+    },
+    { 
+      name: "Anuradhapura", 
+      description: "A UNESCO World Heritage city, Anuradhapura boasts ancient stupas, ruins, and the sacred Sri Maha Bodhi tree.",
+      imageUrl: "/images/anuraphapura.jpg",
+      path: "anuradhapura"
+    },
+    { 
+      name: "Polonnaruwa", 
+      description: "Step back in time at Polonnaruwa, an ancient capital featuring well-preserved ruins and exquisite stone carvings.",
+      imageUrl: "/images/polonnaruwa.jpg",
+      path: "polonnaruwa"
+    },
+    { 
+      name: "Dambulla", 
+      description: "Explore the stunning cave temples of Dambulla, adorned with intricate murals and Buddha statues.",
+      imageUrl: "/images/dambulla.jpg",
+      path: "dambulla"
+    },
+    { 
+      name: "Galle", 
+      description: "Discover the charm of Galle Fort, a UNESCO World Heritage site blending colonial architecture with a coastal vibe.",
+      imageUrl: "/images/galle.jpg",
+      path: "galle"
+    },
   ];
 
   return (
@@ -84,7 +190,7 @@ const DestinationsSection: React.FC = () => {
           Explore Our Destinations
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-          Discover the world s most remarkable wildlife sanctuaries and cultural heritage sites
+          Discover the world's most remarkable wildlife sanctuaries and cultural heritage sites.
         </p>
       </div>
       
