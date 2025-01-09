@@ -9,3 +9,4 @@ const nextConfig: NextConfig = {
   /* other config options here */
 };
 
+module.exports = nextConfig;

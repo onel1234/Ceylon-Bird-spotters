@@ -12,7 +12,7 @@ function Contact() {
     
     // Create a template parameters object
     const templateParams = {
-      to_email: "Fashioninstaclothing7@gamail.com", // Add this if not set in template
+      to_email:"fashionisaclothing7@gmail.com",
       email_from: e.target.email_from.value,
       message: e.target.message.value
     };
