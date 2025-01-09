@@ -1,8 +1,10 @@
 /* eslint-disable react/no-unescaped-entities */
+"use client";
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
+
 
 interface Location {
   name: string;
