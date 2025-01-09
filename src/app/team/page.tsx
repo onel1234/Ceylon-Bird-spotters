@@ -13,11 +13,8 @@ interface TeamMember {
   imageUrl: string;
 }
 
-interface TeamSectionProps {
-  customClass?: string;
-}
 
-const Team: React.FC<TeamSectionProps> = ({ customClass = '' }) => {
+const Team: React.FC = ()  => {
   const teamMembers: TeamMember[] = [
     {
       name: 'Susantha Weerappuli (susa)',
@@ -101,67 +98,67 @@ const Team: React.FC<TeamSectionProps> = ({ customClass = '' }) => {
   return (
     <>
       <Navbar />
-    <section className={`py-16 px-4 bg-white ${customClass}`}>
-      <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={containerVariants}
-        >
-          <motion.h2 
-            className="text-4xl font-bold text-center mb-16"
-            variants={itemVariants}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
           >
-            Our Team
-          </motion.h2>
+            <motion.h2 
+              className="text-4xl font-bold text-center mb-16"
+              variants={itemVariants}
+            >
+              Our Team
+            </motion.h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {teamMembers.map((member) => (
-              <motion.div
-                key={member.name}
-                variants={itemVariants}
-                className="flex flex-col items-center"
-              >
-                <motion.div 
-                  className="w-48 h-48 rounded-full overflow-hidden mb-6"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+              {teamMembers.map((member) => (
+                <motion.div
+                  key={member.name}
+                  variants={itemVariants}
+                  className="flex flex-col items-center"
                 >
-                  <Image
-                    src={member.imageUrl}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                    width={400}
-                    height={400}
-                  />
-                </motion.div>
-
-                <div className="text-center">
-                  <h3 className="text-2xl font-semibold mb-2">{member.name}</h3>
-                  <div className="relative">
-                    <motion.div
-                      className="h-0.5 w-12 bg-blue-500 mx-auto mb-4"
-                      initial={{ width: 0 }}
-                      whileInView={{ width: 48 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
+                  <motion.div 
+                    className="w-48 h-48 rounded-full overflow-hidden mb-6"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Image
+                      src={member.imageUrl}
+                      alt={member.name}
+                      className="w-full h-full object-cover"
+                      width={400}
+                      height={400}
                     />
+                  </motion.div>
+
+                  <div className="text-center">
+                    <h3 className="text-2xl font-semibold mb-2">{member.name}</h3>
+                    <div className="relative">
+                      <motion.div
+                        className="h-0.5 w-12 bg-blue-500 mx-auto mb-4"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: 48 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                      />
+                    </div>
+                    <p className="text-gray-600 font-medium mb-4">{member.role}</p>
+                    <div className="text-gray-500 leading-relaxed px-4 space-y-4">
+                      {member.description.map((paragraph, i) => (
+                        <p key={i}>{paragraph}</p>
+                      ))}
+                    </div>
                   </div>
-                  <p className="text-gray-600 font-medium mb-4">{member.role}</p>
-                  <div className="text-gray-500 leading-relaxed px-4 space-y-4">
-                    {member.description.map((paragraph, i) => (
-                      <p key={i}>{paragraph}</p>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
-    </section>
-    <Footer />
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+      <Footer />
     </>
   );
 };
