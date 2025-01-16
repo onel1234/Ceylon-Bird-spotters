@@ -1,25 +1,66 @@
+"use client";
+import React, { useState } from 'react';
 import { ParallaxScrollSecond } from "../Ui/Galleryscroll";
-import Footer from "../Footer";
+import GalleryFilter from '../components/galleryfilter';
 import Navbar from "../NavbarFn";
+import Footer from "../Footer";
+import { CategoryType, ImageDetails } from '../types';
 
-const images = [
-  "/images/image1.jpg",
-  "/images/cb2.jpg",
-  "/images/cb3.jpg",
-  "/images/cbs1.jpg",
-  "/images/ranjan.jpg",
-  "/images/mahinda.jpg",
-  // Add more images here
-];
+import { amphibianImages } from '../data/amphibians';
+import { mammalImages } from '../data/mammals';
+import { butterflyImages } from '../data/butterflies';
+import { birdImages } from '../data/birds';
+import { endemicBirdImages } from '../data/endemicbirds';
 
-export default function GalleryPage() {
+const GalleryPage: React.FC = () => {
+  const [activeCategory, setActiveCategory] = useState<CategoryType>('all');
+
+  const getAllImages = (): ImageDetails[] => {
+    return [
+      ...amphibianImages,
+      ...mammalImages,
+      ...butterflyImages,
+      ...birdImages,
+      ...endemicBirdImages
+    ];
+  };
+
+  const getFilteredImages = (): ImageDetails[] => {
+    switch (activeCategory) {
+      case 'amphibians':
+        return amphibianImages;
+      case 'mammals':
+        return mammalImages;
+      case 'butterfly':
+        return butterflyImages;
+      case 'birds':
+        return birdImages;
+      case 'endemic-birds':
+        return endemicBirdImages;
+      default:
+        return getAllImages();
+    }
+  };
+
   return (
-    <>
+    <div className="min-h-screen">
       <Navbar />
-      <div>
-        <ParallaxScrollSecond images={images} className="your-custom-class" />
+      {/* Add padding-top to account for fixed navbar height */}
+      <div className="pt-20"> {/* Adjust this value based on your navbar height */}
+        <GalleryFilter
+          activeCategory={activeCategory}
+          onCategoryChange={setActiveCategory}
+        />
+        <div className="pt-7"> {/* Space between filter and gallery */}
+          <ParallaxScrollSecond
+            images={getFilteredImages()}
+            className="gallery-grid"
+          />
+        </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
-}
+};
+
+export default GalleryPage;

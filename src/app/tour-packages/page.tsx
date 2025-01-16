@@ -662,7 +662,7 @@ const TourPackages: React.FC = () => {
   return (
     <>
       <Navbar />
-      <div className="max-w-7xl mx-auto px-4 py-16">
+      <div className="max-w-7xl mx-auto px-4 py-40"> {/* Increased top padding */}
         <h1 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
           Discover Our Tour Packages
         </h1>
@@ -676,6 +676,6 @@ const TourPackages: React.FC = () => {
       </div>
     </>
   );
-};
+}
 
 export default TourPackages;
