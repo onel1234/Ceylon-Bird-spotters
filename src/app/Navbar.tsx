@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu as MenuIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const transition = {
   type: "spring",
@@ -80,6 +81,7 @@ export const Menu = ({ setActive, children }: MenuProps) => {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     const handleResize = () => {
@@ -116,6 +118,10 @@ export const Menu = ({ setActive, children }: MenuProps) => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isMobileMenuOpen]);
 
+  const handleLogoClick = () => {
+    router.push('/');
+  };
+
   return (
     <nav
       id="main-nav"
@@ -125,7 +131,10 @@ export const Menu = ({ setActive, children }: MenuProps) => {
       } border border-gray-200 bg-white shadow-lg`}
     >
       <div className="px-8 py-6 flex justify-between items-center">
-        <div className="flex items-center">
+        <div 
+          className="flex items-center cursor-pointer"
+          onClick={handleLogoClick}
+        >
           <Image src="/images/LogoV2.jpg" alt="Logo" width={200} height={100} />
         </div>
 

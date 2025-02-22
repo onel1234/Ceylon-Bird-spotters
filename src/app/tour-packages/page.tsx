@@ -91,12 +91,20 @@ const TourPackage: React.FC<TourPackageProps> = ({
   fullWidthImage,
 }) => (
   <div className="flex flex-col bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
-    <div className="relative w-full h-[300px]">
-      <Image src={imageUrl} alt={title} fill className="object-cover" priority />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50">
-        <h2 className="absolute bottom-6 left-6 text-3xl font-bold text-white">
-          {title}
-        </h2>
+    <div className="relative w-full">
+      <div className="relative w-full h-0 pb-[56.25%]"> {/* 16:9 aspect ratio container */}
+        <Image 
+          src={imageUrl} 
+          alt={title} 
+          fill 
+          className="object-cover"
+          priority 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50">
+          <h2 className="absolute bottom-6 left-6 text-3xl font-bold text-white">
+            {title}
+          </h2>
+        </div>
       </div>
     </div>
 
@@ -129,7 +137,7 @@ const TourPackage: React.FC<TourPackageProps> = ({
           Map View
         </h3>
         <div className="relative w-full max-w-4xl mx-auto">
-          <div className="relative w-full h-0 pb-[100%] sm:pb-[75%] md:pb-[65%] lg:pb-[55%]">
+          <div className="relative w-full h-0 pb-[75%]">
             <Image
               src={fullWidthImage}
               alt={`${title} tour map`}
@@ -662,7 +670,7 @@ const TourPackages: React.FC = () => {
   return (
     <>
       <Navbar />
-      <div className="max-w-7xl mx-auto px-4 py-40"> {/* Increased top padding */}
+      <div className="max-w-7xl mx-auto px-4 py-40">
         <h1 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
           Discover Our Tour Packages
         </h1>
@@ -676,6 +684,6 @@ const TourPackages: React.FC = () => {
       </div>
     </>
   );
-}
+};
 
 export default TourPackages;
