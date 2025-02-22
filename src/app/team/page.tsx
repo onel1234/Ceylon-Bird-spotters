@@ -26,7 +26,7 @@ const Team: React.FC = ()  => {
         'Susantha has been a cornerstone for both local and foreign renowned birdwatching tour companies, contributing his expertise and enriching the experience for enthusiasts.',
         'Furthermore, his commitment extends to research initiatives, notably contributing to the biodiversity baseline survey conducted by the Department of Wildlife Conservation and the University of Colombo. Susantha Weerappuli emerges not only as a seasoned naturalist and guide but also as a fervent advocate for wildlife conservation, leaving an indelible mark on the exploration and understanding of Sri Lanka’s rich and diverse ecosystems.',
       ],
-      imageUrl: '/images/Susa.jpg',
+      imageUrl: 'https://res.cloudinary.com/dfxolekjs/image/upload/v1740244252/SUSA_vhtwvk.jpg',
     },
     {
       name: 'Suneth Bashitha',
