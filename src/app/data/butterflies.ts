@@ -3,7 +3,7 @@ import { ImageDetails } from "../types";
 export const butterflyImages: ImageDetails[] = [
   {
     id: 1,
-    src: "/images/cb2.jpg",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787424/IMG_5608_osbbzr.jpg",
     title: "Sri Lankan Leopard",
     scientificName: "Panthera pardus kotiya",
     location: "Yala National Park",
@@ -12,7 +12,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 2,
-    src: "/wildlife/Five bar Swordtail (Graphiun antiphates) (34).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787423/IMG_8892_efwwz2.jpg",
     title: "Five Bar Swordtail",
     scientificName: "Graphium antiphates",
     location: "Unknown",
@@ -21,7 +21,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 3,
-    src: "/wildlife/Grey Pansy (Junonia atlites) (2).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787424/Indian_Fritillary_Argynnis_hyperbius_2_mbngyv.jpg",
     title: "Grey Pansy",
     scientificName: "Junonia atlites",
     location: "Unknown",
@@ -30,7 +30,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 4,
-    src: "/wildlife/IMG_1145.JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787425/Plian_Tiger_Danaus_chrysippus_2_p342fc.jpg",
     title: "Butterfly Image",
     scientificName: "Unknown",
     location: "Unknown",
@@ -39,7 +39,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 5,
-    src: "/wildlife/IMG_1485.JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787425/Sri_Lankan_Birdwing_Troides_darsius_1_j2koi6.jpg",
     title: "Butterfly Image",
     scientificName: "Unknown",
     location: "Unknown",
@@ -48,7 +48,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 6,
-    src: "/wildlife/IMG_4996.JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787425/Sri_Lankan_Rose_Eachliopta_jophon_13_fnrh7y.jpg",
     title: "Butterfly Image",
     scientificName: "Unknown",
     location: "Unknown",
@@ -57,7 +57,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 7,
-    src: "/wildlife/IMG_5501.JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787425/Sri_Lankan_Tree_Nymph_Idea_iasonia_2_dhvlqa.jpg",
     title: "Butterfly Image",
     scientificName: "Unknown",
     location: "Unknown",
@@ -66,7 +66,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 8,
-    src: "/wildlife/IMG_5608.JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787431/Tailed_Jay_15_xf2thh.jpg",
     title: "Butterfly Image",
     scientificName: "Unknown",
     location: "Unknown",
@@ -75,7 +75,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 9,
-    src: "/wildlife/IMG_8892.JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787434/Cruiser_Vindula_erota_28_r9eedv.jpg",
     title: "Butterfly Image",
     scientificName: "Unknown",
     location: "Unknown",
@@ -84,7 +84,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 10,
-    src: "/wildlife/Indian Fritillary (Argynnis hyperbius) (2).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787430/Five_bar_Swordtail_Graphiun_antiphates_2_wcj2lu.jpg.JPG",
     title: "Indian Fritillary",
     scientificName: "Argynnis hyperbius",
     location: "Unknown",
@@ -93,7 +93,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 11,
-    src: "/wildlife/Plian Tiger (Danaus chrysippus) (2).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787434/Five_bar_Swordtail_Graphiun_antiphates_21_kwxpgw.jpg",
     title: "Plain Tiger",
     scientificName: "Danaus chrysippus",
     location: "Unknown",
@@ -102,7 +102,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 12,
-    src: "/wildlife/Sri Lankan Birdwing (Troides darsius) (1).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787434/Five_bar_Swordtail_Graphiun_antiphates_34_botz2h.jpg",
     title: "Sri Lankan Birdwing",
     scientificName: "Troides darsius",
     location: "Unknown",
@@ -111,7 +111,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 13,
-    src: "/wildlife/Sri Lankan Rose (Eachliopta jophon) (13).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787436/Grey_Pansy_Junonia_atlites_2_q2zor9.jpg",
     title: "Sri Lankan Rose",
     scientificName: "Eachliopta jophon",
     location: "Unknown",
@@ -120,7 +120,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 14,
-    src: "/wildlife/Sri Lankan Tree Nymph (Idea iasonia) (2).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787457/IMG_1145_zu9z9f.jpg",
     title: "Sri Lankan Tree Nymph",
     scientificName: "Idea iasonia",
     location: "Unknown",
@@ -129,7 +129,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 15,
-    src: "/wildlife/Tailed Jay (15).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787460/IMG_1485_gpu4zc.jpg",
     title: "Tailed Jay",
     scientificName: "Unknown",
     location: "Unknown",
@@ -138,7 +138,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 16,
-    src: "/wildlife/Baronet (20).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787462/IMG_4996_p4dudi.jpg",
     title: "Baronet",
     scientificName: "Unknown",
     location: "Unknown",
@@ -147,7 +147,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 17,
-    src: "/wildlife/Blue Admiral (Kaniska canace) (16).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787469/IMG_5501_sheqbd.jpg",
     title: "Blue Admiral",
     scientificName: "Kaniska canace",
     location: "Unknown",
@@ -156,7 +156,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 18,
-    src: "/wildlife/Blue Glassy Tiger (Ideopsis similis) (1).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787471/Commander_Moduza_procris_15_td87oj.jpg",
     title: "Blue Glassy Tiger",
     scientificName: "Ideopsis similis",
     location: "Unknown",
@@ -165,7 +165,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 19,
-    src: "/wildlife/Blue Mormon (Papilio polymnestor) (9).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787477/Commander_Moduza_procris_3_hqmzyu.jpg",
     title: "Blue Mormon",
     scientificName: "Papilio polymnestor",
     location: "Unknown",
@@ -174,7 +174,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 20,
-    src: "/wildlife/Clipper (Parthenos sylvia) (7).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787471/Commander_Moduza_procris_15_td87oj.jpg",
     title: "Clipper",
     scientificName: "Parthenos sylvia",
     location: "Unknown",
@@ -183,7 +183,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 21,
-    src: "/wildlife/Commander (Moduza procris) (3).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787471/Commander_Moduza_procris_15_td87oj.jpg",
     title: "Commander",
     scientificName: "Moduza procris",
     location: "Unknown",
@@ -192,7 +192,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 22,
-    src: "/wildlife/Commander (Moduza procris) (15).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787477/Commander_Moduza_procris_3_hqmzyu.jpg",
     title: "Commander",
     scientificName: "Moduza procris",
     location: "Unknown",
@@ -201,7 +201,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 23,
-    src: "/wildlife/Common Sailor (Neptis hylas) (7).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787471/Common_Sailor_Neptis_hylas_7_gza3zg.jpg",
     title: "Common Sailor",
     scientificName: "Neptis hylas",
     location: "Unknown",
@@ -210,7 +210,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 24,
-    src: "/wildlife/Common Tiger (Danaus genutia) (4).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787475/Common_Tiger_Danaus_genutia_4_u4hoyg.jpg",
     title: "Common Tiger",
     scientificName: "Danaus genutia",
     location: "Unknown",
@@ -219,7 +219,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 25,
-    src: "/wildlife/Cruiser (Vindula erota) (2).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787480/Cruiser_Vindula_erota_2_cs9b4e.jpg",
     title: "Cruiser",
     scientificName: "Vindula erota",
     location: "Unknown",
@@ -228,7 +228,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 26,
-    src: "/wildlife/Cruiser (Vindula erota) (28).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787434/Cruiser_Vindula_erota_28_r9eedv.jpg",
     title: "Cruiser",
     scientificName: "Vindula erota",
     location: "Unknown",
@@ -237,7 +237,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 27,
-    src: "/wildlife/Five bar Swordtail (Graphiun antiphates) (2).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787430/Five_bar_Swordtail_Graphiun_antiphates_2_wcj2lu.jpg",
     title: "Five Bar Swordtail",
     scientificName: "Graphium antiphates",
     location: "Unknown",
@@ -246,7 +246,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 28,
-    src: "/wildlife/Five bar Swordtail (Graphiun antiphates) (21).JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787434/Five_bar_Swordtail_Graphiun_antiphates_21_kwxpgw.jpg",
     title: "Five Bar Swordtail",
     scientificName: "Graphium antiphates",
     location: "Unknown",
