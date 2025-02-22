@@ -84,7 +84,7 @@ export const butterflyImages: ImageDetails[] = [
   },
   {
     id: 10,
-    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787430/Five_bar_Swordtail_Graphiun_antiphates_2_wcj2lu.jpg.JPG",
+    src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787489/Blue_Mormon_Papilio_polymnestor_9_vegham.jpg",
     title: "Indian Fritillary",
     scientificName: "Argynnis hyperbius",
     location: "Unknown",
