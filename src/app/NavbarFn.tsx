@@ -15,11 +15,6 @@ const Navbar = () => {
   return (
     <Menu setActive={setActiveItem}>
       <MenuItem
-        item="Home"
-        active={activeItem}
-        setActive={() => handleMenuClick("/")}
-      />
-      <MenuItem
         item="Tour Packages"
         active={activeItem}
         setActive={() => handleMenuClick("/tour-packages")}
@@ -33,6 +28,11 @@ const Navbar = () => {
         item="Team"
         active={activeItem}
         setActive={() => handleMenuClick("/team")}
+      />
+      <MenuItem
+        item="Sri Lanka"
+        active={activeItem}
+        setActive={() => handleMenuClick("/sri-lanka")}
       />
       <MenuItem
         item="About Us"
