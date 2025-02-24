@@ -1,5 +1,5 @@
 "use client";
-import { Twitter,  Instagram, Facebook, Linkedin } from "lucide-react";
+import { Instagram, Facebook, Linkedin, MessageCircle } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -7,12 +7,11 @@ const Footer = () => {
   return (
     <footer className="w-full bg-gray-900 text-white py-4">
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-        {/* Logo and Company Name */}
+        {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="rounded-full w-8 h-8 flex items-center justify-center text-xl font-bold">
-            <Image src="/images/cb-logo.png" alt="Logo" width={150} height={150} />
+          <div className="flex items-center justify-center text-xl font-bold">
+            <Image src="/images/footer.png" alt="Logo" width={200} height={150} className="object-contain" />
           </div>
-          <span className="text-xl font-semibold">CeylonBirdSpotters</span>
         </div>
         {/* Navigation Links */}
         <nav className="flex gap-6">
@@ -52,15 +51,13 @@ const Footer = () => {
             <Facebook size={20} />
           </a>
           <a
-            href="https://www.linkedin.com/company/ceylon-birdspotters/about/"
+            href="https://wa.me/+94722062989"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-white transition-colors"
           >
-            <Twitter size={20} />
+            <MessageCircle size={20} />
           </a>
-          
-         
           <a
             href="https://instagram.com/ceylonbirdspotters"
             target="_blank"

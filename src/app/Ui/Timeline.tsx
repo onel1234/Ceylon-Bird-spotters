@@ -41,7 +41,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
     About Ceylon Birdspotters
   </h2>
-  <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-full">
+  <p className="text-neutral-700 dark:text-neutral-300 text-lg md:text-lg max-w-full">
     Step into the realm of natural wonders with Ceylon Birdspotters, your gateway to unparalleled wildlife experiences in Sri Lanka. With a legacy of expertise and a team of seasoned tour guide naturalists, we&apos;re dedicated to crafting bespoke journeys tailored to your passions.
     <br /><br />
     At Ceylon Birdspotters, we don&apos;t just offer tours; we curate moments that resonate with your soul. Our mission? To align your interests with the very best Sri Lanka has to offer, ensuring every expedition leaves you awe-inspired and fulfilled.

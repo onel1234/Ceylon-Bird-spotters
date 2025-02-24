@@ -3,13 +3,15 @@ import React from "react";
 import { Timeline } from "../Ui/Timeline";
 import Navbar from "../NavbarFn";
 import Footer from "../Footer";
+import { Circle } from "lucide-react";
+
 export default function About() {
   const data = [
     {
       title: "The start",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-neutral-800 dark:text-neutral-200 text-base md:text-lg font-normal mb-8">
            Ceylon Birdspotters begain with people who have over 2 decades of experience on this field.
           </p>
           <div className="grid grid-cols-2 gap-4">
@@ -49,10 +51,10 @@ export default function About() {
       title: "Today",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-neutral-800 dark:text-neutral-200 text-base md:text-lg font-normal mb-8">
            Today we cater to people all over the world to discover the wonders of Sri Lanka.
           </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
+          <p className="text-neutral-800 dark:text-neutral-200 text-base md:text-lg font-normal mb-8">
             The story is still writing for ceylon Birdspotters. Reserve your page in our story.
           </p>
           <div className="grid grid-cols-2 gap-4">
@@ -92,27 +94,27 @@ export default function About() {
       title: "Future Goals",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-4">
+          <p className="text-neutral-800 dark:text-neutral-200 text-base md:text-lg font-normal mb-4">
             Striving to redefine wildlife and nature tourism in Sri Lanka with innovative and sustainable approaches.
           </p>
-          <div className="mb-8">
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Launch interactive birdwatching workshops for enthusiasts and beginners.
+          <div className="mb-8 space-y-2">
+            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-base md:text-lg">
+              <Circle className="text-blue-500 h-4 w-4 fill-current" /> Launch interactive birdwatching workshops for enthusiasts and beginners.
             </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Develop eco-friendly tour packages, including carbon-offset programs.
+            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-base md:text-lg">
+              <Circle className="text-blue-500 h-4 w-4 fill-current" /> Develop eco-friendly tour packages, including carbon-offset programs.
             </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Partner with local communities to promote sustainable tourism and empower locals.
+            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-base md:text-lg">
+              <Circle className="text-blue-500 h-4 w-4 fill-current" /> Partner with local communities to promote sustainable tourism and empower locals.
             </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Continue and improve the customer experience
+            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-base md:text-lg">
+              <Circle className="text-blue-500 h-4 w-4 fill-current" /> Continue and improve the customer experience
             </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Expand knowledge about Sri Lanka to foreign countries
+            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-base md:text-lg">
+              <Circle className="text-blue-500 h-4 w-4 fill-current" /> Expand knowledge about Sri Lanka to foreign countries
             </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-xs md:text-sm">
-              ✅ Establish a bird conservation fund to support research and habitat protection.
+            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-base md:text-lg">
+              <Circle className="text-blue-500 h-4 w-4 fill-current" /> Establish a bird conservation fund to support research and habitat protection.
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
@@ -137,25 +139,26 @@ export default function About() {
               height={500}
               className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
-             <Image
-          src='/images/sigiriya.jpg'
-          alt="Bird Conservation Fund"
-          width={500}
-          height={500}
-          className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
-        />
-      </div>
-    </div>
-  ),
-},
-  ]
+            <Image
+              src='/images/sigiriya.jpg'
+              alt="Bird Conservation Fund"
+              width={500}
+              height={500}
+              className="rounded-lg object-cover h-20 md:h-44 lg:h-60 w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+            />
+          </div>
+        </div>
+      ),
+    },
+  ];
+  
   return (
     <>
-    <Navbar/>
-    <div className="w-full">
-      <Timeline data={data} />
-    </div>
-    <Footer/>
+      <Navbar/>
+      <div className="w-full">
+        <Timeline data={data} />
+      </div>
+      <Footer/>
     </>
   );
 }

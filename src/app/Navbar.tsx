@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+// Navbar.tsx
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useEffect, useState } from "react";
@@ -33,21 +35,20 @@ export const MenuItem = ({
 }: MenuItemProps) => {
   return (
     <div 
-      onMouseEnter={() => !isMobile && setActive(item)} 
-      onClick={() => isMobile && setActive(active === item ? null : item)}
-      className="relative"
+      onClick={() => setActive(active === item ? null : item)}
+      className="relative cursor-pointer"
     >
       <motion.p
         transition={{ duration: 0.3 }}
-        className="cursor-pointer text-black hover:text-gray-600"
+        className="text-black hover:text-gray-600"
       >
         {item}
       </motion.p>
       {active !== null && (
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 10 }}
-          animate={{ opacity: 3, scale: 3, y: 0 }}
-          transition={transition}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.2 }}
         >
           {active === item && (
             <div className={`${isMobile ? 'relative mt-4' : 'absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2'} pt-4`}>
@@ -125,7 +126,6 @@ export const Menu = ({ setActive, children }: MenuProps) => {
   return (
     <nav
       id="main-nav"
-      onMouseLeave={() => !isMobile && setActive(null)}
       className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
         scrollingUp ? "transform translate-y-0" : "transform -translate-y-full"
       } border border-gray-200 bg-white shadow-lg`}
