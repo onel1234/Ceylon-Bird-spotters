@@ -14,7 +14,7 @@ export const amphibianImages: ImageDetails[] = [
   {
     id: 3,
     src: "/wildlife/IMG_0323 (2).JPG",
-    title: "Frog in the Wild",
+    title: "Unknown",
     scientificName: "Unknown",
     location: "Unknown",
     photographer: "Unknown",
@@ -32,10 +32,12 @@ export const amphibianImages: ImageDetails[] = [
   {
     id: 5,
     src: "/wildlife/IMG_7904.JPG",
-    title: "Amphibian Portrait",
+    title: "Unknown",
     scientificName: "Unknown",
     location: "Unknown",
     photographer: "Unknown",
     category: "amphibians",
   },
 ];
+
+
