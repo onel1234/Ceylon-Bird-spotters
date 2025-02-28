@@ -12,14 +12,14 @@ function Contact() {
     
     // Create a template parameters object
     const templateParams = {
-      to_email:"fashionisaclothing7@gmail.com",
+      to_email:"redribbongarments7@gmail.com",
       email_from: e.target.email_from.value,
       message: e.target.message.value
     };
 
     emailjs
       .send(
-        'service_58c5me3',
+        'service_s4rm529',
         "template_wzk609k",
         templateParams,
         "lHYF9zJWeaB3KgDsH"
