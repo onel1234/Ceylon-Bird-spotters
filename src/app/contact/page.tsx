@@ -42,7 +42,7 @@ const Contact: React.FC = () => {
 
     emailjs
       .send(
-        'service_s4rm529',
+        'service_vkek2pe',
         "template_wzk609k",
         templateParams,
         "lHYF9zJWeaB3KgDsH"
