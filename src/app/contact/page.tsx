@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
     e.preventDefault();
     
     const templateParams = {
-      to_email: "wathilaonelranaweera9@gmail.com",
+      to_email: "contact@ceylonbirdspotters.com",
       from_name: formData.from_name,
       email_from: formData.email_from,
       message: formData.message
