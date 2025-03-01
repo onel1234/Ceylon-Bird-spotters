@@ -1,7 +1,7 @@
 "use client";
 import React, { lazy, Suspense } from "react";
+import Head from "next/head"; 
 import { MessageCircle } from "lucide-react";
-
 
 const Navbar = lazy(() => import("./NavbarFn"));
 const HeroParallax = lazy(() => import("./Heroprallax"));
@@ -33,6 +33,10 @@ const WhatsAppButton = () => {
 export default function Page() {
   return (
     <div>
+      {/* Add Favicon */}
+      <Head>
+        <link rel="icon" type="image/jpeg" href="/images/LogoV2.jpg" />
+      </Head>
       <Suspense fallback={<LoadingSpinner />}>
         <Navbar />
       </Suspense>

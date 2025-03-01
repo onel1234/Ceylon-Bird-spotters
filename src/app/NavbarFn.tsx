@@ -8,7 +8,7 @@ const Navbar = () => {
   const router = useRouter();
  
   const handleMenuClick = (path: string) => {
-    // Toggle the active state - if the same item is clicked, close it
+    
     setActiveItem(prevActive => prevActive === path ? null : path);
     router.push(path);
   };
