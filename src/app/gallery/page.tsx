@@ -63,8 +63,8 @@ const GalleryPage: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <div className="py-32 px-6 md:px-8 lg:px-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
+      <div className="py-32 bg-gray-50">
+        <div className="max-w-full px-4 mx-auto">
           <div className="text-center mb-8">
             <AnimatePresence mode="wait">
               <motion.h1
@@ -93,15 +93,21 @@ const GalleryPage: React.FC = () => {
               <span>to filter images</span>
             </div>
           </div>
-          <GalleryFilter
-            activeCategory={activeCategory}
-            onCategoryChange={setActiveCategory}
-          />
-          <div className="pt-7">
-            <ParallaxScrollSecond
-              images={getFilteredImages()}
-              className="gallery-grid"
+
+          <div className="max-w-7xl mx-auto">
+            <GalleryFilter
+              activeCategory={activeCategory}
+              onCategoryChange={setActiveCategory}
             />
+          </div>
+
+          <div className="pt-7 w-full overflow-hidden">
+            <div className="max-w-[95vw] mx-auto">
+              <ParallaxScrollSecond
+                images={getFilteredImages()}
+                className="gallery-grid"
+              />
+            </div>
           </div>
         </div>
       </div>
