@@ -1,6 +1,6 @@
 "use client";
 
-import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
+import { IconArrowLeft, IconArrowRight, IconPhoto } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
@@ -10,7 +10,6 @@ type Testimonial = {
   name: string;
   designation: string;
   image: string;
-  
 };
 
 const testimonials: Testimonial[] = [
@@ -42,6 +41,8 @@ const testimonials: Testimonial[] = [
   }
 ];
 
+const GOOGLE_DRIVE_LINK = "https://drive.google.com/drive/folders/1VNExEVuV0OBXxRzx_iIX4ShNPCoaluPC?usp=sharing";
+
 const TestimonialsSection = () => {
   const [active, setActive] = useState(0);
   const [imageError, setImageError] = useState<Record<number, boolean>>({});
@@ -72,6 +73,10 @@ const TestimonialsSection = () => {
 
   const randomRotateY = () => {
     return Math.floor(Math.random() * 21) - 10;
+  };
+
+  const openGoogleDrive = () => {
+    window.open(GOOGLE_DRIVE_LINK, "_blank");
   };
 
   return (
@@ -195,21 +200,33 @@ const TestimonialsSection = () => {
                   ))}
                 </motion.p>
               </motion.div>
+              <div className="flex flex-col space-y-4 pt-12 md:pt-0">
+  <div className="flex gap-4">
+    <button
+      onClick={handlePrev}
+      className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
+    >
+      <IconArrowLeft className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:rotate-12 transition-transform duration-300" />
+    </button>
+    <button
+      onClick={handleNext}
+      className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
+    >
+      <IconArrowRight className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:-rotate-12 transition-transform duration-300" />
+    </button>
+  </div>
 
-              <div className="flex gap-4 pt-12 md:pt-0">
-                <button
-                  onClick={handlePrev}
-                  className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
-                >
-                  <IconArrowLeft className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:rotate-12 transition-transform duration-300" />
-                </button>
-                <button
-                  onClick={handleNext}
-                  className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
-                >
-                  <IconArrowRight className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:-rotate-12 transition-transform duration-300" />
-                </button>
-              </div>
+  {/* Google Drive Link Button - Now positioned below arrows */}
+  <motion.button
+    onClick={openGoogleDrive}
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="flex items-center gap-2 bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 text-sm font-medium mt-12"
+  >
+    <IconPhoto className="h-4 w-4" />
+    <span>Explore Our Tour History &  More Reviews</span>
+  </motion.button>
+</div>
             </div>
           </div>
         </div>
