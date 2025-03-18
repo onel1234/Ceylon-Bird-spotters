@@ -137,7 +137,7 @@ export default function MirissaPage() {
                     className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg"
                   >
                     <h4 className="font-semibold text-lg mb-2">{highlight.title}</h4>
-                    <p className="text-gray-700 dark:text-gray-300">{highlight.description}</p>
+                    <p className="text-gray-700 dark:text-gray-300 text-lg">{highlight.description}</p>
                   </div>
                 ))}
               </div>
