@@ -175,8 +175,8 @@ export const endemicBirdImages: ImageDetails[] = [
   {
     id: 20,
     src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1740204755/Aves_575_yhzels.jpg",
-    title: "Sri Lanka Blue Magpie",
-    scientificName: "Urocissa ornata",
+    title: " Black-capped Bulbul",
+    scientificName: " Rubigula melanictera",
     location: "Sinharaja Rainforest",
     photographer: "Lucas Young",
     category: "Endemics",
@@ -184,8 +184,8 @@ export const endemicBirdImages: ImageDetails[] = [
   {
     id: 21,
     src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1740204753/IMG_1926_e21ggy.jpg",
-    title: "Sri Lankan Leopard",
-    scientificName: "Panthera pardus kotiya",
+    title: "Sri Lanka Junglefowl",
+    scientificName: " Gallus lafayettii",
     location: "Yala National Park",
     photographer: "Jane Smith",
     category: "Endemics",
@@ -220,8 +220,8 @@ export const endemicBirdImages: ImageDetails[] = [
   {
     id: 25,
     src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1740204741/DSCN8000_xtqunc.jpg",
-    title: "Crested Hawk-Eagle",
-    scientificName: "Nisaetus cirrhatus",
+    title: "Sri Lanka Swallow",
+    scientificName: "Cecropis hyperythra",
     location: "Horton Plains",
     photographer: "Sophia Green",
     category: "Endemics",
@@ -274,8 +274,8 @@ export const endemicBirdImages: ImageDetails[] = [
   {
     id: 31,
     src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1740204718/Aves_8_dwyemn.jpg",
-    title: "Sri Lanka Blue Magpie",
-    scientificName: "Urocissa ornata",
+    title: "Spot-winged Thrush",
+    scientificName: "Geokichla spiloptera",
     location: "Sinharaja Rainforest",
     photographer: "Lucas Young",
     category: "Endemics",
@@ -292,8 +292,8 @@ export const endemicBirdImages: ImageDetails[] = [
   {
     id: 33,
     src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1740204706/IMG_3439_r5wqpb.jpg",
-    title: "Sri Lanka Blue Magpie",
-    scientificName: "Urocissa ornata",
+    title: "Ashy-headed Laughingthrush",
+    scientificName: "Argya cinereifrons",
     location: "Sinharaja Rainforest",
     photographer: "Lucas Young",
     category: "Endemics",
@@ -301,10 +301,11 @@ export const endemicBirdImages: ImageDetails[] = [
   {
     id: 34,
     src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1740204705/Sri_Lanka_Orange-billed_Babaler_-_Turdoides_rufescens_2_asggva.jpg",
-    title: "Sri Lanka Blue Magpie",
-    scientificName: "Urocissa ornata",
+    title: "Orange-billed Babbler",
+    scientificName: "Argya rufescens",
     location: "Sinharaja Rainforest",
     photographer: "Lucas Young",
     category: "Endemics",
   },
   ];
+

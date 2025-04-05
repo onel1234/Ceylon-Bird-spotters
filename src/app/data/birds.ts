@@ -22,8 +22,8 @@ export const birdImages: ImageDetails[] = [
   {
     id: 3,
     src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1740202139/IMG_0737_ipveev.jpg",
-    title: "Sri Lankan Elephant",
-    scientificName: "Elephas maximus maximus",
+    title: "White-bellied Sea-Eagle",
+    scientificName: "Icthyophaga leucogaster",
     location: "Udawalawe National Park",
     photographer: "Emma Wilson",
     category: "Birds",
@@ -184,8 +184,8 @@ export const birdImages: ImageDetails[] = [
   {
     id: 21,
     src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1740202211/Aves_233_b8bkwa.jpg",
-    title: "Sri Lankan Leopard",
-    scientificName: "Panthera pardus kotiya",
+    title: "Alexandrine Parakeet",
+    scientificName: "Psittacula eupatria",
     location: "Yala National Park",
     photographer: "Jane Smith",
     category: "Birds",
@@ -202,8 +202,8 @@ export const birdImages: ImageDetails[] = [
   {
     id: 23,
     src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1740202213/Aves_182_srrmlw.jpg",
-    title: "Sri Lankan Elephant",
-    scientificName: "Elephas maximus maximus",
+    title: "Indian Nightjar",
+    scientificName: "Caprimulgus asiaticus",
     location: "Udawalawe National Park",
     photographer: "Emma Wilson",
     category: "Birds",
@@ -274,10 +274,12 @@ export const birdImages: ImageDetails[] = [
   {
     id: 31,
     src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1740202235/Aves_147_qxusfy.jpg",
-    title: "Sri Lanka Blue Magpie",
-    scientificName: "Urocissa ornata",
+    title: "Sri Lanka Frogmouth",
+    scientificName: "Batrachostomus moniliger",
     location: "Sinharaja Rainforest",
     photographer: "Lucas Young",
     category: "Birds",
   },
 ];
+
+

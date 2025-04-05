@@ -4,8 +4,8 @@ export const mammalImages: ImageDetails[] = [
   {
     id: 1,
     src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1740207631/ASIAN_ELEPHANT_Elephas_maximus_151_l9pfia.jpg",
-    title: "Sri Lankan Leopard",
-    scientificName: "Panthera pardus kotiya",
+    title: "Asian Elephant",
+    scientificName: "Elephas maximus",
     location: "Yala National Park",
     photographer: "Jane Smith",
     category: "Mammals",
@@ -112,8 +112,8 @@ export const mammalImages: ImageDetails[] = [
   {
     id: 13,
     src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1740207549/IMG_2576_xnppso.jpg",
-    title: "Sri Lankan Elephant",
-    scientificName: "Elephas maximus maximus",
+    title: " Indian Buffalo",
+    scientificName: " Bubalus arnee",
     location: "Udawalawe National Park",
     photographer: "Emma Wilson",
     category: "Mammals",
@@ -335,3 +335,4 @@ export const mammalImages: ImageDetails[] = [
     category: "Mammals",
   },
   ];
+
