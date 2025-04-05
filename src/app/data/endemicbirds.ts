@@ -8,7 +8,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Panthera pardus kotiya",
     location: "Yala National Park",
     photographer: "Jane Smith",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Melursus ursinus",
     location: "Wilpattu National Park",
     photographer: "John Doe",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Elephas maximus maximus",
     location: "Udawalawe National Park",
     photographer: "Emma Wilson",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Pavo cristatus",
     location: "Minneriya National Park",
     photographer: "Liam Brown",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Nisaetus cirrhatus",
     location: "Horton Plains",
     photographer: "Sophia Green",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 6,
@@ -53,7 +53,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Alcedo atthis",
     location: "Sinharaja Forest Reserve",
     photographer: "Michael Scott",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 7,
@@ -62,7 +62,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Macaca sinica",
     location: "Dambulla Cave Temple",
     photographer: "Olivia White",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 8,
@@ -71,7 +71,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Crocodylus palustris",
     location: "Bundala National Park",
     photographer: "William Harris",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 9,
@@ -80,7 +80,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Varanus bengalensis",
     location: "Wasgamuwa National Park",
     photographer: "Ava Martinez",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 10,
@@ -89,7 +89,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Urocissa ornata",
     location: "Sinharaja Rainforest",
     photographer: "Lucas Young",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 11,
@@ -98,7 +98,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Panthera pardus kotiya",
     location: "Yala National Park",
     photographer: "Jane Smith",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 12,
@@ -107,7 +107,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Melursus ursinus",
     location: "Wilpattu National Park",
     photographer: "John Doe",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 13,
@@ -116,7 +116,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Elephas maximus maximus",
     location: "Udawalawe National Park",
     photographer: "Emma Wilson",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 14,
@@ -125,7 +125,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Pavo cristatus",
     location: "Minneriya National Park",
     photographer: "Liam Brown",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 15,
@@ -134,7 +134,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Nisaetus cirrhatus",
     location: "Horton Plains",
     photographer: "Sophia Green",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 16,
@@ -143,7 +143,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Alcedo atthis",
     location: "Sinharaja Forest Reserve",
     photographer: "Michael Scott",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 17,
@@ -152,7 +152,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Macaca sinica",
     location: "Dambulla Cave Temple",
     photographer: "Olivia White",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 18,
@@ -161,7 +161,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Crocodylus palustris",
     location: "Bundala National Park",
     photographer: "William Harris",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 19,
@@ -170,7 +170,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Varanus bengalensis",
     location: "Wasgamuwa National Park",
     photographer: "Ava Martinez",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 20,
@@ -179,7 +179,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Urocissa ornata",
     location: "Sinharaja Rainforest",
     photographer: "Lucas Young",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 21,
@@ -188,7 +188,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Panthera pardus kotiya",
     location: "Yala National Park",
     photographer: "Jane Smith",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 22,
@@ -197,7 +197,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Melursus ursinus",
     location: "Wilpattu National Park",
     photographer: "John Doe",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 23,
@@ -206,7 +206,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Elephas maximus maximus",
     location: "Udawalawe National Park",
     photographer: "Emma Wilson",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 24,
@@ -215,7 +215,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Pavo cristatus",
     location: "Minneriya National Park",
     photographer: "Liam Brown",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 25,
@@ -224,7 +224,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Nisaetus cirrhatus",
     location: "Horton Plains",
     photographer: "Sophia Green",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 26,
@@ -233,7 +233,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Alcedo atthis",
     location: "Sinharaja Forest Reserve",
     photographer: "Michael Scott",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 27,
@@ -242,7 +242,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Macaca sinica",
     location: "Dambulla Cave Temple",
     photographer: "Olivia White",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 28,
@@ -251,7 +251,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Crocodylus palustris",
     location: "Bundala National Park",
     photographer: "William Harris",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 29,
@@ -260,7 +260,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Varanus bengalensis",
     location: "Wasgamuwa National Park",
     photographer: "Ava Martinez",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 30,
@@ -269,7 +269,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Urocissa ornata",
     location: "Sinharaja Rainforest",
     photographer: "Lucas Young",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 31,
@@ -278,7 +278,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Urocissa ornata",
     location: "Sinharaja Rainforest",
     photographer: "Lucas Young",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 32,
@@ -287,7 +287,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Urocissa ornata",
     location: "Sinharaja Rainforest",
     photographer: "Lucas Young",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 33,
@@ -296,7 +296,7 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Urocissa ornata",
     location: "Sinharaja Rainforest",
     photographer: "Lucas Young",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   {
     id: 34,
@@ -305,6 +305,6 @@ export const endemicBirdImages: ImageDetails[] = [
     scientificName: "Urocissa ornata",
     location: "Sinharaja Rainforest",
     photographer: "Lucas Young",
-    category: "endemic-birds",
+    category: "Endemics",
   },
   ];

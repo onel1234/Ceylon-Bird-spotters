@@ -8,7 +8,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Panthera pardus kotiya",
     location: "Yala National Park",
     photographer: "Jane Smith",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Melursus ursinus",
     location: "Wilpattu National Park",
     photographer: "John Doe",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Elephas maximus maximus",
     location: "Udawalawe National Park",
     photographer: "Emma Wilson",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Pavo cristatus",
     location: "Minneriya National Park",
     photographer: "Liam Brown",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Nisaetus cirrhatus",
     location: "Horton Plains",
     photographer: "Sophia Green",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 6,
@@ -53,7 +53,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Alcedo atthis",
     location: "Sinharaja Forest Reserve",
     photographer: "Michael Scott",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 7,
@@ -62,7 +62,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Macaca sinica",
     location: "Dambulla Cave Temple",
     photographer: "Olivia White",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 8,
@@ -71,7 +71,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Crocodylus palustris",
     location: "Bundala National Park",
     photographer: "William Harris",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 9,
@@ -80,7 +80,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Varanus bengalensis",
     location: "Wasgamuwa National Park",
     photographer: "Ava Martinez",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 10,
@@ -89,7 +89,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Urocissa ornata",
     location: "Sinharaja Rainforest",
     photographer: "Lucas Young",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 11,
@@ -98,7 +98,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Panthera pardus kotiya",
     location: "Yala National Park",
     photographer: "Jane Smith",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 12,
@@ -107,7 +107,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Melursus ursinus",
     location: "Wilpattu National Park",
     photographer: "John Doe",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 13,
@@ -116,7 +116,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Elephas maximus maximus",
     location: "Udawalawe National Park",
     photographer: "Emma Wilson",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 14,
@@ -125,7 +125,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Pavo cristatus",
     location: "Minneriya National Park",
     photographer: "Liam Brown",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 15,
@@ -134,7 +134,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Nisaetus cirrhatus",
     location: "Horton Plains",
     photographer: "Sophia Green",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 16,
@@ -143,7 +143,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Alcedo atthis",
     location: "Sinharaja Forest Reserve",
     photographer: "Michael Scott",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 17,
@@ -152,7 +152,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Macaca sinica",
     location: "Dambulla Cave Temple",
     photographer: "Olivia White",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 18,
@@ -161,7 +161,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Crocodylus palustris",
     location: "Bundala National Park",
     photographer: "William Harris",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 19,
@@ -170,7 +170,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Varanus bengalensis",
     location: "Wasgamuwa National Park",
     photographer: "Ava Martinez",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 20,
@@ -179,7 +179,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Urocissa ornata",
     location: "Sinharaja Rainforest",
     photographer: "Lucas Young",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 21,
@@ -188,7 +188,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Panthera pardus kotiya",
     location: "Yala National Park",
     photographer: "Jane Smith",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 22,
@@ -197,7 +197,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Melursus ursinus",
     location: "Wilpattu National Park",
     photographer: "John Doe",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 23,
@@ -206,7 +206,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Elephas maximus maximus",
     location: "Udawalawe National Park",
     photographer: "Emma Wilson",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 24,
@@ -215,7 +215,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Pavo cristatus",
     location: "Minneriya National Park",
     photographer: "Liam Brown",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 25,
@@ -224,7 +224,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Nisaetus cirrhatus",
     location: "Horton Plains",
     photographer: "Sophia Green",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 26,
@@ -233,7 +233,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Alcedo atthis",
     location: "Sinharaja Forest Reserve",
     photographer: "Michael Scott",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 27,
@@ -242,7 +242,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Macaca sinica",
     location: "Dambulla Cave Temple",
     photographer: "Olivia White",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 28,
@@ -251,7 +251,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Crocodylus palustris",
     location: "Bundala National Park",
     photographer: "William Harris",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 29,
@@ -260,7 +260,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Varanus bengalensis",
     location: "Wasgamuwa National Park",
     photographer: "Ava Martinez",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 30,
@@ -269,7 +269,7 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Urocissa ornata",
     location: "Sinharaja Rainforest",
     photographer: "Lucas Young",
-    category: "birds",
+    category: "Birds",
   },
   {
     id: 31,
@@ -278,6 +278,6 @@ export const birdImages: ImageDetails[] = [
     scientificName: "Urocissa ornata",
     location: "Sinharaja Rainforest",
     photographer: "Lucas Young",
-    category: "birds",
+    category: "Birds",
   },
 ];

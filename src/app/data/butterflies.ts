@@ -8,7 +8,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Panthera pardus kotiya",
     location: "Yala National Park",
     photographer: "Jane Smith",
-    category: "mammals",
+    category: "Butterflies",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Graphium antiphates",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Junonia atlites",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Unknown",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Unknown",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 6,
@@ -53,7 +53,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Unknown",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 7,
@@ -62,7 +62,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Unknown",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 8,
@@ -71,7 +71,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Unknown",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 9,
@@ -80,7 +80,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Unknown",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 10,
@@ -89,7 +89,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Argynnis hyperbius",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 11,
@@ -98,7 +98,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Danaus chrysippus",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 12,
@@ -107,7 +107,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Troides darsius",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 13,
@@ -116,7 +116,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Eachliopta jophon",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 14,
@@ -125,7 +125,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Idea iasonia",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 15,
@@ -134,7 +134,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Unknown",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 16,
@@ -143,7 +143,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Unknown",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 17,
@@ -152,7 +152,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Kaniska canace",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 18,
@@ -161,7 +161,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Ideopsis similis",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 19,
@@ -170,7 +170,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Papilio polymnestor",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 20,
@@ -179,7 +179,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Parthenos sylvia",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 21,
@@ -188,7 +188,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Moduza procris",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 22,
@@ -197,7 +197,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Moduza procris",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 23,
@@ -206,7 +206,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Neptis hylas",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 24,
@@ -215,7 +215,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Danaus genutia",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 25,
@@ -224,7 +224,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Vindula erota",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 26,
@@ -233,7 +233,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Vindula erota",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 27,
@@ -242,7 +242,7 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Graphium antiphates",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
   {
     id: 28,
@@ -251,6 +251,6 @@ export const butterflyImages: ImageDetails[] = [
     scientificName: "Graphium antiphates",
     location: "Unknown",
     photographer: "Unknown",
-    category: "butterfly",
+    category: "Butterflies",
   },
 ];

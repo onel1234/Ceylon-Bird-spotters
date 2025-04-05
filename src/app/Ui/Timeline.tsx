@@ -1,11 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
-import {
- 
-  useScroll,
-  useTransform,
-  motion,
-} from "framer-motion";
+
 import React, { useEffect, useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 interface TimelineEntry {
   title: string;
@@ -18,11 +15,22 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
   const [height, setHeight] = useState(0);
 
   useEffect(() => {
-    if (ref.current) {
-      const rect = ref.current.getBoundingClientRect();
-      setHeight(rect.height);
-    }
-  }, [ref]);
+    const updateHeight = () => {
+      if (ref.current) {
+        const rect = ref.current.getBoundingClientRect();
+        setHeight(rect.height);
+      }
+    };
+
+    updateHeight();
+
+    const resizeObserver = new ResizeObserver(updateHeight);
+    if (ref.current) resizeObserver.observe(ref.current);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -37,23 +45,23 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       className="w-full bg-white dark:bg-neutral-950 font-sans md:px-10"
       ref={containerRef}
     >
-     <div className="max-w-7xl mx-auto py-32 px-4 md:px-8 lg:px-10">
-  <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-    About Ceylon Naturalist
-  </h2>
-  <p className="text-neutral-700 dark:text-neutral-300 text-lg md:text-lg max-w-full">
-    Step into the realm of natural wonders with Ceylon Naturalist, your gateway to unparalleled wildlife experiences in Sri Lanka. With a legacy of expertise and a team of seasoned tour guide naturalists, we&apos;re dedicated to crafting bespoke journeys tailored to your passions.
-    <br /><br />
-    At Ceylon Naturalist, we don&apos;t just offer tours; we curate moments that resonate with your soul. Our mission? To align your interests with the very best Sri Lanka has to offer, ensuring every expedition leaves you awe-inspired and fulfilled.
-    <br /><br />
-    Our tour guide naturalists aren&apos;t just experts; they&apos;re enthusiasts driven by a passion for nature&apos;s marvels. With their guidance, immerse yourself in wildlife wonders, discovering the hidden gems of Sri Lanka&apos;s diverse ecosystems.
-    <br /><br />
-    We prioritize your interests, ensuring your experience aligns perfectly with your desires. From birding to wildlife photography, and cultural immersions to nature escapes, we tailor each journey to suit your preferences.
-    <br /><br />
-    At Ceylon Naturalist, we don&apos;t just promise tours; we promise connections—with nature, with communities, and with unforgettable experiences. Join us, and let&apos;s discover the untamed wonders of Sri Lanka together.
-  </p>
-</div>
+      <div className="max-w-7xl mx-auto py-32 px-4 md:px-8 lg:px-10">
+        <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
+          About <span className="text-[#0E806A] font-semibold">Ceylon Naturalist</span>
+        </h2>
 
+        <p className="text-neutral-700 dark:text-neutral-300 text-lg md:text-lg max-w-full">
+          Step into the realm of natural wonders with Ceylon Naturalist, your gateway to unparalleled wildlife experiences in Sri Lanka. With a legacy of expertise and a team of seasoned tour guide naturalists, we're dedicated to crafting bespoke journeys tailored to your passions.
+          <br /><br />
+          At Ceylon Naturalist, we don't just offer tours; we curate moments that resonate with your soul. Our mission? To align your interests with the very best Sri Lanka has to offer, ensuring every expedition leaves you awe-inspired and fulfilled.
+          <br /><br />
+          Our tour guide naturalists aren't just experts; they're enthusiasts driven by a passion for nature's marvels. With their guidance, immerse yourself in wildlife wonders, discovering the hidden gems of Sri Lanka's diverse ecosystems.
+          <br /><br />
+          We prioritize your interests, ensuring your experience aligns perfectly with your desires. From birding to wildlife photography, and cultural immersions to nature escapes, we tailor each journey to suit your preferences.
+          <br /><br />
+          At Ceylon Naturalist, we don't just promise tours; we promise connections—with nature, with communities, and with unforgettable experiences. Join us, and let's discover the untamed wonders of Sri Lanka together.
+        </p>
+      </div>
 
       <div ref={ref} className="relative max-w-7xl mx-auto pb-20">
         {data.map((item, index) => (
@@ -62,10 +70,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
             className="flex justify-start pt-10 md:pt-40 md:gap-10"
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-              <div className="h-10 absolute left-3 md:left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
+              <div className="h-10 absolute left-3 w-10 rounded-full bg-white dark:bg-black flex items-center justify-center">
                 <div className="h-4 w-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
-              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500 ">
+              <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-neutral-500 dark:text-neutral-500">
                 {item.title}
               </h3>
             </div>
@@ -74,23 +82,23 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <h3 className="md:hidden block text-2xl mb-4 text-left font-bold text-neutral-500 dark:text-neutral-500">
                 {item.title}
               </h3>
-              {item.content}{" "}
+              {item.content}
             </div>
           </div>
         ))}
+
+        {/* Vertical animated line */}
         <div
-          style={{
-            height: height + "px",
-          }}
-          className="absolute md:left-8 left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent from-[0%] via-neutral-200 dark:via-neutral-700 to-transparent to-[99%]  [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)] "
+          style={{ height: height + "px" }}
+          className="absolute left-8 top-0 overflow-hidden w-[2px] bg-[linear-gradient(to_bottom,var(--tw-gradient-stops))] from-transparent via-neutral-200 dark:via-neutral-700 to-transparent [mask-image:linear-gradient(to_bottom,transparent_0%,black_10%,black_90%,transparent_100%)]"
         >
           <motion.div
             style={{
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-purple-500 via-blue-500 to-transparent from-[0%] via-[10%] rounded-full"
-          />
+            className="absolute inset-x-0 top-0 w-[2px] bg-gradient-to-t from-teal-700 via-teal-500 to-transparent rounded-full"
+/>
         </div>
       </div>
     </div>

@@ -23,6 +23,7 @@ export const Tabs = ({
 }) => {
   const [active, setActive] = useState<Tab>(propTabs[0]);
   const [isHovering, setIsHovering] = useState(false);
+  const [hoveredTab, setHoveredTab] = useState<string | null>(null);
 
   const moveSelectedTabToTop = (idx: number) => {
     const selectedTab = propTabs[idx];
@@ -43,8 +44,14 @@ export const Tabs = ({
             onClick={() => {
               moveSelectedTabToTop(idx);
             }}
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
+            onMouseEnter={() => {
+              setIsHovering(true);
+              setHoveredTab(tab.value);
+            }}
+            onMouseLeave={() => {
+              setIsHovering(false);
+              setHoveredTab(null);
+            }}
             className={cn("relative px-4 py-2 rounded-full", tabClassName)}
             style={{
               transformStyle: "preserve-3d",
@@ -55,12 +62,28 @@ export const Tabs = ({
                 layoutId="selected-tab-indicator"
                 transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                 className={cn(
-                  "absolute inset-0 bg-gray-200 dark:bg-zinc-800 rounded-full",
+                  "absolute inset-0 bg-teal-700 dark:bg-teal-700 rounded-full",
                   activeTabClassName
                 )}
               />
             )}
-            <span className="relative block text-black dark:text-white">
+            {hoveredTab === tab.value && active.value !== tab.value && (
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="absolute inset-0 bg-teal-700/10 dark:bg-teal-700/20 rounded-full"
+                transition={{ duration: 0.3 }}
+              />
+            )}
+            <span 
+              className={cn(
+                "relative block",
+                active.value === tab.value 
+                  ? "text-white dark:text-white" 
+                  : "text-black dark:text-white"
+              )}
+            >
               {tab.title}
             </span>
           </button>

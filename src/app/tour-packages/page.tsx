@@ -115,7 +115,7 @@ const TourPackage: React.FC<TourPackageProps> = ({
         </p>
         <Link
           href="/contact"
-          className="inline-block px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors"
+          className="inline-block px-6 py-3 bg-teal-700 hover:bg-teal-700 text-white rounded-lg transition-colors"
         >
           Contact Us Now
         </Link>
@@ -307,20 +307,20 @@ This is an intensive birdwatching tour and contains a big opportunity for endemi
       {
         day: 3,
         location: "Transfer to Wilpattu",
-        pageRoute: "",
+        pageRoute: "/destinations/wilpattu",
         image: "/wildlife/Leopard (5).jpg",
       },
       {
         day: 4,
         location: "Wilpattu National Park",
-        pageRoute: "",
+        pageRoute: "/destinations/wilpattu",
         image: "/wildlife/Leopard (7).jpg",
       },
      
       {
         day: 5,
         location: "Wilpattu National Park",
-        pageRoute: "",
+        pageRoute: "/destinations/wilpattu",
         image: "/wildlife/Leopard (15).jpg",
       },
        {
@@ -599,7 +599,7 @@ This is an intensive birdwatching tour and contains a big opportunity for endemi
         type: "location",
         number: 15,
         location: "Wilpattu National Park",
-        pageRoute: "",
+        pageRoute: "/destinations/wilpattu",
         image: "/wildlife/Leopard (4).jpg",
       },
       {
@@ -677,7 +677,7 @@ const TourPackages: React.FC = () => {
         <Tabs
           tabs={tabData}
           containerClassName="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl shadow-md"
-          activeTabClassName="bg-blue-600 text-white"
+          activeTabClassName="bg-teal-700 text-white"
           tabClassName="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
           contentClassName="mt-8"
         />

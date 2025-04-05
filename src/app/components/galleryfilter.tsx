@@ -12,12 +12,13 @@ const GalleryFilter: React.FC<GalleryFilterProps> = ({ activeCategory, onCategor
   const [isOpen, setIsOpen] = useState(false);
 
   const categories: CategoryType[] = [
-    'all',
-    'amphibians',
-    'mammals',
-    'butterfly',
-    'birds',
-    'endemic-birds'
+    'All',
+    'Endemics',
+    'Birds',
+     'Mammals',
+     'Butterflies',
+     'Reptiles',
+    
   ];
 
   return (
@@ -34,7 +35,7 @@ const GalleryFilter: React.FC<GalleryFilterProps> = ({ activeCategory, onCategor
         {/* Floating Action Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-14 h-14 rounded-full bg-blue-500 text-white shadow-lg hover:bg-blue-600 transition-colors duration-200 flex items-center justify-center"
+          className="w-14 h-14 rounded-full bg-teal-700 text-white shadow-lg hover:bg-teal-700 transition-colors duration-200 flex items-center justify-center"
           aria-label="Toggle filter menu"
         >
           <motion.div
@@ -66,7 +67,7 @@ const GalleryFilter: React.FC<GalleryFilterProps> = ({ activeCategory, onCategor
                     }}
                     className={`px-4 py-2 rounded-lg text-left transition-colors duration-200 ${
                       activeCategory === category
-                        ? 'bg-blue-500 text-white'
+                        ? 'bg-teal-700 text-white'
                         : 'hover:bg-gray-100'
                     }`}
                     whileHover={{ x: 4 }}
