@@ -86,7 +86,7 @@ const TestimonialsSection = () => {
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
             What Clients Say About Us
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-teal-700 mx-auto rounded-full"></div>
         </div>
         
         <div className="max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12">
