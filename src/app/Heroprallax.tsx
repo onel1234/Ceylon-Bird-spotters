@@ -233,10 +233,10 @@ const ImagesSlider = ({
 
 const HeroSection = () => {
   const images = [
-   "/culture/slide1.jpg",
+   "/culture/cnslide1(1).jpg",
     "/culture/slide2.jpg",
-    "/culture/slide3.jpg",
-    "https://res.cloudinary.com/dfxolekjs/image/upload/v1740831607/slide3_jrjlws.jpg",
+    "/culture/cnslide2(1).jpg",
+  
     
 
     

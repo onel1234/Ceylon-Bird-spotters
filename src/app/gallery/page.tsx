@@ -78,7 +78,7 @@ const GalleryPage: React.FC = () => {
               </motion.h1>
             </AnimatePresence>
             <motion.div
-              className="h-1 w-24 bg-blue-600 mx-auto mb-6"
+              className="h-1 w-24 bg-teal-700 mx-auto mb-6"
               layoutId="underline"
               layout
               transition={{
