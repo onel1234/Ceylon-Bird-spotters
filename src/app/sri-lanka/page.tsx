@@ -46,7 +46,7 @@ const SriLankaShowcase = () => {
         >
           <h2 className="text-3xl font-semibold text-black mb-8">A Biodiversity Haven</h2>
           <p className="text-black leading-relaxed mb-8 text-lg">
-            Sri Lanka, an enchanting tropical gem in the heart of the Indian Ocean, stands as a testament to the splendors of biodiversity. Recognized among the 36 biodiversity hotspots on our planet, alongside India's Western Ghats, this island nation spans a mere 65,610 km² of land yet cradles an astonishing 522 bird species, constituting approximately 5% of the world's avian diversity.
+            Sri Lanka, an enchanting tropical gem in the heart of the Indian Ocean, stands as a testament to the splendors of biodiversity. Recognized among the 36 biodiversity hotspots on our planet, alongside India's Western Ghats, this island nation spans a mere 65,610 km² of land yet cradles an astonishing number of bird species, constituting approximately 5% of the world's avian diversity.
           </p>
           
           <h3 className="text-2xl font-semibold text-black mb-6">Migratory Gateway</h3>

@@ -135,7 +135,7 @@ export const Menu = ({ setActive, children }: MenuProps) => {
           className="flex items-center cursor-pointer"
           onClick={handleLogoClick}
         >
-          <Image src="/images/LogoV2.jpg" alt="Logo" width={200} height={100} />
+          <Image src="/images/nabar.png" alt="Logo" width={120} height={120} />
         </div>
 
         <div className="hidden md:flex items-center space-x-8">
