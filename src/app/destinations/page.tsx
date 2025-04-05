@@ -22,7 +22,8 @@ const DestinationCard: React.FC<DestinationCardProps> = ({ title, locations }) =
   return (
     <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-xl overflow-hidden w-full">
       <div className="relative h-48 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600" />
+      <div className="absolute inset-0 bg-gradient-to-r from-teal-700 to-teal-300" />
+
         <h2 className="absolute bottom-0 left-0 p-6 text-3xl font-bold text-white">{title}</h2>
       </div>
       <div className="p-6">
@@ -67,79 +68,85 @@ const DestinationCard: React.FC<DestinationCardProps> = ({ title, locations }) =
 const DestinationsSection: React.FC = () => {
   const wildlifeDestinations: Location[] = [
     { 
-      name: "Sinharaja Forest", 
+      name: "Sinharaja Forest Reserve", 
       description: "A UNESCO World Heritage site, Sinharaja Forest Reserve is a verdant haven teeming with endemic flora and fauna, perfect for eco-enthusiasts.",
       imageUrl: "/images/sinharaja.jpg",
-      path:'destinations/sinharaja-forest',
+      path: "destinations/sinharaja-forest",
     },
     { 
-      name: "Kitulgala-Kelani Valley Forest", 
+      name: "Kitulgala-Makandawa Forest Reserve", 
       description: "Famous for white-water rafting and lush greenery, Kitulgala offers a thrilling escape into nature's embrace.",
       imageUrl: "/images/kitulgala.jpg",
-      path: 'destinations/kitulgala',
+      path: "destinations/kitulgala",
     },
     { 
-      name: "Mirissa", 
-      description: "Renowned for whale watching and pristine beaches, Mirissa is a coastal paradise waiting to be explored.",
-      imageUrl: "/images/mirissa.jpg",
-      path: 'destinations/mirissa',
+      name: "Horton Plains National Park", 
+      description: "An eco-tourist's dream, Horton Plains features misty grasslands, dense forests, and the famous World's End viewpoint.",
+      imageUrl: "/images/hortonplains.jpg",
+      path: "destinations/horton-plains",
     },
     { 
       name: "Yala National Park", 
       description: "Home to the elusive leopard and diverse wildlife, Yala offers an unparalleled safari experience.",
       imageUrl: "/images/yala.jpg",
-      path: 'destinations/yala',
-    },
-    { 
-      name: "Victoria National Park", 
-      description: "This scenic haven is perfect for hiking and bird watching, with breathtaking views of lush landscapes.",
-      imageUrl: "/images/victoria.jpg",
-      path: 'destinations/victoria',
+      path: "destinations/yala",
     },
     { 
       name: "Udawalawe National Park", 
       description: "Renowned for its large elephant population, Udawalawe is a must-visit for wildlife enthusiasts.",
       imageUrl: "/images/udawala.jpg",
-      path: 'destinations/udawalawe',
+      path: "destinations/udawalawe",
+    },
+    { 
+      name: "Wilpattu National Park", 
+      description: "One of Sri Lanka’s oldest and largest national parks, Wilpattu is famed for its unique villus and elusive leopards.",
+      imageUrl: "/images/wilpattu.jpg",
+      path: "destinations/wilpattu",
     },
     { 
       name: "Bundala National Park", 
       description: "A Ramsar Wetland, Bundala is a paradise for bird watchers with its vibrant avian diversity.",
       imageUrl: "/images/bundala.jpg",
-      path: 'destinations/bundala',
+      path: "destinations/bundala",
     },
     { 
       name: "Lunugamwehera National Park", 
       description: "A tranquil sanctuary blending forests and savannahs, Lunugamwehera is perfect for those seeking solitude amidst nature.",
       imageUrl: "/images/lunugamvehera.jpg",
-      path: 'destinations/lunugamwehara',
+      path: "destinations/lunugamwehara",
     },
     { 
       name: "Minneriya National Park", 
       description: "Witness the incredible 'Gathering' of elephants at Minneriya, a spectacle like no other.",
       imageUrl: "/images/minneriya.jpg",
-      path: 'destinations/minneriya',
+      path: "destinations/minneriya",
+    },
+    { 
+      name: "Victoria Park - Nuwara Eliya", 
+      description: "This scenic haven is perfect for hiking and bird watching, with breathtaking views of lush landscapes.",
+      imageUrl: "/images/victoria.jpg",
+      path: "destinations/victoria",
     },
     { 
       name: "Mannar Island", 
       description: "A hidden gem known for its pristine beaches, migratory birds, and rich cultural history.",
       imageUrl: "/images/mannar.jpg",
-      path: 'destinations/mannar',
+      path: "destinations/mannar",
+    },
+    { 
+      name: "Mirissa", 
+      description: "Renowned for whale watching and pristine beaches, Mirissa is a coastal paradise waiting to be explored.",
+      imageUrl: "/images/mirissa.jpg",
+      path: "destinations/mirissa",
     },
     { 
       name: "Anawilundawa Sanctuary", 
       description: "This Ramsar Wetland is a tranquil retreat, ideal for bird watching and immersing in serene wetlands.",
       imageUrl: "/images/anawilundawa.jpg",
-      path: 'destinations/anawilundawa',
+      path: "destinations/anawilundawa",
     },
-    
-    { 
-      name: "Horton Plains National Park", 
-      description: "An eco-tourist's dream, Horton Plains features misty grasslands, dense forests, and the famous World's End viewpoint.",
-      imageUrl: "/images/hortonplains.jpg",
-      path:'destinations/horton-plains',
-    }
   ];
+  
 
   const culturalDestinations: Location[] = [
     { 

@@ -78,7 +78,7 @@ const TypewriterEffect = ({
           repeat: Infinity,
           repeatType: "reverse",
         }}
-        className={cn("inline-block rounded-sm w-[4px] h-6 md:h-8 lg:h-10 bg-blue-500", cursorClassName)}
+        className={cn("inline-block rounded-sm w-[4px] h-6 md:h-8 lg:h-10 text-teal-700", cursorClassName)}
       />
     </div>
   );
@@ -233,9 +233,9 @@ const ImagesSlider = ({
 
 const HeroSection = () => {
   const images = [
-    "https://res.cloudinary.com/dfxolekjs/image/upload/v1740831187/slide1_2_1_qet0pf.jpg",
-    "https://res.cloudinary.com/dfxolekjs/image/upload/v1740831328/slide2_o6ncqz.jpg",
-    "https://res.cloudinary.com/dfxolekjs/image/upload/v1740831455/slide1_uthn2d.jpg",
+   "/culture/slide1.jpg",
+    "/culture/slide2.jpg",
+    "/culture/slide3.jpg",
     "https://res.cloudinary.com/dfxolekjs/image/upload/v1740831607/slide3_jrjlws.jpg",
     
 
@@ -262,7 +262,7 @@ const HeroSection = () => {
           >
             <motion.p className="font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
               <span className="text-xl md:text-6xl block mb-2">Discover Nature's Wonders</span>
-              <span className="text-base md:text-2xl">Embark on your avian journey with Ceylon Bird Spotters</span>
+              <span className="text-base md:text-2xl">Embark on your avian journey with Ceylon Naturalist</span>
             </motion.p>
           </motion.div>
         </ImagesSlider>
@@ -279,17 +279,17 @@ const HeroSection = () => {
               { text: "Sri" },
               { text: "Lanka" },
              { text: "with" },
-              { text: "Ceylon Bird Spotters", className: "text-blue-500" },
+              { text: "Ceylon Naturalist", className: "text-teal-700" },
             ]}
           />
           <div className="flex flex-col md:flex-row gap-4 mt-4">
             <Link href="/contact">
-              <button className="w-48 h-12 rounded-xl bg-blue-500 text-white text-base hover:bg-blue-600 transition-colors">
+              <button className="w-48 h-12 rounded-xl bg-teal-700 text-white text-base hover:bg-teal-700 transition-colors">
                 Contact us
               </button>
             </Link>
             <Link href="/tour-packages">
-            <button className="w-48 h-12 rounded-xl bg-blue-500 text-white text-base hover:bg-blue-600 transition-colors">
+            <button className="w-48 h-12 rounded-xl bg-teal-700 text-white text-base hover:bg-teal-700 transition-colors">
                 Tour packages
               </button>
             </Link>

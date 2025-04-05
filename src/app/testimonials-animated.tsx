@@ -221,7 +221,8 @@ const TestimonialsSection = () => {
     onClick={openGoogleDrive}
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
-    className="flex items-center gap-2 bg-blue-500 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 text-sm font-medium mt-12"
+    className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 text-sm font-medium mt-12"
+
   >
     <IconPhoto className="h-4 w-4" />
     <span>Explore Our Tour History &  More Reviews</span>

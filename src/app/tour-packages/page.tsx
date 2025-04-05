@@ -171,14 +171,14 @@ const TOUR_DATA: Record<string, {
   tourItems: TourItem[];
 }> =  {
   mountain: {
-    title: "Endemics- Migrants and Big Games",
+    title: "Endemics- Migrants and Big Game",
     imageUrl: "/culture/head1.jpg",
-    description: `The main focus of this tour is to see most of the bird species out of 34 species Endemic to the island, winter migrants, and subcontinent specialties.
+    description: `The main focus of this tour is to hopefully show you all 35 birds endemic to the island, winter migrants, and subcontinent specialties.
 In Yala and Lunugamvehera National Parks, you can try the most demanding Sri Lankan Leopard and Sloth bear. Udawalawe National Park is well-known for Asian Elephants. Additionally, if you missed any dry zone species in Yala or Lunugamvehera National Parks, Udawalawe is a good backup site to catch up with them.
 
 At your consent, you will have the opportunity to get the whale-watching extension on day 14th and try your luck to see the largest mammal – the Blue Whale – ever to have lived on this planet and the other cetacean species found in the tropical waters of the Indian Ocean.
 
-This is an intensive birdwatching tour and contains a big opportunity for endemics. If you are interested in the wider natural history of Sri Lanka, let's discover nature's wonders together.`,
+This is an intensive birdwatching tour and contains a big opportunity for endemics. If you are interested in the wider natural beauty of Sri Lanka, let's discover nature's wonders together.`,
 
     fullWidthImage: "/images/Tour1(1).png",
     tourItems: [
@@ -288,8 +288,8 @@ This is an intensive birdwatching tour and contains a big opportunity for endemi
     title: 'Big Games of Sri Lanka And Migratory watch in the North',
 
     imageUrl: "/images/Big Game.jpg",
-    description:'This tour is mainly designed for trying the Sri Lankan Leopard and the Sloth Bear in the largest and the oldest national park – “Wilpattu” in the North West of Sri Lanka and, to witness the fascinating wintering bird life in Mannar Island in the north of Sri Lanka. Additionally, the dry zone bird species and the Sigiriya ancient rock fortress – the world-famous archaeological site also been put together to add a further dimension to the itinerary. This is an exciting bird and mammal-watching tour and contains a big opportunity for Sri Lankan Leopard and Northern wintering birds. If you are interested in the wider natural history of Sri Lanka Let’s Discover Nature’s Wonders Together.',
-   
+    description: "This tour is mainly designed for trying the Sri Lankan Leopard and the Sloth Bear in the largest and the oldest national park – “Wilpattu” in the North West of Sri Lanka and, to witness the fascinating wintering bird life in Mannar Island in the north of Sri Lanka. In addition, visits to places where dry zone bird species can be observed and a visit to a Sigiriya ancient rock fortress – a world-famous archeological site where a number of interesting birds can be observed – have been added to the tour add an extra dimension. This is an exciting bird and mammal-watching tour and contains a big opportunity for Sri Lankan Leopard and Northern wintering birds. If you are interested in the wider natural history of Sri Lanka Let’s Discover Nature’s Wonders Together.",
+
    fullWidthImage: "/images/Tour2.png",
     tourItems: [
       {

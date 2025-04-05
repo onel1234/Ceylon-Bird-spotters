@@ -12,7 +12,7 @@ export default function About() {
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-base md:text-lg font-normal mb-8">
-            Ceylon Birdspotters began with people who have over 2 decades of experience in this field.
+           Ceylon Naturalist began with people who have over 2 decades of experience in this field.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image
@@ -55,7 +55,7 @@ export default function About() {
             Today we cater to people all over the world to discover the wonders of Sri Lanka.
           </p>
           <p className="text-neutral-800 dark:text-neutral-200 text-base md:text-lg font-normal mb-8">
-            The story is still writing for Ceylon Birdspotters. Reserve your page in our story.
+            The story is still writing for Ceylon Naturalist. Reserve your page in our story.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <Image

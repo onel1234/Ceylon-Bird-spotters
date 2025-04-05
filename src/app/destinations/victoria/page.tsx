@@ -88,7 +88,7 @@ export default function VictoriaNationalParkPage() {
         </div>
 
         <CardHeader>
-          <CardTitle className="text-3xl">Victoria National Park</CardTitle>
+          <CardTitle className="text-3xl">Victoria Park - Nuwara Eliya</CardTitle>
         </CardHeader>
 
         <CardContent>

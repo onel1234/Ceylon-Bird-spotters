@@ -10,7 +10,7 @@ const Footer = () => {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="flex items-center justify-center text-xl font-bold">
-            <Image src="/images/footerv2.png" alt="Logo" width={200} height={150} className="object-contain" />
+            <Image src="/images/footer.png" alt="Logo" width={200} height={150} className="object-contain" />
           </div>
         </div>
         {/* Navigation Links */}
@@ -59,7 +59,7 @@ const Footer = () => {
             <MessageCircle size={20} />
           </a>
           <a
-            href="https://instagram.com/ceylonbirdspotters"
+            href="https://www.instagram.com/ceylonnaturalist/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-300 hover:text-white transition-colors"
