@@ -5,7 +5,7 @@ export interface ImageDetails {
     scientificName: string;
     location: string;
     photographer: string;
-    category: 'amphibians' | 'mammals' | 'butterfly' | 'birds' | 'endemic-birds';
+    category: 'Reptiles' | 'Mammals' | 'Butterflies' | 'Birds' | 'Endemics';
   }
   
-  export type CategoryType = 'all' | 'amphibians' | 'mammals' | 'butterfly' | 'birds' | 'endemic-birds';
+  export type CategoryType = 'All' | 'Reptiles' | 'Mammals' | 'Butterflies' | 'Birds' | 'Endemics';

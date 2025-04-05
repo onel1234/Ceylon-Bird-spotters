@@ -14,30 +14,34 @@ import { Filter } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const GalleryPage: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<CategoryType>('all');
+  const [activeCategory, setActiveCategory] = useState<CategoryType>('All');
 
   const getAllImages = (): ImageDetails[] => {
     return [
+      ...endemicBirdImages,
+      ...birdImages,
       ...amphibianImages,
       ...mammalImages,
       ...butterflyImages,
-      ...birdImages,
-      ...endemicBirdImages
+     
+    
     ];
   };
 
   const getFilteredImages = (): ImageDetails[] => {
     switch (activeCategory) {
-      case 'amphibians':
-        return amphibianImages;
-      case 'mammals':
-        return mammalImages;
-      case 'butterfly':
-        return butterflyImages;
-      case 'birds':
-        return birdImages;
-      case 'endemic-birds':
+      case 'Endemics':
         return endemicBirdImages;
+        case 'Birds':
+          return birdImages;
+          case 'Mammals':
+            return mammalImages;
+            case 'Butterflies':
+              return butterflyImages;
+      case 'Reptiles':
+        return amphibianImages;
+     
+     
       default:
         return getAllImages();
     }
@@ -45,15 +49,15 @@ const GalleryPage: React.FC = () => {
 
   const getCategoryTitle = (): string => {
     switch (activeCategory) {
-      case 'amphibians':
-        return 'Amphibian Collection';
-      case 'mammals':
+      case 'Reptiles':
+        return 'Reptiles Collection';
+      case 'Mammals':
         return 'Mammal Collection';
-      case 'butterfly':
+      case 'Butterflies':
         return 'Butterfly Collection';
-      case 'birds':
+      case 'Birds':
         return 'Bird Collection';
-      case 'endemic-birds':
+      case 'Endemics':
         return 'Endemic Bird Collection';
       default:
         return 'Complete Wildlife Collection';

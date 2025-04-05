@@ -33,17 +33,26 @@ export const MenuItem = ({
   children,
   isMobile,
 }: MenuItemProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+  
   return (
     <div 
       onClick={() => setActive(active === item ? null : item)}
       className="relative cursor-pointer"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      <motion.p
-        transition={{ duration: 0.3 }}
-        className="text-black hover:text-gray-600"
+      <motion.div
+        className="px-4 py-2 rounded-md relative"
+        initial={false}
+        animate={{
+          backgroundColor: isHovered ? "#0f766e" : "transparent", // teal-700
+          color: isHovered ? "white" : "black"
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        {item}
-      </motion.p>
+        <motion.p>{item}</motion.p>
+      </motion.div>
       {active !== null && (
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 10 }}
@@ -143,7 +152,7 @@ export const Menu = ({ setActive, children }: MenuProps) => {
         </div>
 
         <button
-          className="md:hidden text-black hover:text-gray-600"
+          className="md:hidden text-black hover:text-teal-700"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >
@@ -217,12 +226,23 @@ interface HoveredLinkProps {
 }
 
 export const HoveredLink = ({ children, ...rest }: HoveredLinkProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+  
   return (
     <Link
       {...rest}
       className="text-gray-600 hover:text-black"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
-      {children}
+      <motion.span
+        animate={{
+          color: isHovered ? "white" : "inherit"
+        }}
+        transition={{ duration: 0.3 }}
+      >
+        {children}
+      </motion.span>
     </Link>
   );
 };

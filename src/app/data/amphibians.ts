@@ -9,7 +9,7 @@ export const amphibianImages: ImageDetails[] = [
     scientificName: "Unknown",
     location: "Unknown",
     photographer: "Unknown",
-    category: "amphibians",
+    category: "Reptiles",
   },
   {
     id: 3,
@@ -18,7 +18,7 @@ export const amphibianImages: ImageDetails[] = [
     scientificName: "Unknown",
     location: "Unknown",
     photographer: "Unknown",
-    category: "amphibians",
+    category: "Reptiles",
   },
   {
     id: 4,
@@ -27,7 +27,7 @@ export const amphibianImages: ImageDetails[] = [
     scientificName: "Unknown",
     location: "Unknown",
     photographer: "Unknown",
-    category: "amphibians",
+    category: "Reptiles",
   },
   {
     id: 5,
@@ -36,7 +36,7 @@ export const amphibianImages: ImageDetails[] = [
     scientificName: "Unknown",
     location: "Unknown",
     photographer: "Unknown",
-    category: "amphibians",
+    category: "Reptiles",
   },
 ];
 
