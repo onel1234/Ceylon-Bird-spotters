@@ -100,7 +100,7 @@ const DestinationsSection: React.FC = () => {
     { 
       name: "Wilpattu National Park", 
       description: "One of Sri Lanka’s oldest and largest national parks, Wilpattu is famed for its unique villus and elusive leopards.",
-      imageUrl: "/images/wilpattu.jpg",
+      imageUrl: "/images/wil5.jpg",
       path: "destinations/wilpattu",
     },
     { 
