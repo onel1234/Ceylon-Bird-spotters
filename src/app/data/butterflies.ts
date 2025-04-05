@@ -4,10 +4,10 @@ export const butterflyImages: ImageDetails[] = [
   {
     id: 1,
     src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787424/IMG_5608_osbbzr.jpg",
-    title: "Sri Lankan Leopard",
-    scientificName: "Panthera pardus kotiya",
-    location: "Yala National Park",
-    photographer: "Jane Smith",
+    title: "Peocock Pancy",
+    scientificName: "Junonia almana",
+    location: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -25,7 +25,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Indian Fritillary",
     scientificName: "Argynnis hyperbius",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -34,7 +34,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Plain Tiger",
     scientificName: "Danaus chrysippus",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -43,7 +43,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Sri Lankan Birdwing",
     scientificName: "Troides darsius",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -52,7 +52,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Common Rose",
     scientificName: "Pachliopta aristolochiae",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -61,7 +61,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Sri Lankan Tree Nymph",
     scientificName: "Idea iasonia",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -70,7 +70,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Tailed Jay",
     scientificName: "Graphium agamemnon",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -88,16 +88,16 @@ export const butterflyImages: ImageDetails[] = [
     title: "Blue Mormon",
     scientificName: "Papilio polymnestor",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
     id: 11,
     src: "https://res.cloudinary.com/dfxolekjs/image/upload/v1737787434/Five_bar_Swordtail_Graphiun_antiphates_21_kwxpgw.jpg",
-    title: "Plain Tiger",
-    scientificName: "Danaus chrysippus",
-    location: "Unknown",
-    photographer: "Unknown",
+    title: "Five-bar swordtail",
+    scientificName: "Graphium antiphates",
+    location: "Sinharaja Rainforest",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -106,7 +106,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Five-bar swordtail",
     scientificName: "Sinharaja Rainforest",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -115,7 +115,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Gray Pansy",
     scientificName: "Junonia atlites",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -124,7 +124,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Jezebel",
     scientificName: "Delias eucharis",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -133,7 +133,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Pea Blue",
     scientificName: "Lampides boeticus",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -142,7 +142,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Lime Butterfly",
     scientificName: "Papilio demoleus",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -151,7 +151,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Red Admiral",
     scientificName: "Vanessa atalanta",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -160,7 +160,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Commander",
     scientificName: "Moduza procris",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -169,7 +169,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Commander",
     scientificName: "Moduza procris",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -178,7 +178,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Commander",
     scientificName: "Moduza procris",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -187,7 +187,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Commander",
     scientificName: "Moduza procris",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -196,7 +196,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Commander",
     scientificName: "Moduza procris",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -205,7 +205,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Common Sailor",
     scientificName: "Neptis hylas",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -214,7 +214,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Common Tiger",
     scientificName: "Danaus genutia",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -241,7 +241,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Five-Bar Swordtail",
     scientificName: "Graphium antiphates",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
   {
@@ -250,7 +250,7 @@ export const butterflyImages: ImageDetails[] = [
     title: "Five-Bar Swordtail",
     scientificName: "Graphium antiphates",
     location: "Unknown",
-    photographer: "Unknown",
+    photographer: "Susa Weerappuli",
     category: "Butterflies",
   },
 ];
