@@ -72,7 +72,7 @@ const Contact: React.FC = () => {
     <>
       <Navbar />
 
-      <div className="min-h-screen bg-blue-500 flex items-center justify-center p-3 md:p-1">
+      <div className="min-h-screen bg-gradient-to-b from-teal-700 to-teal-500 flex items-center justify-center p-3 md:p-1">
         <div className="w-full max-w-5xl flex flex-col lg:flex-row">
           {/* Left Section - Contact Info */}
           <div className="text-white lg:w-1/2 mb-6 lg:mb-0 lg:pr-6 py-32">
@@ -88,7 +88,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs opacity-80">Email</p>
-                  <p className="text-base">contact@ceylonbirdspotters.com</p>
+                  <p className="text-base">contact@ceylonnaturalist.com</p>
                 </div>
               </div>
 
@@ -108,7 +108,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs opacity-80">Address</p>
-                  <p className="text-base">Ceylon Birdspotters, Kudawa, Veddagala, Kalwana, Sri Lanka.</p>
+                  <p className="text-base">Ceylon Naturalist, Kudawa, Veddagala, Kalwana, Sri Lanka.</p>
                 </div>
               </div>
 
@@ -139,7 +139,7 @@ const Contact: React.FC = () => {
                 <MessageCircle size={20} className="cursor-pointer hover:opacity-80 transition-opacity text-white" />
               </a>
               <a
-                href="https://instagram.com/ceylonbirdspotters"
+                href="https://instagram.com/ceylonnaturalist/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -171,7 +171,7 @@ const Contact: React.FC = () => {
                     value={formData.email_from}
                     onChange={handleChange}
                     required
-                    className="w-full p-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
                   />
                 </div>
 
@@ -187,7 +187,7 @@ const Contact: React.FC = () => {
                     value={formData.from_name}
                     onChange={handleChange}
                     required
-                    className="w-full p-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
                   />
                 </div>
 
@@ -202,13 +202,13 @@ const Contact: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full p-2.5 border border-gray-300 rounded-md h-28 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-2.5 border border-gray-300 rounded-md h-28 resize-none focus:outline-none focus:ring-2 focus:ring-teal-500"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="bg-blue-500 text-white px-5 py-2.5 rounded-md flex items-center justify-center hover:bg-blue-600 transition-colors w-full sm:w-auto"
+                  className="bg-teal-600 text-white px-5 py-2.5 rounded-md flex items-center justify-center hover:bg-teal-900 transition-colors w-full sm:w-auto"
                 >
                   <span className="mr-2">Send message</span>
                   <Send size={14} />
