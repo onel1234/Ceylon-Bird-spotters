@@ -4,7 +4,7 @@ import React, { lazy, Suspense } from "react";
 import { MessageCircle } from "lucide-react";
 
 const Navbar = lazy(() => import("./NavbarFn"));
-const HeroParallax = lazy(() => import("./Heroprallax"));
+const HeroParallax = lazy(() => import(/* webpackPrefetch: true */ "./Heroprallax"));
 const DestinationsSection = lazy(() => import("./destinations/page"));
 const TestimonialsSection = lazy(() => import("./testimonials-animated"));
 const InstagramSection = lazy(() => import("./instagramSection"));
