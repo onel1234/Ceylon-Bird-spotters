@@ -93,7 +93,7 @@ const ImagesSlider = ({
   autoplay = true,
   direction = "up",
 }: {
-  images: string[];
+  images: Array<{src: string, alt: string}>;
   children: React.ReactNode;
   overlay?: React.ReactNode;
   overlayClassName?: string;
@@ -102,9 +102,8 @@ const ImagesSlider = ({
   direction?: "up" | "down";
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [loading, setLoading] = useState(false);
-  const [loadedImages, setLoadedImages] = useState<string[]>([]);
+  // Remove the unused loading variable
+  const [loadedImages, setLoadedImages] = useState<Array<{src: string, alt: string}>>([]);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
@@ -123,11 +122,10 @@ const ImagesSlider = ({
   }, []);
 
   const loadImages = () => {
-    setLoading(true);
     const loadPromises = images.map((image) => {
       return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = image;
+        const img = new globalThis.Image(); 
+        img.src = image.src;
         img.onload = () => resolve(image);
         img.onerror = reject;
       });
@@ -135,8 +133,7 @@ const ImagesSlider = ({
 
     Promise.all(loadPromises)
       .then((loadedImages) => {
-        setLoadedImages(loadedImages as string[]);
-        setLoading(false);
+        setLoadedImages(loadedImages as Array<{src: string, alt: string}>);
       })
       .catch((error) => console.error("Failed to load images", error));
   };
@@ -218,7 +215,8 @@ const ImagesSlider = ({
         <AnimatePresence>
           <motion.img
             key={currentIndex}
-            src={loadedImages[currentIndex]}
+            src={loadedImages[currentIndex].src}
+            alt={loadedImages[currentIndex].alt}
             initial="initial"
             animate="visible"
             exit={direction === "up" ? "upExit" : "downExit"}
@@ -233,17 +231,22 @@ const ImagesSlider = ({
 
 const HeroSection = () => {
   const images = [
-   "/culture/cnslide1(1).jpg",
-    "/culture/slide2.jpg",
-    "/culture/cnslide2(1).jpg",
-  
-    
-
-    
+    { 
+      src: "/culture/slide2.webp", 
+      alt: "wildlife tours in Sri Lanka" 
+    },
+    { 
+      src: "/culture/cnslide11.webp", 
+      alt: "Ceylon Naturalist tour guide showcasing Sri Lankan wildlife" 
+    },
+    { 
+      src: "/culture/cnslide22.webp", 
+      alt: "Beautiful Sri Lankan landscape with endemic birds" 
+    },
   ];
 
   return (
-    <div className="flex flex-col gap-16">
+    <section aria-label="Hero section featuring Sri Lankan wildlife" className="flex flex-col gap-16">
       <div className="h-[600px]">
         <ImagesSlider images={images}>
           <motion.div
@@ -260,10 +263,10 @@ const HeroSection = () => {
             }}
             className="z-50 flex flex-col justify-center items-center"
           >
-            <motion.p className="font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
-              <span className="text-xl md:text-6xl block mb-2">Discover Nature's Wonders</span>
-              <span className="text-base md:text-2xl">Embark on your avian journey with Ceylon Naturalist</span>
-            </motion.p>
+            <motion.div className="font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
+              <h1 className="text-xl md:text-6xl block mb-2">Discover Nature's Wonders</h1>
+              <p className="text-base md:text-2xl">Embark on your avian journey with Ceylon Naturalist</p>
+            </motion.div>
           </motion.div>
         </ImagesSlider>
       </div>
@@ -278,25 +281,25 @@ const HeroSection = () => {
               { text: "Discover" },
               { text: "Sri" },
               { text: "Lanka" },
-             { text: "with" },
+              { text: "with" },
               { text: "Ceylon Naturalist", className: "text-teal-700" },
             ]}
           />
           <div className="flex flex-col md:flex-row gap-4 mt-4">
-            <Link href="/contact">
+            <Link href="/contact" aria-label="Contact Ceylon Naturalist">
               <button className="w-48 h-12 rounded-xl bg-teal-700 text-white text-base hover:bg-teal-700 transition-colors">
                 Contact us
               </button>
             </Link>
-            <Link href="/tour-packages">
-            <button className="w-48 h-12 rounded-xl bg-teal-700 text-white text-base hover:bg-teal-700 transition-colors">
+            <Link href="/tour-packages" aria-label="View our tour packages">
+              <button className="w-48 h-12 rounded-xl bg-teal-700 text-white text-base hover:bg-teal-700 transition-colors">
                 Tour packages
               </button>
             </Link>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
