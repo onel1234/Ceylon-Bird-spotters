@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-    siteUrl: 'https://ceylon-bird-spotters-m6om-git-main-wathila-onels-projects.vercel.app/',
+    siteUrl: 'https://ceylonnaturalist.com/',
     generateRobotsTxt: true,
     generateIndexSitemap: false
   }
