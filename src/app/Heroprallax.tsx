@@ -5,6 +5,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence, useAnimate, useInView, stagger } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 const TypewriterEffect = ({
@@ -43,7 +44,7 @@ const TypewriterEffect = ({
         }
       );
     }
-  }, [isInView]);
+  }, [isInView, animate]);
 
   const renderWords = () => (
     <motion.div ref={scope} className="inline">
@@ -95,15 +96,14 @@ const ImagesSlider = ({
 }: {
   images: Array<{src: string, alt: string}>;
   children: React.ReactNode;
-  overlay?: React.ReactNode;
+  overlay?: boolean; // Changed from React.ReactNode to boolean
   overlayClassName?: string;
   className?: string;
   autoplay?: boolean;
   direction?: "up" | "down";
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  // Remove the unused loading variable
-  const [loadedImages, setLoadedImages] = useState<Array<{src: string, alt: string}>>([]);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
@@ -116,27 +116,23 @@ const ImagesSlider = ({
       prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
     );
   };
-
+  
+  // Preload all images and set loaded state
   useEffect(() => {
-    loadImages();
+    // Set a small delay to allow component to mount
+    const timer = setTimeout(() => {
+      setImagesLoaded(true);
+    }, 100);
+    
+    return () => clearTimeout(timer);
   }, []);
 
-  const loadImages = () => {
-    const loadPromises = images.map((image) => {
-      return new Promise((resolve, reject) => {
-        const img = new globalThis.Image(); 
-        img.src = image.src;
-        img.onload = () => resolve(image);
-        img.onerror = reject;
-      });
-    });
-
-    Promise.all(loadPromises)
-      .then((loadedImages) => {
-        setLoadedImages(loadedImages as Array<{src: string, alt: string}>);
-      })
-      .catch((error) => console.error("Failed to load images", error));
-  };
+ 
+  useEffect(() => {
+    const nextIndex = (currentIndex + 1) % images.length;
+    const prefetchImage = document.createElement("img");
+    prefetchImage.src = images[nextIndex].src;
+  }, [currentIndex, images]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -160,7 +156,7 @@ const ImagesSlider = ({
       window.removeEventListener("keydown", handleKeyDown);
       clearInterval(interval);
     };
-  }, []);
+  }, [autoplay]);
 
   const slideVariants = {
     initial: {
@@ -193,8 +189,6 @@ const ImagesSlider = ({
     },
   };
 
-  const areImagesLoaded = loadedImages.length > 0;
-
   return (
     <div
       className={cn(
@@ -205,24 +199,38 @@ const ImagesSlider = ({
         perspective: "1000px",
       }}
     >
-      {areImagesLoaded && children}
-      {areImagesLoaded && overlay && (
+      {imagesLoaded && children}
+      {imagesLoaded && overlay && (
         <div
           className={cn("absolute inset-0 bg-black/60 z-40", overlayClassName)}
         />
       )}
-      {areImagesLoaded && (
-        <AnimatePresence>
-          <motion.img
+      {imagesLoaded && (
+        <AnimatePresence mode="wait">
+          <motion.div
             key={currentIndex}
-            src={loadedImages[currentIndex].src}
-            alt={loadedImages[currentIndex].alt}
             initial="initial"
             animate="visible"
             exit={direction === "up" ? "upExit" : "downExit"}
             variants={slideVariants}
-            className="image h-full w-full absolute inset-0 object-cover object-center"
-          />
+            className="image h-full w-full absolute inset-0"
+          >
+            <Image
+              src={images[currentIndex].src}
+              alt={images[currentIndex].alt}
+              fill
+              priority={currentIndex === 0} // Priority loading for first image
+              sizes="100vw"
+              quality={90}
+              className="object-cover object-center"
+              onLoadingComplete={(result) => {
+                if (result.naturalWidth === 0) {
+                  // Image failed to load
+                  console.error(`Failed to load image: ${images[currentIndex].src}`);
+                }
+              }}
+            />
+          </motion.div>
         </AnimatePresence>
       )}
     </div>

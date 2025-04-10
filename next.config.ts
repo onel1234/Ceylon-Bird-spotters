@@ -4,10 +4,54 @@ const nextConfig: NextConfig = {
   images: {
     domains: [
       'assets.aceternity.com',
-      'res.cloudinary.com'  // Cloudinary domain added
+      'res.cloudinary.com'  
     ],
+    formats: ['image/webp', 'image/avif'],
   },
-  /* other config options here */
+ 
+  async headers() {
+    return [
+      {
+       
+        source: '/culture/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        
+        source: '/:path*.webp',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/:path*.jpg',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/:path*.png',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+    ];
+  },
+  
 };
 
 module.exports = nextConfig;

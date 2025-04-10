@@ -1,7 +1,7 @@
 "use client";
-import React, { lazy, Suspense } from "react";
-
+import React, { lazy, Suspense, useEffect } from "react";
 import { MessageCircle } from "lucide-react";
+import Head from "next/head";
 
 const Navbar = lazy(() => import("./NavbarFn"));
 const HeroParallax = lazy(() => import(/* webpackPrefetch: true */ "./Heroprallax"));
@@ -30,33 +30,53 @@ const WhatsAppButton = () => {
   );
 };
 
+// Images to preload
+const heroImages = [
+  "/culture/slide2.webp",
+  "/culture/cnslide11.webp",
+  "/culture/cnslide22.webp",
+];
+
 export default function Page() {
+  // Preload hero images
+  useEffect(() => {
+    heroImages.forEach((imageSrc) => {
+      const img = new Image();
+      img.src = imageSrc;
+    });
+  }, []);
+
   return (
     <div>
-      {/* Add Favicon */}
-     
+      <Head>
+        {/* Preload critical images */}
+        {heroImages.map((imageSrc) => (
+          <link
+            key={imageSrc}
+            rel="preload"
+            href={imageSrc}
+            as="image"
+            type="image/webp"
+          />
+        ))}
+      </Head>
+      
       <Suspense fallback={<LoadingSpinner />}>
         <Navbar />
       </Suspense>
-
       <Suspense fallback={<LoadingSpinner />}>
         <HeroParallax />
       </Suspense>
-
       <WhatsAppButton />
-
       <Suspense fallback={<LoadingSpinner />}>
         <DestinationsSection />
       </Suspense>
-
       <Suspense fallback={<LoadingSpinner />}>
         <TestimonialsSection />
       </Suspense>
-
       <Suspense fallback={<LoadingSpinner />}>
         <InstagramSection />
       </Suspense>
-
       <Suspense fallback={<LoadingSpinner />}>
         <Footer />
       </Suspense>
