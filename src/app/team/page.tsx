@@ -108,7 +108,7 @@ const Team: React.FC = ()  => {
             className="space-y-16"
           >
             <motion.div variants={itemVariants} className="text-center">
-              <h2 className="text-4xl font-bold mb-4">Our Team</h2>
+              <h2 className="text-4xl font-[Poppins] font-bold mb-4">Our Team</h2>
               <div className="h-1 w-24 bg-teal-700 mx-auto"></div>
             </motion.div>
 
@@ -131,13 +131,13 @@ const Team: React.FC = ()  => {
                   
                   <div className="p-6 space-y-4">
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
+                      <h3 className="text-xl font-[Poppins] font-bold text-gray-900">{member.name}</h3>
                       {member.role && (
-                        <p className="text-blue-600 font-medium mt-1">{member.role}</p>
+                        <p className="text-blue-600 font-[Poppins] font-medium mt-1">{member.role}</p>
                       )}
                     </div>
                     
-                    <div className="space-y-3 text-gray-600 text-sm">
+                    <div className="space-y-3 font-[Poppins] text-gray-600 text-sm">
                       {member.description.map((paragraph, i) => (
                         <p key={i} className="leading-relaxed">
                           {paragraph}

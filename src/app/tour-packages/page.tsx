@@ -42,7 +42,7 @@ const TourDayCard: React.FC<{ item: TourItem }> = ({ item }) => {
   if ('type' in item && item.type === 'section') {
     return (
       <div className="col-span-full my-4">
-        <h3 className="text-xl font-semibold text-gray-800 dark:text-white border-b pb-2">
+        <h3 className="text-xl font-semibold text-gray-800 font-[Poppins] dark:text-white border-b pb-2">
           {item.title}
         </h3>
       </div>
@@ -73,7 +73,7 @@ const TourDayCard: React.FC<{ item: TourItem }> = ({ item }) => {
           <span className="text-sm font-medium text-gray-500 dark:text-gray-400">
             {getDisplayLabel(item)}
           </span>
-          <p className="text-gray-900 dark:text-white font-medium">
+          <p className="text-gray-900 font-[Poppins] dark:text-white font-medium">
             {item.location}
           </p>
         </div>
@@ -101,7 +101,7 @@ const TourPackage: React.FC<TourPackageProps> = ({
           priority 
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50">
-          <h2 className="absolute bottom-6 left-6 text-3xl font-bold text-white">
+          <h2 className="absolute bottom-6 left-6 text-3xl font-[Poppins] font-bold text-white">
             {title}
           </h2>
         </div>
@@ -110,19 +110,19 @@ const TourPackage: React.FC<TourPackageProps> = ({
 
     <div className="p-6 space-y-8">
       <div className="space-y-4">
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+        <p className="text-gray-600 dark:text-gray-300 font-[Poppins]  leading-relaxed">
           {description}
         </p>
         <Link
           href="/contact"
-          className="inline-block px-6 py-3 bg-teal-700 hover:bg-teal-700 text-white rounded-lg transition-colors"
+          className="inline-block px-6 py-3 bg-teal-700 font-[Poppins]  hover:bg-teal-700 text-white rounded-lg transition-colors"
         >
           Contact Us Now
         </Link>
       </div>
 
       <div className="space-y-6">
-        <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">
+        <h3 className="text-2xl font-semibold text-gray-800 font-[Poppins] dark:text-white">
           Main Tour
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -133,7 +133,7 @@ const TourPackage: React.FC<TourPackageProps> = ({
       </div>
 
       <div className="space-y-4">
-        <h3 className="text-2xl font-semibold text-gray-800 dark:text-white text-center">
+        <h3 className="text-2xl font-semibold text-gray-800 font-[Poppins] dark:text-white text-center">
           Map View
         </h3>
         <div className="relative w-full max-w-4xl mx-auto">
@@ -150,7 +150,7 @@ const TourPackage: React.FC<TourPackageProps> = ({
 
       {details && (
         <div className="mt-8">
-          <h3 className="text-2xl font-semibold text-gray-800 dark:text-white">
+          <h3 className="text-2xl font-semibold text-gray-800 font-[Poppins] dark:text-white">
             Additional Details
           </h3>
           <p className="mt-4 text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -671,14 +671,14 @@ const TourPackages: React.FC = () => {
     <>
       <Navbar />
       <div className="max-w-7xl mx-auto px-4 py-40">
-        <h1 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+        <h1 className="text-4xl font-bold text-center font-[Poppins]  mb-12 text-gray-800 dark:text-white">
           Discover Our Tour Packages
         </h1>
         <Tabs
           tabs={tabData}
-          containerClassName="bg-gray-50 dark:bg-gray-900 p-6 rounded-xl shadow-md"
-          activeTabClassName="bg-teal-700 text-white"
-          tabClassName="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+          containerClassName="bg-gray-50 dark:bg-gray-900 font-[Poppins] p-6 rounded-xl shadow-md"
+          activeTabClassName="bg-teal-700 font-[Poppins] text-white"
+          tabClassName="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 font-[Poppins]  transition-colors"
           contentClassName="mt-8"
         />
       </div>

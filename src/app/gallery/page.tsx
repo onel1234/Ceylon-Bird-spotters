@@ -69,14 +69,14 @@ const GalleryPage: React.FC = () => {
       <Navbar />
       <div className="py-32 bg-gray-50">
         <div className="max-w-full px-4 mx-auto">
-          <div className="text-center mb-8">
+          <div className="text-center font-[Poppins]  mb-8">
             <AnimatePresence mode="wait">
               <motion.h1
                 key={activeCategory}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                className="text-4xl font-bold mb-4"
+                className="text-4xl font-[Poppins]  font-bold mb-4"
               >
                 {getCategoryTitle()}
               </motion.h1>
@@ -91,14 +91,14 @@ const GalleryPage: React.FC = () => {
                 damping: 30
               }}
             />
-            <div className="flex items-center justify-center gap-2 text-gray-600">
+            <div className="flex items-center justify-center gap-2 font-[Poppins] text-gray-600">
               <span>Click</span>
               <Filter className="inline-block w-5 h-5" />
               <span>to filter images</span>
             </div>
           </div>
 
-          <div className="max-w-7xl mx-auto">
+          <div className="max-w-7xl font-[Poppins] mx-auto">
             <GalleryFilter
               activeCategory={activeCategory}
               onCategoryChange={setActiveCategory}

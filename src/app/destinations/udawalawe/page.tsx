@@ -157,9 +157,8 @@ export default function UdawalaweNationalParkPage() {
           <Image
             src="/images/udawala.jpg"
             alt="Udawalawe National Park"
-            width={450}
-            height={400}
-            className="object-cover"
+            layout="fill" 
+        objectFit="cover"
           />
         </div>
 

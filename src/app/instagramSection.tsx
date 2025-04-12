@@ -32,7 +32,7 @@ const InstagramSection = () => {
             className="flex items-center gap-2 text-white hover:text-pink-500 transition-colors duration-300"
           >
             <Instagram size={32} />
-            <h2 className="text-3xl font-bold">Follow Us on Instagram</h2>
+            <h2 className="text-3xl font-[Poppins] font-bold">Follow Us on Instagram</h2>
           </Link>
           <p className="text-gray-400 mt-4">@ceylonnaturalist</p>
         </div>

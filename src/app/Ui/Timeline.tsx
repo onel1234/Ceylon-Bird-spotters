@@ -46,11 +46,11 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
       <div className="max-w-7xl mx-auto py-32 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl">
-          About <span className="text-[#0E806A] font-semibold">Ceylon Naturalist</span>
+        <h2 className="text-lg md:text-4xl mb-4 text-black dark:text-white font-[Poppins]  max-w-4xl">
+          About <span className="text-[#0E806A] font-[Poppins] font-semibold">Ceylon Naturalist</span>
         </h2>
 
-        <p className="text-neutral-700 dark:text-neutral-300 text-lg md:text-lg max-w-full">
+        <p className="text-neutral-700 dark:text-neutral-300 font-[Poppins] text-lg md:text-lg max-w-full">
           Step into the realm of natural wonders with Ceylon Naturalist, your gateway to unparalleled wildlife experiences in Sri Lanka. With a legacy of expertise and a team of seasoned tour guide naturalists, we're dedicated to crafting bespoke journeys tailored to your passions.
           <br /><br />
           At Ceylon Naturalist, we don't just offer tours; we curate moments that resonate with your soul. Our mission? To align your interests with the very best Sri Lanka has to offer, ensuring every expedition leaves you awe-inspired and fulfilled.

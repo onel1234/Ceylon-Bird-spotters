@@ -65,14 +65,15 @@ export default function WilpattuNationalParkPage() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 p-8">
       <Card className="max-w-4xl mx-auto overflow-hidden">
-        <div className="relative h-72 w-full">
+      <div className="w-full">
+      <div className="relative w-full h-72">
           <Image
             src="/images/wil5.jpg"
             alt="Wilpattu National Park"
-            width={370}
-            height={370}
-            className="object-cover"
+           layout="fill" 
+        objectFit="cover"
           />
+        </div>
         </div>
 
         <CardHeader>

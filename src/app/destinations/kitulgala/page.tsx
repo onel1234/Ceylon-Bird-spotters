@@ -99,9 +99,8 @@ export default function KitulgalaForestPage() {
           <Image
             src="/images/kitulgala.jpg"
             alt="Kitulgala-Kelani Valley Forest"
-            width={450}
-            height={600}
-            className="object-cover"
+            layout="fill" 
+        objectFit="cover"
           />
         </div>
 

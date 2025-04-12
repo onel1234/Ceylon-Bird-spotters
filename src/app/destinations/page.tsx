@@ -48,10 +48,10 @@ const DestinationCard: React.FC<DestinationCardProps> = ({ title, locations }) =
                     />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                    <h3 className="text-lg font-semibold font-[Poppins]  text-gray-900 dark:text-white">
                       {location.name}
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
+                    <p className="text-sm text-gray-600 font-[Poppins] dark:text-gray-300 mt-1">
                       {location.description}
                     </p>
                   </div>
@@ -196,15 +196,15 @@ const DestinationsSection: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-16">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
+        <h1 className="text-4xl md:text-5xl font-[Poppins] font-bold mb-4 text-gray-900 dark:text-white">
           Explore Our Destinations
         </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+        <p className="text-lg text-gray-600 font-[Poppins] dark:text-gray-300 max-w-2xl mx-auto">
           Discover the world's most remarkable wildlife sanctuaries and cultural heritage sites.
         </p>
       </div>
       
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 font-[Poppins] gap-8">
         <DestinationCard title="Wildlife Destinations" locations={wildlifeDestinations} />
         <DestinationCard title="Cultural Destinations" locations={culturalDestinations} />
       </div>

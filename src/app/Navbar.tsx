@@ -24,6 +24,8 @@ interface MenuItemProps {
   item: string;
   children?: React.ReactNode;
   isMobile?: boolean;
+  hasScrolled?: boolean;
+  isLast?: boolean;
 }
 
 export const MenuItem = ({
@@ -32,50 +34,59 @@ export const MenuItem = ({
   item,
   children,
   isMobile,
+  hasScrolled,
+  isLast,
 }: MenuItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
   
   return (
-    <div 
-      onClick={() => setActive(active === item ? null : item)}
-      className="relative cursor-pointer"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-    >
-      <motion.div
-        className="px-4 py-2 rounded-md relative"
-        initial={false}
-        animate={{
-          backgroundColor: isHovered ? "#0f766e" : "transparent", // teal-700
-          color: isHovered ? "white" : "black"
-        }}
-        transition={{ duration: 0.3, ease: "easeInOut" }}
+    <div className="flex items-center">
+      <div 
+        onClick={() => setActive(active === item ? null : item)}
+        className="relative cursor-pointer"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
-        <motion.p>{item}</motion.p>
-      </motion.div>
-      {active !== null && (
         <motion.div
-          initial={{ opacity: 0, scale: 0.85, y: 10 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.2 }}
+          className="px-4 py-2 rounded-md relative"
+          initial={false}
+          animate={{
+            backgroundColor: isHovered ? "#0f766e" : "transparent", // teal-700
+            color: isHovered ? "white" : hasScrolled ? "black" : "white"
+          }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
         >
-          {active === item && (
-            <div className={`${isMobile ? 'relative mt-4' : 'absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2'} pt-4`}>
-              <motion.div
-                transition={transition}
-                layoutId="active"
-                className="bg-white backdrop-blur-sm overflow-hidden border border-gray-200 shadow-xl"
-              >
-                <motion.div
-                  layout
-                  className="w-max h-full p-4"
-                >
-                  {children}
-                </motion.div>
-              </motion.div>
-            </div>
-          )}
+          <motion.p className="font-bold font-poppins tracking-wide text-base">
+            {item}
+          </motion.p>
         </motion.div>
+        {active !== null && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.85, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.2 }}
+          >
+            {active === item && (
+              <div className={`${isMobile ? 'relative mt-4' : 'absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2'} pt-4`}>
+                <motion.div
+                  transition={transition}
+                  layoutId="active"
+                  className="bg-white backdrop-blur-sm overflow-hidden border border-gray-200 shadow-xl"
+                >
+                  <motion.div
+                    layout
+                    className="w-max h-full p-4"
+                  >
+                    {children}
+                  </motion.div>
+                </motion.div>
+              </div>
+            )}
+          </motion.div>
+        )}
+      </div>
+      {!isMobile && !isLast && (
+        <div className={`h-6 w-px ${hasScrolled ? 'bg-gray-400' : 'bg-white bg-opacity-50'}`}></div>
       )}
     </div>
   );
@@ -87,11 +98,22 @@ interface MenuProps {
 }
 
 export const Menu = ({ setActive, children }: MenuProps) => {
-  const [scrollingUp, setScrollingUp] = useState(false);
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [hasScrolled, setHasScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    // Import Poppins font
+    const linkElement = document.createElement('link');
+    linkElement.rel = 'stylesheet';
+    linkElement.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap';
+    document.head.appendChild(linkElement);
+    
+    return () => {
+      document.head.removeChild(linkElement);
+    };
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -108,13 +130,14 @@ export const Menu = ({ setActive, children }: MenuProps) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      setScrollingUp(prevScrollPos > currentScrollPos);
-      setPrevScrollPos(currentScrollPos);
+      // Check if page has scrolled more than 50px
+      const scrolled = window.scrollY > 50;
+      setHasScrolled(scrolled);
     };
+    
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollPos]);
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -132,27 +155,45 @@ export const Menu = ({ setActive, children }: MenuProps) => {
     router.push('/');
   };
 
+  // Add isLast prop to children
+  const childrenWithProps = React.Children.toArray(children);
+  const enhancedChildren = childrenWithProps.map((child, index) => {
+    if (React.isValidElement<MenuItemProps>(child)) {
+      return React.cloneElement(child, {
+        ...child.props,
+        hasScrolled,
+        isLast: index === childrenWithProps.length - 1
+      });
+    }
+    return child;
+  });
+
   return (
-    <nav
+    <motion.nav
       id="main-nav"
-      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
-        scrollingUp ? "transform translate-y-0" : "transform -translate-y-full"
-      } border border-gray-200 bg-white shadow-lg`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out font-poppins ${
+        hasScrolled 
+          ? "bg-white border border-gray-200 shadow-lg text-black" 
+          : "bg-transparent text-white"
+      }`}
+      initial={{ y: 0 }}
+      animate={{ y: 0 }}
+      style={{ fontFamily: "'Poppins', sans-serif" }}
     >
       <div className="px-8 py-6 flex justify-between items-center">
         <div 
           className="flex items-center cursor-pointer"
           onClick={handleLogoClick}
         >
-          <Image src="/images/nabar.png" alt="Logo" width={120} height={120} />
+          <Image src="/images/nabar.png" alt="Logo" width={150} height={150} />
         </div>
 
-        <div className="hidden md:flex items-center space-x-8">
-          {children}
+        <div className="hidden md:flex items-center">
+          {enhancedChildren}
         </div>
 
         <button
-          className="md:hidden text-black hover:text-teal-700"
+          className={`md:hidden hover:text-teal-700 ${hasScrolled ? 'text-black' : 'text-white'} font-bold`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >
@@ -165,14 +206,16 @@ export const Menu = ({ setActive, children }: MenuProps) => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden px-8 py-4 bg-white border-t border-gray-200"
+          className={`md:hidden px-8 py-4 ${hasScrolled ? 'bg-white' : 'bg-white bg-opacity-90 backdrop-blur-sm'} border-t border-gray-200`}
         >
           <div className="flex flex-col space-y-4">
-            {React.Children.map(children, child => {
+            {React.Children.map(children, (child, index) => {
               if (React.isValidElement<MenuItemProps>(child)) {
                 return React.cloneElement(child, {
                   ...child.props,
-                  isMobile: true
+                  isMobile: true,
+                  hasScrolled,
+                  isLast: index === childrenWithProps.length - 1
                 });
               }
               return child;
@@ -180,7 +223,7 @@ export const Menu = ({ setActive, children }: MenuProps) => {
           </div>
         </motion.div>
       )}
-    </nav>
+    </motion.nav>
   );
 };
 
@@ -206,7 +249,7 @@ export const ProductItem = ({
         alt={title}
         className="flex-shrink-0 shadow-2xl"
       />
-      <div>
+      <div className="font-poppins">
         <h4 className="text-xl font-bold mb-1 text-black">
           {title}
         </h4>
@@ -222,22 +265,23 @@ interface HoveredLinkProps {
   children: React.ReactNode;
   href: string;
   className?: string;
+  hasScrolled?: boolean;
   [key: string]: any;
 }
 
-export const HoveredLink = ({ children, ...rest }: HoveredLinkProps) => {
+export const HoveredLink = ({ children, hasScrolled, ...rest }: HoveredLinkProps) => {
   const [isHovered, setIsHovered] = useState(false);
   
   return (
     <Link
       {...rest}
-      className="text-gray-600 hover:text-black"
+      className={`font-bold font-poppins ${hasScrolled ? "text-gray-600 hover:text-black" : "text-white hover:text-gray-200"}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <motion.span
         animate={{
-          color: isHovered ? "white" : "inherit"
+          color: isHovered ? (hasScrolled ? "black" : "white") : "inherit"
         }}
         transition={{ duration: 0.3 }}
       >

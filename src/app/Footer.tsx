@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="flex items-center justify-center text-xl font-bold">
+          <div className="flex items-center justify-center text-xl font-[Poppins] font-bold">
             <Image src="/images/footer.png" alt="Logo" width={200} height={150} className="object-contain" />
           </div>
         </div>
@@ -17,25 +17,25 @@ const Footer = () => {
         <nav className="flex gap-6">
           <Link
             href="/tour-packages"
-            className="text-gray-300 hover:text-white transition-colors"
+            className="text-gray-300 hover:text-white font-[Poppins]  transition-colors"
           >
             Tour Packages
           </Link>
           <Link
             href="/contact"
-            className="text-gray-300 hover:text-white transition-colors"
+            className="text-gray-300 hover:text-white font-[Poppins] transition-colors"
           >
             Contact Us
           </Link>
           <Link
             href="/about"
-            className="text-gray-300 hover:text-white transition-colors"
+            className="text-gray-300 hover:text-white font-[Poppins]  transition-colors"
           >
             About
           </Link>
           <Link
             href="/gallery"
-            className="text-gray-300 hover:text-white transition-colors"
+            className="text-gray-300 hover:text-white font-[Poppins] transition-colors"
           >
             Gallery
           </Link>

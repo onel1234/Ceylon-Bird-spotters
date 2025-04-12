@@ -58,15 +58,15 @@ export const ParallaxScrollSecond: React.FC<ParallaxScrollSecondProps> = ({
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/75 transition-all duration-300">
         <div className="absolute inset-0 flex flex-col justify-center p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-            <h3 className="text-xl font-bold mb-2">{image.title}</h3>
+            <h3 className="text-xl font-[Poppins] font-bold mb-2">{image.title}</h3>
             <p className="text-sm italic mb-3 text-gray-200">{image.scientificName}</p>
             <div className="space-y-2 text-sm">
               <p className="flex items-center gap-2">
-                <span className="font-semibold">Location:</span>
+                <span className="font-semibold font-[Poppins] ">Location:</span>
                 <span>{image.location}</span>
               </p>
               <p className="flex items-center gap-2">
-                <span className="font-semibold">Photographer:</span>
+                <span className="font-semibold font-[Poppins] ">Photographer:</span>
                 <span>{image.photographer}</span>
               </p>
             </div>
@@ -139,7 +139,7 @@ export const ParallaxScrollSecond: React.FC<ParallaxScrollSecondProps> = ({
               onClick={(e) => e.stopPropagation()}
             >
               <button 
-                className="absolute top-6 right-6 z-10 bg-white rounded-full p-2 text-black hover:bg-gray-200 transition-colors"
+                className="absolute top-6 right-6 z-10 bg-white rounded-full p-2 text-black hover:bg-gray-200 transition-colors font-[Poppins] "
                 onClick={handleCloseFullImage}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -159,16 +159,16 @@ export const ParallaxScrollSecond: React.FC<ParallaxScrollSecondProps> = ({
                 </div>
                 
                 <div className="p-6 bg-white">
-                  <h2 className="text-2xl font-bold mb-2">{selectedImage.title}</h2>
+                  <h2 className="text-2xl font-[Poppins] font-bold mb-2">{selectedImage.title}</h2>
                   <p className="text-lg italic mb-4 text-gray-600">{selectedImage.scientificName}</p>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <h3 className="font-semibold text-gray-700">Location</h3>
+                      <h3 className="font-semibold font-[Poppins] text-gray-700">Location</h3>
                       <p>{selectedImage.location}</p>
                     </div>
                     <div>
-                      <h3 className="font-semibold text-gray-700">Photographer</h3>
+                      <h3 className="font-semibold font-[Poppins] text-gray-700">Photographer</h3>
                       <p>{selectedImage.photographer}</p>
                     </div>
                   </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/app/Ui/Card';
 import { Camera, Eye } from 'lucide-react';
@@ -70,32 +71,33 @@ export default function VictoriaNationalParkPage() {
     'Sri Lanka Scimitar-Babbler',
     'Indian Pitta',
     'Yellow-eared Bulbul',
-  
-
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 p-8">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 p-8 font-[Poppins]">
       <Card className="max-w-4xl mx-auto overflow-hidden">
-        <div className="relative h-72 w-full">
-          <Image
-            src="/images/victoria2.webp"
-            alt="Victoria National Park"
-            width={450}
-            height={400}
-            className="object-cover"
-          />
+        {/* Fix for header image - make it span the full width of the card */}
+        <div className="w-full">
+          <div className="relative w-full h-72">
+            <Image
+              src="/images/victoria2.webp"
+              alt="Victoria National Park"
+              layout="fill"
+              objectFit="cover"
+              className="w-full"
+            />
+          </div>
         </div>
 
         <CardHeader>
-          <CardTitle className="text-3xl">Victoria Park - Nuwara Eliya</CardTitle>
+          <CardTitle className="text-3xl font-[Poppins]">Victoria Park - Nuwara Eliya</CardTitle>
         </CardHeader>
 
-        <CardContent>
+        <CardContent className="font-[Poppins]">
           <div className="space-y-8">
             <p className="text-lg">
               Victoria National Park, located near Nuwara Eliya, is a haven of biodiversity and a stunning example of
-              Sri Lanka’s montane ecosystems. Its cool climate and scenic beauty make it a popular destination for
+              Sri Lanka's montane ecosystems. Its cool climate and scenic beauty make it a popular destination for
               nature enthusiasts and birdwatchers.
             </p>
 

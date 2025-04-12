@@ -114,9 +114,8 @@ export default function HortonPlainsPage() {
           <Image
             src="/images/hortonplains.jpg"
             alt="Horton Plains Landscape"
-            width={400}
-            height={400}
-            className="object-cover"
+           layout="fill" 
+        objectFit="cover"
           />
         </div>
 

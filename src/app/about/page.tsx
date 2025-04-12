@@ -11,7 +11,7 @@ export default function About() {
       title: "The start",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-base md:text-lg font-normal mb-8">
+          <p className="text-neutral-800 dark:text-neutral-200 font-[Poppins]  text-base md:text-lg font-normal mb-8">
            Ceylon Naturalist began with people who have over 2 decades of experience in this field.
           </p>
           <div className="grid grid-cols-2 gap-4">
@@ -51,10 +51,10 @@ export default function About() {
       title: "Today",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-base md:text-lg font-normal mb-8">
+          <p className="text-neutral-800 dark:text-neutral-200 font-[Poppins] text-base md:text-lg font-normal mb-8">
             Today we cater to people all over the world to discover the wonders of Sri Lanka.
           </p>
-          <p className="text-neutral-800 dark:text-neutral-200 text-base md:text-lg font-normal mb-8">
+          <p className="text-neutral-800 dark:text-neutral-200 font-[Poppins] text-base md:text-lg font-normal mb-8">
             The story is still writing for Ceylon Naturalist. Reserve your page in our story.
           </p>
           <div className="grid grid-cols-2 gap-4">
@@ -94,26 +94,26 @@ export default function About() {
       title: "Future Goals",
       content: (
         <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-base md:text-lg font-normal mb-4">
+          <p className="text-neutral-800 dark:text-neutral-200 font-[Poppins] text-base md:text-lg font-normal mb-4">
             Striving to redefine wildlife and nature tourism in Sri Lanka with innovative and sustainable approaches.
           </p>
           <div className="mb-8 space-y-2">
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-base md:text-lg">
+            <div className="flex gap-2 items-center text-neutral-700 font-[Poppins] dark:text-neutral-300 text-base md:text-lg">
               <Badge size={20} color="#00ffff" strokeWidth={3} /> Launch interactive birdwatching workshops for enthusiasts and beginners.
             </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-base md:text-lg">
+            <div className="flex gap-2 items-center text-neutral-700 font-[Poppins] dark:text-neutral-300 text-base md:text-lg">
               <Badge size={20} color="#00ffff" strokeWidth={3} /> Develop eco-friendly tour packages, including carbon-offset programs.
             </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-base md:text-lg">
+            <div className="flex gap-2 items-center text-neutral-700 font-[Poppins]   dark:text-neutral-300 text-base md:text-lg">
               <Badge size={20} color="#00ffff" strokeWidth={3} /> Partner with local communities to promote sustainable tourism and empower locals.
             </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-base md:text-lg">
+            <div className="flex gap-2 items-center text-neutral-700 font-[Poppins]  dark:text-neutral-300 text-base md:text-lg">
               <Badge size={20} color="#00ffff" strokeWidth={3} /> Continue and improve the customer experience.
             </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-base md:text-lg">
+            <div className="flex gap-2 items-center text-neutral-700 font-[Poppins] dark:text-neutral-300 text-base md:text-lg">
               <Badge size={20} color="#00ffff" strokeWidth={3} /> Expand knowledge about Sri Lanka to foreign countries.
             </div>
-            <div className="flex gap-2 items-center text-neutral-700 dark:text-neutral-300 text-base md:text-lg">
+            <div className="flex gap-2 items-center text-neutral-700 font-[Poppins] dark:text-neutral-300 text-base md:text-lg">
               <Badge size={20} color="#00ffff" strokeWidth={3} /> Establish a bird conservation fund to support research and habitat protection.
             </div>
           </div>

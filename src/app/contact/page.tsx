@@ -76,8 +76,8 @@ const Contact: React.FC = () => {
         <div className="w-full max-w-5xl flex flex-col lg:flex-row">
           {/* Left Section - Contact Info */}
           <div className="text-white lg:w-1/2 mb-6 lg:mb-0 lg:pr-6 py-32">
-            <h1 className="text-3xl md:text-4xl font-bold mb-3">Contact us</h1>
-            <p className="text-base md:text-lg mb-10">
+            <h1 className="text-3xl md:text-4xl font-bold font-[Poppins]  mb-3">Contact us</h1>
+            <p className="text-base font-[Poppins]  md:text-lg mb-10">
               Leave your email and we will get back to you 
             </p>
 
@@ -87,7 +87,7 @@ const Contact: React.FC = () => {
                   <Mail size={20} />
                 </div>
                 <div>
-                  <p className="text-xs opacity-80">Email</p>
+                  <p className="text-xs font-[Poppins] opacity-80">Email</p>
                   <p className="text-base">contact@ceylonnaturalist.com</p>
                 </div>
               </div>
@@ -97,7 +97,7 @@ const Contact: React.FC = () => {
                   <Phone size={20} />
                 </div>
                 <div>
-                  <p className="text-xs opacity-80">Phone</p>
+                  <p className="text-xs font-[Poppins]  opacity-80">Phone</p>
                   <p className="text-base">+94 (72) 2068 960</p>
                 </div>
               </div>
@@ -107,8 +107,8 @@ const Contact: React.FC = () => {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <p className="text-xs opacity-80">Address</p>
-                  <p className="text-base">Ceylon Naturalist, Kudawa, Veddagala, Kalwana, Sri Lanka.</p>
+                  <p className="text-xs font-[Poppins] opacity-80">Address</p>
+                  <p className="text-base font-[Poppins] ">Ceylon Naturalist, Kudawa, Veddagala, Kalwana, Sri Lanka.</p>
                 </div>
               </div>
 
@@ -117,8 +117,8 @@ const Contact: React.FC = () => {
                   <Clock size={20} />
                 </div>
                 <div>
-                  <p className="text-xs opacity-80">Working hours</p>
-                  <p className="text-base">8 a.m. — 11 p.m.</p>
+                  <p className="text-xs font-[Poppins] opacity-80">Working hours</p>
+                  <p className="text-base font-[Poppins] ">8 a.m. — 11 p.m.</p>
                 </div>
               </div>
             </div>
@@ -160,7 +160,7 @@ const Contact: React.FC = () => {
             <div className="bg-white rounded-lg p-5 md:p-6 shadow-lg">
               <form onSubmit={sendEmail} className="space-y-5">
                 <div>
-                  <label htmlFor="emailFrom" className="block text-gray-700 mb-1.5">
+                  <label htmlFor="emailFrom" className="block text-gray-700 font-[Poppins] mb-1.5">
                     Email <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -176,7 +176,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="fromName" className="block text-gray-700 mb-1.5">
+                  <label htmlFor="fromName" className="block text-gray-700font-[Poppins]  mb-1.5">
                     Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -192,7 +192,7 @@ const Contact: React.FC = () => {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-gray-700 mb-1.5">
+                  <label htmlFor="message" className="block text-gray-700 font-[Poppins]  mb-1.5">
                     Your message <span className="text-red-500">*</span>
                   </label>
                   <textarea
@@ -208,7 +208,7 @@ const Contact: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="bg-teal-600 text-white px-5 py-2.5 rounded-md flex items-center justify-center hover:bg-teal-900 transition-colors w-full sm:w-auto"
+                  className="bg-teal-600 text-white px-5 py-2.5 rounded-md flex font-[Poppins] items-center justify-center hover:bg-teal-900 transition-colors w-full sm:w-auto"
                 >
                   <span className="mr-2">Send message</span>
                   <Send size={14} />

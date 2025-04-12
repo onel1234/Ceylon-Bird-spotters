@@ -87,9 +87,8 @@ export default function MinneriyaNationalParkPage() {
           <Image
             src="/images/minneriya.jpg"
             alt="Minneriya National Park"
-            width={400}
-            height={400}
-            className="object-cover"
+            layout="fill" 
+        objectFit="cover"
           />
         </div>
 

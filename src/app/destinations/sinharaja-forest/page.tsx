@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/app/Ui/Card';
+import { Card, CardHeader, CardTitle, CardContent,CardImage } from '@/app/Ui/Card';
 import { Camera, Eye } from 'lucide-react';
 import Image from 'next/image';
 
@@ -11,13 +11,7 @@ export default function SinharajaForestPage() {
   ];
 
  const imageGallery = [
-    {
-      src: '/wildlife/Blue.jpg',
-      width: 400,
-      height: 400,
-      alt: 'Dense rainforest canopy',
-     
-    },
+    
     {
       src: '/wildlife/grey.jpg',
       width: 400,
@@ -25,13 +19,7 @@ export default function SinharajaForestPage() {
       alt: 'Rare bird species',
      
     },
-    {
-      src: '/wildlife/ceylon.jpg',
-      width: 400,
-      height: 400,
-      alt: 'Waterfall in the forest',
-      
-    },
+   
     {
       src: '/wildlife/mag.jpg',
       width: 400,
@@ -114,15 +102,17 @@ export default function SinharajaForestPage() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 p-8">
       <Card className="max-w-4xl mx-auto overflow-hidden">
-        <div className="relative h-72 w-full">
+      <CardImage>
+      <div className=" w-full h-72">
           <Image
             src="/images/sinharaja.jpg"
             alt="Sinharaja Forest"
-            width={750}
-            height={700}
-            className="object-cover"
+             layout="fill" 
+        objectFit="cover"
           />
+     
         </div>
+        </CardImage>
         
         <CardHeader>
           <CardTitle className="text-3xl">Sinharaja Forest Reserve</CardTitle>

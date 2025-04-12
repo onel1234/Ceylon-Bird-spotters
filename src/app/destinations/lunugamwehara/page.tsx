@@ -133,9 +133,8 @@ export default function LunugamweheraNationalParkPage() {
           <Image
             src="/images/lunugamvehera.jpg"
             alt="Lunugamwehera National Park"
-            width={425}
-            height={400}
-            className="object-cover"
+           layout="fill" 
+        objectFit="cover"
           />
         </div>
 

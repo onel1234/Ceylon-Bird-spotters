@@ -86,9 +86,8 @@ export default function MirissaPage() {
           <Image
             src="/images/mirissa.jpg"
             alt="Mirissa Beach"
-            width={450}
-            height={400}
-            className="object-cover"
+            layout="fill" 
+        objectFit="cover"
           />
         </div>
         

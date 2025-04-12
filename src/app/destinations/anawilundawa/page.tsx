@@ -113,9 +113,8 @@ export default function AnawilundawaSanctuaryPage() {
           <Image
             src="/images/anawilundawa.jpg"
             alt="Anawilundawa Sanctuary"
-            width={430}
-            height={400}
-            className="object-cover"
+           layout="fill" 
+        objectFit="cover"
           />
         </div>
 

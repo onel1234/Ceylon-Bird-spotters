@@ -207,9 +207,8 @@ export default function YalaNationalParkPage() {
           <Image
             src="/images/yala.jpg"
             alt="Yala National Park"
-            width={520}
-            height={400}
-            className="object-cover"
+            layout="fill" 
+        objectFit="cover"
           />
         </div>
 
