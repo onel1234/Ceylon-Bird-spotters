@@ -1,5 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
-
 import Link from "next/link";
 import TypewriterEffect from "./TypeWriterEffect"; // Make sure the casing matches exactly
 import ImagesSlider, { SlideImage } from "./ImagesSlider"; // Import with the type
@@ -7,8 +7,8 @@ import ImagesSlider, { SlideImage } from "./ImagesSlider"; // Import with the ty
 const HeroSection = () => {
   // Images with customized text and button positions
   const images: SlideImage[] = [
-    { 
-      src: "/culture/slide2.webp", 
+    {
+      src: "/culture/slide2.webp",
       alt: "wildlife tours in Sri Lanka",
       heading: {
         text: "Discover Sri Lanka's Wildlife",
@@ -24,8 +24,8 @@ const HeroSection = () => {
         position: { x: "10%", y: "50%", align: "left" }
       }
     },
-    { 
-      src: "/culture/cnslide11.webp", 
+    {
+      src: "/culture/cnslide11.webp",
       alt: "Ceylon Naturalist tour guide showcasing Sri Lankan wildlife",
       heading: {
         text: "Expert Guided Tours",
@@ -41,8 +41,8 @@ const HeroSection = () => {
         position: { x: "50%", y: "55%", align: "center" }
       }
     },
-    { 
-      src: "/culture/cnslide22.webp", 
+    {
+      src: "/culture/cnslide22.webp",
       alt: "Beautiful Sri Lankan landscape with endemic birds",
       heading: {
         text: "Bird Watching Paradise",
@@ -65,12 +65,17 @@ const HeroSection = () => {
       <div className="h-[600px]">
         <ImagesSlider images={images} />
       </div>
-
       <div className="max-w-7xl mx-auto w-full px-6">
         <div className="flex flex-col items-center space-y-8">
           <p className="text-neutral-600 dark:text-neutral-200 font-[Poppins] text-lg">
-            The road to freedom starts from here
+            Welcome to the Wild Heart of Sri Lanka
           </p>
+          
+          <p className="text-neutral-600 dark:text-neutral-200 font-[Poppins] text-lg max-w-4xl text-center">
+            At CeylonNaturalist, we gently guide you into the wonders of Sri Lanka's wildlife, landscapes, and cultural treasures. With years of field experience and a deep love for nature, we create moments that are both enriching and personal—designed with care, led with heart.
+            Whether you're a keen birder, a wildlife enthusiast, or simply curious about the island's hidden gems, we're here to help you connect with the wild, one unforgettable journey at a time.
+          </p>
+          
           <TypewriterEffect
             words={[
               { text: "Discover" },
@@ -87,10 +92,28 @@ const HeroSection = () => {
               </button>
             </Link>
             <Link href="/tour-packages" aria-label="View our tour packages">
-              <button className="w-48 h-12 rounded-xl bg-teal-700 font-[Poppins]  text-white text-base hover:bg-teal-700 transition-colors">
+              <button className="w-48 h-12 rounded-xl bg-teal-700 font-[Poppins] text-white text-base hover:bg-teal-700 transition-colors">
                 Tour packages
               </button>
             </Link>
+          </div>
+          
+          <div className="flex flex-col items-center space-y-6 mt-8">
+            <h2 className="text-neutral-800 dark:text-neutral-100 font-[Poppins] text-2xl font-semibold">
+              What Makes Our Journeys Special?
+            </h2>
+            
+            <p className="text-neutral-600 dark:text-neutral-200 font-[Poppins] text-lg max-w-3xl text-center">
+              Personalized & Flexible - Every tour is thoughtfully crafted to match your interests—no rush, no pressure, just the joy of discovery.
+            </p>
+            
+            <p className="text-neutral-600 dark:text-neutral-200 font-[Poppins] text-lg max-w-3xl text-center">
+              Expert-Led Adventures - From the rainforest canopy to ancient ruins, our experienced naturalists know the land like an old friend.
+            </p>
+            
+            <p className="text-neutral-600 dark:text-neutral-200 font-[Poppins] text-lg max-w-3xl text-center">
+              Gentle, Responsible Travel - We travel with kindness—to wildlife, to people, and to the environment we all share.
+            </p>
           </div>
         </div>
       </div>

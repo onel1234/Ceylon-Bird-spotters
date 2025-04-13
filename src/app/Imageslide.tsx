@@ -61,7 +61,7 @@ const ImageSlide: React.FC<ImageSlideProps> = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className={cn(
-            "absolute text-white font-poppins font-bold text-4xl md:text-5xl lg:text-6xl",
+            "absolute text-white font-[Poppins] font-bold text-4xl md:text-5xl lg:text-6xl",
             heading.className
           )}
           style={{
@@ -110,7 +110,7 @@ const ImageSlide: React.FC<ImageSlideProps> = ({
           <Link href={button.href}>
             <button
               className={cn(
-                "px-6 py-3 rounded-xl bg-teal-700 text-white font-poppins font-medium hover:bg-teal-800 transition-colors",
+                "px-6 py-3 rounded-xl bg-teal-700 text-white font-[Poppins] font-medium hover:bg-teal-800 transition-colors",
                 button.className
               )}
             >

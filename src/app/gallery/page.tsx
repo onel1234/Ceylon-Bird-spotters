@@ -58,7 +58,7 @@ const GalleryPage: React.FC = () => {
       case 'Birds':
         return 'Bird Collection';
       case 'Endemics':
-        return 'Endemic Bird Collection';
+        return 'Endemic Collection';
       default:
         return 'Complete Wildlife Collection';
     }

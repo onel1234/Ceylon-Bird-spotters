@@ -122,15 +122,15 @@ const TourPackage: React.FC<TourPackageProps> = ({
       </div>
 
       <div className="space-y-6">
-        <h3 className="text-2xl font-semibold text-gray-800 font-[Poppins] dark:text-white">
-          Main Tour
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {tourItems.map((item, index) => (
-            <TourDayCard key={index} item={item} />
-          ))}
-        </div>
-      </div>
+  <h3 className="text-2xl font-semibold text-gray-800 font-[Poppins] dark:text-white">
+    {title === 'Tailor - made Holidays ' ? 'Destinations' : 'Main Tour'}
+  </h3>
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {tourItems.map((item, index) => (
+      <TourDayCard key={index} item={item} />
+    ))}
+  </div>
+</div>
 
       <div className="space-y-4">
         <h3 className="text-2xl font-semibold text-gray-800 font-[Poppins] dark:text-white text-center">
@@ -171,14 +171,13 @@ const TOUR_DATA: Record<string, {
   tourItems: TourItem[];
 }> =  {
   mountain: {
-    title: "Endemics- Migrants and Big Game",
+    title: "Endemics, Migrants, and Big Game",
     imageUrl: "/culture/head1.jpg",
-    description: `The main focus of this tour is to hopefully show you all 35 birds endemic to the island, winter migrants, and subcontinent specialties.
-In Yala and Lunugamvehera National Parks, you can try the most demanding Sri Lankan Leopard and Sloth bear. Udawalawe National Park is well-known for Asian Elephants. Additionally, if you missed any dry zone species in Yala or Lunugamvehera National Parks, Udawalawe is a good backup site to catch up with them.
+    description: `The main focus of this tour is to showcase 35 bird species endemics to Sri Lanka, along with winter migrants and subcontinental specialties. In Yala and Lunugamvehera National Parks, you’ll have the chance to encounter iconic wildlife such as the elusive Sri Lankan Leopard and the Sloth Bear. Udawalawe National Park, renowned for its large population of Asian Elephants, also serves as a reliable backup location to spot any dry-zone species you may have missed in Yala or Lunugamvehera.
+With your consent, we offer a whale-watching extension on Day 14, giving you the opportunity to see the largest mammal ever to live on Earth—the Blue Whale—alongside other cetaceans in the tropical waters of the Indian Ocean.
+This is an intensive birdwatching tour that provides excellent chances to observe Sri Lanka’s endemics. If you’re eager to experience the island’s rich biodiversity and breathtaking natural beauty.
+"Let’s discover nature’s wonders together”,`,
 
-At your consent, you will have the opportunity to get the whale-watching extension on day 14th and try your luck to see the largest mammal – the Blue Whale – ever to have lived on this planet and the other cetacean species found in the tropical waters of the Indian Ocean.
-
-This is an intensive birdwatching tour and contains a big opportunity for endemics. If you are interested in the wider natural beauty of Sri Lanka, let's discover nature's wonders together.`,
 
     fullWidthImage: "/images/Tour1(1).png",
     tourItems: [
@@ -285,12 +284,15 @@ This is an intensive birdwatching tour and contains a big opportunity for endemi
     ],
   },
   coastal: {
-    title: 'Big Games of Sri Lanka And Migratory watch in the North',
+    title: 'Big Game of Sri Lanka and Migratory Bird Watching in the North',
 
     imageUrl: "/images/Big Game.jpg",
-    description: "This tour is mainly designed for trying the Sri Lankan Leopard and the Sloth Bear in the largest and the oldest national park – “Wilpattu” in the North West of Sri Lanka and, to witness the fascinating wintering bird life in Mannar Island in the north of Sri Lanka. In addition, visits to places where dry zone bird species can be observed and a visit to a Sigiriya ancient rock fortress – a world-famous archeological site where a number of interesting birds can be observed – have been added to the tour add an extra dimension. This is an exciting bird and mammal-watching tour and contains a big opportunity for Sri Lankan Leopard and Northern wintering birds. If you are interested in the wider natural history of Sri Lanka Let’s Discover Nature’s Wonders Together.",
-
-   fullWidthImage: "/images/Tour2.png",
+description: `This tour is specially designed to explore the iconic wildlife of Sri Lanka, including the Sri Lankan Leopard and the Sloth Bear, in the ancient and legendary Wilpattu National Park, located in the northwestern region of the island.
+You’ll also have the opportunity to witness the fascinating wintering birdlife at Mannar Island in northern Sri Lanka—one of the country’s most important sites for migratory birds.
+To enhance the experience, the itinerary includes visits to key dry zone birding sites and the historic Sigiriya Rock Fortress, a UNESCO World Heritage Site known for its archaeological significance and birdlife.
+This tour offers a rich blend of birdwatching and mammal encounters, ideal for those seeking to discover Sri Lanka's leopards and wintering birds in their natural habitats.
+If you're curious about the natural wonders of Sri Lanka, let’s explore them together!`,
+fullWidthImage: "/images/Tour2.png",
     tourItems: [
       {
         day: 1,
@@ -368,11 +370,10 @@ This is an intensive birdwatching tour and contains a big opportunity for endemi
     ],
   },
   photography: {
-    title: 'Photography tour Endemic birds and Wildlife',
+    title: 'Photography Tour – Endemic Birds and Wildlife',
 
     imageUrl: "/images/Tour3.jpg",
-    description:'This tour is mainly focused on the photography opportunities of the Endemic bird species + mammals and other wildlife of Sri Lanka.This is an exciting bird and mammal-watching tour and contains a big opportunity for capturing memorable moments of the wonderful wildlife of Sri Lanka.',
-   
+    description:'This tour is specially designed for photography enthusiasts, focusing on the endemic bird species, mammals, and other unique wildlife of Sri Lanka. This is an exciting opportunity for bird and mammal watchers to capture unforgettable moments of the island’s rich biodiversity.',
    fullWidthImage: "/images/tour3.png",
    tourItems: [
     {
@@ -492,9 +493,9 @@ This is an intensive birdwatching tour and contains a big opportunity for endemi
   
   },
   tailor: {
-    title: 'Tailor-Made Expiditions',
+    title: 'Tailor - made Holidays ',
     imageUrl: "/images/Tour4.jpg",
-    description: 'Create your perfect wildlife adventure...',
+    description: 'Explore your dream holiday in Sri Lanka with CeylonNaturalist! Choose your favorite destinations from our curated list below, and let us craft a personalized journey just for you',
     fullWidthImage: "/images/tour4.png",
     tourItems: [
       {

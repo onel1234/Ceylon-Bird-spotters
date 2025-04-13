@@ -60,46 +60,45 @@ const SriLankaShowcase = () => {
           </p>
         </motion.div>
 
-        {/* Image Grid - Smaller and More Subtle */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
-          <motion.div 
-            whileHover={{ scale: 1.02 }}
-            className="relative h-48 overflow-hidden"
-          >
-            <Image
-              src="https://res.cloudinary.com/dfxolekjs/image/upload/v1740240115/srilanka_ke3vob.jpg"
-              alt="Sri Lanka Wildlife"
-              width={300}
-              height={200}
-              className="object-cover w-full h-full"
-            />
-          </motion.div>
-          <motion.div 
-            whileHover={{ scale: 1.02 }}
-            className="relative h-48 rounded-lg overflow-hidden shadow-md"
-          >
-            <Image
-              src="https://res.cloudinary.com/dfxolekjs/image/upload/v1740240115/srilanka2_ks1l4j.jpg"
-              alt="Sri Lanka Beaches"
-              width={300}
-              height={200}
-              className="object-cover w-full h-full"
-            />
-          </motion.div>
-          <motion.div 
-            whileHover={{ scale: 1.02 }}
-            className="relative h-48 rounded-lg overflow-hidden shadow-md"
-          >
-            <Image
-              src="https://res.cloudinary.com/dfxolekjs/image/upload/v1740240114/srilnaka3_g0jpvk.jpg"
-              alt="Sri Lanka Culture"
-              width={300}
-              height={200}
-              className="object-cover w-full h-full"
-            />
-          </motion.div>
-        </div>
-
+      {/* Image Grid - Smaller and More Subtle */}
+<div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-16">
+  <motion.div
+    whileHover={{ scale: 1.02 }}
+    className="relative h-48 rounded-lg overflow-hidden shadow-md"
+  >
+    <Image
+      src="https://res.cloudinary.com/dfxolekjs/image/upload/v1740240115/srilanka_ke3vob.jpg"
+      alt="Sri Lanka Wildlife"
+      width={300}
+      height={200}
+      className="object-cover w-full h-full"
+    />
+  </motion.div>
+  <motion.div
+    whileHover={{ scale: 1.02 }}
+    className="relative h-48 rounded-lg overflow-hidden shadow-md"
+  >
+    <Image
+      src="https://res.cloudinary.com/dfxolekjs/image/upload/v1740240115/srilanka2_ks1l4j.jpg"
+      alt="Sri Lanka Beaches"
+      width={300}
+      height={200}
+      className="object-cover w-full h-full"
+    />
+  </motion.div>
+  <motion.div
+    whileHover={{ scale: 1.02 }}
+    className="relative h-48 rounded-lg overflow-hidden shadow-md"
+  >
+    <Image
+      src="https://res.cloudinary.com/dfxolekjs/image/upload/v1740240114/srilnaka3_g0jpvk.jpg"
+      alt="Sri Lanka Culture"
+      width={300}
+      height={200}
+      className="object-cover w-full h-full"
+    />
+  </motion.div>
+</div>
         {/* Additional Text Content */}
         <motion.div 
           initial={{ opacity: 0 }}
@@ -137,7 +136,7 @@ const SriLankaShowcase = () => {
           </div>
           <div className="flex flex-col items-center p-6 bg-gray-50 rounded-lg shadow-sm">
             <Palmtree className="w-8 h-8 text-gray-700 mb-2" />
-            <p className="text-2xl font-bold text-black">3,154</p>
+            <p className="text-2xl font-bold text-black">3,210</p>
             <p className="text-sm font-[Poppins] text-gray-600">Flowering Plants</p>
           </div>
           <div className="flex flex-col items-center p-6 bg-gray-50 rounded-lg shadow-sm">
