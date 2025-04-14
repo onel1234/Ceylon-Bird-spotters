@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -35,6 +35,7 @@ export interface ImageSlideProps {
     className?: string;
   };
   button?: ButtonConfig;
+  isActive: boolean; // Controls zoom animation
 }
 
 const ImageSlide: React.FC<ImageSlideProps> = ({
@@ -42,59 +43,85 @@ const ImageSlide: React.FC<ImageSlideProps> = ({
   heading,
   subheading,
   button,
+  isActive,
 }) => {
-  return (
-    <div className="relative h-full w-full">
-      <Image
-        src={image.src}
-        alt={image.alt}
-        fill
-        priority
-        sizes="100vw"
-        quality={90}
-        className="object-cover object-center"
-      />
+  // State to control zoom effect
+  const [zoom, setZoom] = useState(1.2); // Start zoomed in
+  
+  // Effect to animate zoom when slide is active
+  useEffect(() => {
+    if (isActive) {
+      // Give time for the slide to appear before starting zoom animation
+      const zoomTimeout = setTimeout(() => {
+        setZoom(1); // Zoom out to normal size gradually
+      }, 300);
       
+      return () => clearTimeout(zoomTimeout);
+    } else {
+      // Reset zoom for inactive slides
+      setZoom(1.2);
+    }
+  }, [isActive]);
+
+  return (
+    <div className="relative h-full w-full overflow-hidden">
+      <motion.div
+        className="h-full w-full"
+        initial={{ scale: 1.2 }}
+        animate={{ scale: zoom }}
+        transition={{ duration: 10, ease: "easeOut" }} // Slow zoom out over 10 seconds
+      >
+        <Image
+          src={image.src}
+          alt={image.alt}
+          fill
+          priority
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 75vw, 60vw"
+          quality={90}
+          className="object-cover object-center"
+        />
+      </motion.div>
+     
       {heading && (
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className={cn(
-            "absolute text-white font-[Poppins] font-bold text-4xl md:text-5xl lg:text-6xl",
+            "absolute text-white font-[Poppins] font-bold text-xl sm:text-2xl md:text-4xl lg:text-6xl max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg",
             heading.className
           )}
           style={{
             left: heading.position.x,
             top: heading.position.y,
             textAlign: heading.position.align || "center",
-            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
           }}
         >
           {heading.text}
         </motion.h2>
       )}
-      
+     
       {subheading && (
         <motion.p
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className={cn(
-            "absolute text-white font-poppins font-medium text-lg md:text-xl lg:text-2xl",
+            "absolute text-white font-poppins font-medium text-sm sm:text-base md:text-xl lg:text-2xl max-w-xs sm:max-w-sm md:max-w-md",
             subheading.className
           )}
           style={{
             left: subheading.position.x,
             top: subheading.position.y,
             textAlign: subheading.position.align || "center",
-            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
+            textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
           }}
         >
           {subheading.text}
         </motion.p>
       )}
-      
+     
       {button && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -110,7 +137,7 @@ const ImageSlide: React.FC<ImageSlideProps> = ({
           <Link href={button.href}>
             <button
               className={cn(
-                "px-6 py-3 rounded-xl bg-teal-700 text-white font-[Poppins] font-medium hover:bg-teal-800 transition-colors",
+                "px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base rounded-xl bg-teal-700 text-white font-[Poppins] font-medium hover:bg-teal-800 transition-colors",
                 button.className
               )}
             >

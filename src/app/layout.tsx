@@ -15,13 +15,13 @@ export const metadata: Metadata = {
   keywords: "Ceylon Naturalist, Bird watching in Sri Lanka, Wildlife tours in Sri Lanka, Sri Lanka, Nature tours, Eco tourism, Adventure travel",
   icons: {
     icon: [
-      { url: '/images/webicon.png', sizes: 'any' }
+      { url: '/images/webicon.jpg', sizes: 'any' }
     ],
     apple: [
-      { url: '/images/webicon.png', sizes: '90x90' }
+      { url: '/images/webicon.jpg', sizes: '90x90' }
     ],
     shortcut: [
-      { url: '/images/webicon.png' }
+      { url: '/images/webicon.jpg' }
     ],
   }
 };

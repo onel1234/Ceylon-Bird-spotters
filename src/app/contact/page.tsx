@@ -88,7 +88,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs font-[Poppins] opacity-80">Email</p>
-                  <p className="text-base">contact@ceylonnaturalist.com</p>
+                  <p className="text-base font-[Poppins]">contact@ceylonnaturalist.com</p>
                 </div>
               </div>
 
@@ -98,7 +98,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs font-[Poppins]  opacity-80">Phone</p>
-                  <p className="text-base">+94 (72) 2068 960</p>
+                  <p className="text-base font-[Poppins]">+94 (72) 2068 960</p>
                 </div>
               </div>
 
@@ -171,13 +171,13 @@ const Contact: React.FC = () => {
                     value={formData.email_from}
                     onChange={handleChange}
                     required
-                    className="w-full p-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    className="w-full p-2.5 border border-gray-300 rounded-md font-[Poppins] focus:outline-none focus:ring-2 focus:ring-teal-500"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="fromName" className="block text-gray-700font-[Poppins]  mb-1.5">
-                    Name <span className="text-red-500">*</span>
+                  <label htmlFor="fromName" className="block text-gray-700 font-[Poppins]  mb-1.5">
+                    Name <span className="text-red-500 font-[Poppins]">*</span>
                   </label>
                   <input
                     type="text"
@@ -187,7 +187,7 @@ const Contact: React.FC = () => {
                     value={formData.from_name}
                     onChange={handleChange}
                     required
-                    className="w-full p-2.5 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    className="w-full p-2.5 border border-gray-300 font-[Poppins] rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
                   />
                 </div>
 
@@ -202,7 +202,7 @@ const Contact: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full p-2.5 border border-gray-300 rounded-md h-28 resize-none focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    className="w-full p-2.5 border border-gray-300 font-[Poppins] rounded-md h-28 resize-none focus:outline-none focus:ring-2 focus:ring-teal-500"
                   ></textarea>
                 </div>
 

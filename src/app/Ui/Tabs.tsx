@@ -1,6 +1,9 @@
-import { useState } from "react";
+"use client";
+
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useSearchParams } from "next/navigation";
 
 type Tab = {
   title: string;
@@ -21,13 +24,31 @@ export const Tabs = ({
   tabClassName?: string;
   contentClassName?: string;
 }) => {
+  const searchParams = useSearchParams();
   const [active, setActive] = useState<Tab>(propTabs[0]);
   const [isHovering, setIsHovering] = useState(false);
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  // Get the tab from the URL query parameter
+  useEffect(() => {
+    if (!isInitialized && searchParams) {
+      const tabParam = searchParams.get('tab');
+      if (tabParam) {
+        const selectedTab = propTabs.find(t => t.value === tabParam);
+        if (selectedTab) {
+          setActive(selectedTab);
+        }
+      }
+      setIsInitialized(true);
+    }
+  }, [searchParams, propTabs, isInitialized]);
 
   const moveSelectedTabToTop = (idx: number) => {
     const selectedTab = propTabs[idx];
     setActive(selectedTab);
+    
+    // We don't update the URL here since we're using Next.js Link component in the HeroSection
   };
 
   return (

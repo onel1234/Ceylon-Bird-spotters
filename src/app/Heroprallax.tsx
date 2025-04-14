@@ -1,3 +1,4 @@
+"use client";
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import Link from "next/link";
@@ -8,54 +9,90 @@ const HeroSection = () => {
   // Images with customized text and button positions
   const images: SlideImage[] = [
     {
-      src: "/culture/slide2.webp",
+      src: "/hero/cnslide22.webp",
       alt: "wildlife tours in Sri Lanka",
       heading: {
-        text: "Discover Sri Lanka's Wildlife",
-        position: { x: "10%", y: "30%", align: "left" }
+        text: "Explore Sri Lanka’s Wild Heart with CeylonNaturalist",
+        position: { x: "10%", y: "55%", align: "left" }
       },
       subheading: {
-        text: "Explore the rich biodiversity of our island nation",
-        position: { x: "10%", y: "40%", align: "left" }
+        text: "Personalized journeys through Nature, Culture & Adventure with Passionate Local Guides.",
+        position: { x: "10%", y: "78%", align: "left" }
       },
       button: {
-        text: "View Wildlife Tours",
-        href: "/tour-packages/wildlife",
-        position: { x: "10%", y: "50%", align: "left" }
+        text: "About Us",
+        href: "/about",
+        position: { x: "10%", y: "87%", align: "left" }
       }
     },
     {
-      src: "/culture/cnslide11.webp",
-      alt: "Ceylon Naturalist tour guide showcasing Sri Lankan wildlife",
+      src: "/hero/2.webp",
+      alt: "Morning Light meats golden eyes The wild doesnt need to roar to be felt",
       heading: {
-        text: "Expert Guided Tours",
-        position: { x: "50%", y: "35%", align: "center" }
+        text: "Morning Light meats golden eyes – The wild doesn’t need to roar to be felt",
+        position: { x: "10%", y: "50%", align: "center" }
       },
-      subheading: {
-        text: "Journey with our passionate naturalist guides",
-        position: { x: "50%", y: "45%", align: "center" }
-      },
+      
       button: {
-        text: "Meet Our Guides",
-        href: "/about-us",
-        position: { x: "50%", y: "55%", align: "center" }
+        text: "View Tour Package 2",
+        href: "/tour-packages?tab=coastal",
+        position: { x: "40%", y: "85%", align: "center" }
       }
     },
     {
-      src: "/culture/cnslide22.webp",
+      src: "/hero/3-1.jpg",
       alt: "Beautiful Sri Lankan landscape with endemic birds",
       heading: {
-        text: "Bird Watching Paradise",
-        position: { x: "80%", y: "30%", align: "right" }
+        text: "A splash of emerald and elegance – The Green Bee-eater in full display during our photo tour",
+        position: { x: "5%", y: "30%", align: "center" }
       },
-      subheading: {
-        text: "Spot over 400 species of resident and migratory birds",
-        position: { x: "80%", y: "40%", align: "right" }
-      },
+     
       button: {
-        text: "Bird Watching Tours",
-        href: "/tour-packages/birding",
-        position: { x: "80%", y: "50%", align: "right" }
+        text: "View Tour Package 3",
+        href: "/tour-packages?tab=photography",
+        position: { x: "45%", y: "70%", align: "right" }
+      }
+    },
+    {
+      src: "/hero/4.webp",
+      alt: "Morning Light meats golden eyes The wild doesnt need to roar to be felt",
+      heading: {
+        text: "Chasing endemics in the heart of Sinharaja – A perfect day for birders on the trail",
+        position: { x: "10%", y: "50%", align: "center" }
+      },
+      
+      button: {
+        text: "View Tour Package 1",
+        href: "/tour-packages?tab=mountain",
+        position: { x: "40%", y: "85%", align: "center" }
+      }
+    },
+    {
+      src: "/hero/5.jpg",
+      alt: "Morning Light meats golden eyes The wild doesnt need to roar to be felt",
+      heading: {
+        text: "Echoes of a timeless past, carved in stone & spirit",
+        position: { x: "10%", y: "50%", align: "center" }
+      },
+      
+      button: {
+        text: "View Tour Package 4",
+        href: "/tour-packages?tab=tailor",
+        position: { x: "40%", y: "85%", align: "center" }
+      }
+    },
+    {
+      src: "/hero/6.jpg",
+      alt: "Where giants roam and wild journeys begins… ",
+      heading: {
+        text: "Where giants roam and wild journeys begins… ",
+        position: { x: "10%", y: "50%", align: "center" }
+      },
+      
+      button: {
+        text: "Sri Lanka",
+        href: "/sri-lanka",
+        position: { x: "40%", y: "85%", align: "center" }
       }
     },
   ];
@@ -86,16 +123,23 @@ const HeroSection = () => {
             ]}
           />
           <div className="flex flex-col md:flex-row gap-4 mt-4">
-            <Link href="/contact" aria-label="Contact Ceylon Naturalist">
-              <button className="w-48 h-12 rounded-xl font-[Poppins] bg-teal-700 text-white text-base hover:bg-teal-700 transition-colors">
+            <Link href="/contact" >
+              <button 
+                className="w-48 h-12 rounded-xl font-[Poppins] bg-teal-700 text-white text-base hover:bg-teal-700 transition-colors"
+                aria-label="Explore Endemic & Big Game tours"
+              >
                 Contact us
               </button>
             </Link>
-            <Link href="/tour-packages" aria-label="View our tour packages">
-              <button className="w-48 h-12 rounded-xl bg-teal-700 font-[Poppins] text-white text-base hover:bg-teal-700 transition-colors">
-                Tour packages
+            <Link href="/tour-packages">
+              <button 
+                className="w-48 h-12 rounded-xl bg-teal-700 font-[Poppins] text-white text-base hover:bg-teal-700 transition-colors"
+                aria-label="Explore Northern Wildlife tours"
+              >
+                Tour Packages 
               </button>
             </Link>
+            
           </div>
           
           <div className="flex flex-col items-center space-y-6 mt-8">

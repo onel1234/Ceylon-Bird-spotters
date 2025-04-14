@@ -656,15 +656,17 @@ const TourPackages: React.FC = () => {
     title: data.title,
     value: key,
     content: (
-      <TourPackage
-        key={key}
-        title={data.title}
-        description={data.description}
-        imageUrl={data.imageUrl}
-        tourItems={data.tourItems}
-        fullWidthImage={data.fullWidthImage}
-        details={data.details}
-      />
+      <div id={key}>  {/* Add this wrapper with ID */}
+        <TourPackage
+          key={key}
+          title={data.title}
+          description={data.description}
+          imageUrl={data.imageUrl}
+          tourItems={data.tourItems}
+          fullWidthImage={data.fullWidthImage}
+          details={data.details}
+        />
+      </div>
     ),
   }));
 

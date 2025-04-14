@@ -10,7 +10,7 @@ const Footer = () => {
         {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="flex items-center justify-center text-xl font-[Poppins] font-bold">
-            <Image src="/images/footer.png" alt="Logo" width={200} height={150} className="object-contain" />
+            <Image src="/culture/navbar.png" alt="Logo" width={200} height={150} className="object-contain" />
           </div>
         </div>
         {/* Navigation Links */}

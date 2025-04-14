@@ -16,37 +16,37 @@ const Navbar = () => {
   return (
     <Menu setActive={setActiveItem}>
       <MenuItem
-        item="Tour Packages"
+        item="TOUR PACKAGES"
         active={activeItem}
         setActive={() => handleMenuClick("/tour-packages")}
         isMobile={false}
       />            
       <MenuItem
-        item="Contact Us"
+        item="CONTACT US"
         active={activeItem}
         setActive={() => handleMenuClick("/contact")}
         isMobile={false}
       />
       <MenuItem
-        item="Team"
+        item="TEAM"
         active={activeItem}
         setActive={() => handleMenuClick("/team")}
         isMobile={false}
       />
       <MenuItem
-        item="Sri Lanka"
+        item="SRI LANKA"
         active={activeItem}
         setActive={() => handleMenuClick("/sri-lanka")}
         isMobile={false}
       />
       <MenuItem
-        item="About Us"
+        item="ABOUT US"
         active={activeItem}
         setActive={() => handleMenuClick("/about")}
         isMobile={false}
       />
       <MenuItem
-        item="Gallery"
+        item="GALLERY"
         active={activeItem}
         setActive={() => handleMenuClick("/gallery")}
         isMobile={false}

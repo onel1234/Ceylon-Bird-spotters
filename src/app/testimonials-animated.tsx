@@ -36,13 +36,14 @@ const TestimonialsSection = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/bundala.jpg" // Update with your actual background image path
+          src="/culture/clients.jpg" 
           alt="Wildlife background"
           fill
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-black/40"></div> {/* Overlay */}
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/10"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
