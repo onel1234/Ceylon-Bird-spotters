@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../NavbarFn";
-import { Tabs } from "../Ui/Tabs";
+import { ClientTabs } from "../Ui/ClientTabs";
 
 type TourDay =  BaseTourItem & {
   day: number;
@@ -650,13 +650,12 @@ fullWidthImage: "/images/Tour2.png",
   },
 };
 
-
 const TourPackages: React.FC = () => {
   const tabData = Object.entries(TOUR_DATA).map(([key, data]) => ({
     title: data.title,
     value: key,
     content: (
-      <div id={key}>  {/* Add this wrapper with ID */}
+      <div id={key}>
         <TourPackage
           key={key}
           title={data.title}
@@ -674,14 +673,14 @@ const TourPackages: React.FC = () => {
     <>
       <Navbar />
       <div className="max-w-7xl mx-auto px-4 py-40">
-        <h1 className="text-4xl font-bold text-center font-[Poppins]  mb-12 text-gray-800 dark:text-white">
+        <h1 className="text-4xl font-bold text-center font-[Poppins] mb-12 text-gray-800 dark:text-white">
           Discover Our Tour Packages
         </h1>
-        <Tabs
+        <ClientTabs
           tabs={tabData}
           containerClassName="bg-gray-50 dark:bg-gray-900 font-[Poppins] p-6 rounded-xl shadow-md"
           activeTabClassName="bg-teal-700 font-[Poppins] text-white"
-          tabClassName="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 font-[Poppins]  transition-colors"
+          tabClassName="text-sm font-medium hover:text-blue-600 dark:hover:text-blue-400 font-[Poppins] transition-colors"
           contentClassName="mt-8"
         />
       </div>
