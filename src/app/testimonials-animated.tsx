@@ -1,235 +1,100 @@
 "use client";
 
-import { IconArrowLeft, IconArrowRight, IconPhoto } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { IconPhoto } from "@tabler/icons-react";
+import { Quote } from "lucide-react";
+import React from "react";
 import Image from "next/image";
 
 type Testimonial = {
   quote: string;
   name: string;
   designation: string;
-  image: string;
 };
 
 const testimonials: Testimonial[] = [
   {
-    quote: "I really enjoyed my first taste of Sri Lanka and it is definitely a country I would come back to see different places",
-    name: "Lucy",
-    designation: "Leeds, Uk",
-    image: "/wildlife/Elephant (1).jpg"  
+    quote: "Were enjoyed 18 fantastic days with Susa. He's shown us all the endemic birds and many more, loads of mammals and given us an insight to a whole host of other wildlife, plants and Sri Lankan culture and life.\n\nThe tour vehicle was very comfortable with air conditioning and a constant supply of water. Asela's driving was faultless and we all felt extremely safe, driving along at a relaxed pace and stopping off enroute so that Susa could show us the local wildlife.\n\nWe stayed at a number of different locations, and all of the accommodation was excellent, with spacious ensuite cabins, air conditioning and fridges. Some of the accommodation had pools, which we made use of during our down-time in the afternoons. The accommodation staff we all so kind and helpful, and the food was outstanding, with lots of fresh local produce. The Hibiscus Lodge was probably our favorite, and we were lucky enough to enjoy four nights there.\n\nSusa has been a first-class guide in every sense of the word; he's thoughtful, considerate, patient, flexible and above all extremely knowledgeable. Susa's itinerary was perfect, taking in a range of wildlife and cultural sites. We really appreciated his flexibility - if someone in our small group expressed an interest in a particular thing, or a desire to experience a local delicacy, then Susa would work that into our trip.\n\nAlthough this was booked as predominantly a birding trip, Susa's Knowledge of Sri Lankan life and culture, and his ability to answer our questions on religion, the economy, tea production etc. really enriched our holiday. We could not have found a better guide and it has been an absolute pleasure to spend 18 days in Susa's company. We would have no hesitation in recommending Susa and Ceylon Naturalist to friends and anyone considering a wildlife trip to Sri Lanka.",
+    name: "Paul Harvey & Jane Outram",
+    designation: "United Kingdom (February 2025)",
   },
   {
-    quote: "Thank you for a thoroughly enjoyable and rewarding fortnight. ",
-    name: "Paul Southerland",
-    designation: "Melbourne, Austraila",
-    image: "/wildlife/mirissa4.jpg"  
-  },
-  {
-    quote: "Thank so much, for such an informative and relaxing trip for such a hectic schedule",
-    name: "Andy",
-    designation: "Yorkshire, England",
-    image: "/wildlife/vic1.jpg" 
-   
-  },
-  {
-    quote: "This is our second trip to Sri Lanka an I was anxious it might not be as good as our first",
-    name: "Roberts",
-    designation: "Lincoinshire, England",
-    image: "/wildlife/Leopard (11).jpg" 
-   
+    quote: "These 18 days have certainly been enjoyable and memorable, and so much more. Educational, informative, exciting, unforgettable, full of wonder and delight.\n\nDon't think I have ever felt so looked after, at any where we stayed. Splendid food and so well served with someone always ready to accommodate whatever you need. All in beautiful surroundings, so comfortable and relaxed, friendly and homely. Such lovely reception on arrival, With fruit juice and cleansing towels.\n\nImpeccable planning and organization, but flexible to suit the smallest request. Something mentioned in a passing comment was quietly acted on, from the willingness to accommodate any change in plan for any reason to Red Bananas, no sooner mentioned than there they are…!\n\nIt is challenge to birdwatch with a group that went from total expert to virtual novice. It was always, as the novice, useful to see, and be told several times, which bird we were looking for, looking at, hearing or playing the sound of, non-of this was obviously need by the expert but essential to me. The forward planning needed to ensure we saw many birds, and certainly to satisfy our expert, was memorable. 248 species is utterly memorable.\n\nAll of this I have said so far could not have been without Susa. I have learnt so much about all aspects of Sri Lankan culture, farming, land management, and in such a generous, sharing, personal way. Susa was so highly recommended to us and we will certainly be sharing that and singing his praises and that of Sr Lanka, it's nature, culture, people and remarkable world-leading care of its environment and its survival.\n\nI actually can't possibly write down how much this experience has meant to us in so many ways. My enormous heartfelt thanks to Susa and Asela and to everyone involved.",
+    name: "Jane Morton",
+    designation: "United Kingdom (February 2025)",
   }
 ];
 
 const GOOGLE_DRIVE_LINK = "https://drive.google.com/drive/folders/1VNExEVuV0OBXxRzx_iIX4ShNPCoaluPC?usp=sharing";
 
 const TestimonialsSection = () => {
-  const [active, setActive] = useState(0);
-  const [imageError, setImageError] = useState<Record<number, boolean>>({});
-
-  const handleNext = () => {
-    setActive((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const handlePrev = () => {
-    setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
-
-  const isActive = (index: number) => {
-    return index === active;
-  };
-
-  useEffect(() => {
-    const interval = setInterval(handleNext, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const handleImageError = (index: number) => {
-    setImageError(prev => ({
-      ...prev,
-      [index]: true
-    }));
-  };
-
-  const randomRotateY = () => {
-    return Math.floor(Math.random() * 21) - 10;
-  };
-
   const openGoogleDrive = () => {
     window.open(GOOGLE_DRIVE_LINK, "_blank");
   };
 
   return (
-    <div className="w-full bg-white dark:bg-gray-900 py-12">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+    <div className="relative w-full py-16 overflow-hidden font-['Poppins',sans-serif]">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/culture/clients.jpg" 
+          alt="Wildlife background"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/10"></div>
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-white mb-4">
             What Clients Say About Us
           </h2>
-          <div className="w-24 h-1 bg-teal-700 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-teal-500 mx-auto rounded-full"></div>
         </div>
-        
-        <div className="max-w-sm md:max-w-4xl mx-auto px-4 md:px-8 lg:px-12">
-          <div className="relative grid grid-cols-1 md:grid-cols-2 gap-20">
-            <div>
-              <div className="relative h-[500px] w-full">
-                <AnimatePresence>
-                  {testimonials.map((testimonial, index) => (
-                    <motion.div
-                      key={`${testimonial.name}-${index}`}
-                      initial={{
-                        opacity: 0,
-                        scale: 0.9,
-                        z: -100,
-                        rotate: randomRotateY(),
-                      }}
-                      animate={{
-                        opacity: isActive(index) ? 1 : 0.7,
-                        scale: isActive(index) ? 1 : 0.95,
-                        z: isActive(index) ? 0 : -100,
-                        rotate: isActive(index) ? 0 : randomRotateY(),
-                        zIndex: isActive(index) ? 999 : testimonials.length + 2 - index,
-                        y: isActive(index) ? [0, -80, 0] : 0,
-                      }}
-                      exit={{
-                        opacity: 0,
-                        scale: 0.9,
-                        z: 100,
-                        rotate: randomRotateY(),
-                      }}
-                      transition={{
-                        duration: 0.4,
-                        ease: "easeInOut",
-                      }}
-                      className="absolute inset-0 origin-bottom"
-                    >
-                      {imageError[index] ? (
-                        <div className="h-full w-full rounded-3xl bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
-                          <span className="text-gray-500 dark:text-gray-400">
-                            {testimonial.name[0]}
-                          </span>
-                        </div>
-                      ) : (
-                        <div className="relative h-full w-full">
-                          <Image
-                            src={testimonial.image}
-                            alt={testimonial.name}
-                            fill
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            className="rounded-3xl object-cover object-center"
-                            priority={isActive(index)}
-                            onError={() => handleImageError(index)}
-                          />
-                        </div>
-                      )}
-                    </motion.div>
-                  ))}
-                </AnimatePresence>
+
+        {/* Featured testimonials (2 columns) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {testimonials.map((testimonial, index) => (
+            <div 
+              key={index} 
+              className="bg-white/90 rounded-lg p-6 shadow-lg relative h-full flex flex-col"
+            >
+              {/* Opening quote icon */}
+              <div className="absolute -top-4 -left-4 text-teal-500 opacity-80">
+                <Quote size={32} className="transform rotate-180" />
+              </div>
+              
+              <div className="mb-6 relative z-10 pt-2 flex-grow">
+                {testimonial.quote.split('\n\n').map((paragraph, i) => (
+                  <p key={i} className="text-gray-700 text-sm leading-relaxed mb-4">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+              
+              <div className="mt-auto">
+                <p className="text-gray-900 font-bold text-sm">{testimonial.name}</p>
+                <p className="text-gray-600 text-xs">{testimonial.designation}</p>
+              </div>
+              
+              {/* Closing quote icon */}
+              <div className="absolute -bottom-4 -right-4 text-teal-500 opacity-80">
+                <Quote size={32} />
               </div>
             </div>
+          ))}
+        </div>
 
-            <div className="flex justify-between flex-col py-4">
-              <motion.div
-                key={active}
-                initial={{
-                  y: 20,
-                  opacity: 0,
-                }}
-                animate={{
-                  y: 0,
-                  opacity: 1,
-                }}
-                exit={{
-                  y: -20,
-                  opacity: 0,
-                }}
-                transition={{
-                  duration: 0.2,
-                  ease: "easeInOut",
-                }}
-              >
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                  {testimonials[active].name}
-                </h3>
-                <p className="text-sm text-gray-500 dark:text-neutral-500">
-                  {testimonials[active].designation}
-                </p>
-                <motion.p className="text-lg text-gray-500 mt-8 dark:text-neutral-300">
-                  {testimonials[active].quote.split(" ").map((word, index) => (
-                    <motion.span
-                      key={index}
-                      initial={{
-                        filter: "blur(10px)",
-                        opacity: 0,
-                        y: 5,
-                      }}
-                      animate={{
-                        filter: "blur(0px)",
-                        opacity: 1,
-                        y: 0,
-                      }}
-                      transition={{
-                        duration: 0.2,
-                        ease: "easeInOut",
-                        delay: 0.02 * index,
-                      }}
-                      className="inline-block"
-                    >
-                      {word}&nbsp;
-                    </motion.span>
-                  ))}
-                </motion.p>
-              </motion.div>
-              <div className="flex flex-col space-y-4 pt-12 md:pt-0">
-  <div className="flex gap-4">
-    <button
-      onClick={handlePrev}
-      className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
-    >
-      <IconArrowLeft className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:rotate-12 transition-transform duration-300" />
-    </button>
-    <button
-      onClick={handleNext}
-      className="h-7 w-7 rounded-full bg-gray-100 dark:bg-neutral-800 flex items-center justify-center group/button"
-    >
-      <IconArrowRight className="h-5 w-5 text-black dark:text-neutral-400 group-hover/button:-rotate-12 transition-transform duration-300" />
-    </button>
-  </div>
-
-  {/* Google Drive Link Button - Now positioned below arrows */}
-  <motion.button
-    onClick={openGoogleDrive}
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    className="flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg shadow-md transition-all duration-300 text-sm font-medium mt-12"
-
-  >
-    <IconPhoto className="h-4 w-4" />
-    <span>Explore Our Tour History &  More Reviews</span>
-  </motion.button>
-</div>
-            </div>
-          </div>
+        <div className="text-center mt-10">
+          <button
+            onClick={openGoogleDrive}
+            className="bg-teal-600 hover:bg-teal-700 text-white px-6 py-3 rounded-lg shadow-lg transition-all duration-300 font-medium flex items-center gap-2 mx-auto"
+          >
+            <IconPhoto className="h-5 w-5" />
+            <span className="text-sm sm:text-base">Explore Our Tour History & More Reviews </span>
+          </button>
         </div>
       </div>
     </div>

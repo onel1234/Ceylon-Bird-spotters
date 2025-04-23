@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardHeader, CardTitle, CardContent } from '@/app/Ui/Card';
+import { Card, CardHeader, CardTitle, CardContent,CardImage } from '@/app/Ui/Card';
 import { Camera, Eye } from 'lucide-react';
 import Image from 'next/image';
 
@@ -11,13 +11,7 @@ export default function SinharajaForestPage() {
   ];
 
  const imageGallery = [
-    {
-      src: '/wildlife/Blue.jpg',
-      width: 400,
-      height: 400,
-      alt: 'Dense rainforest canopy',
-     
-    },
+    
     {
       src: '/wildlife/grey.jpg',
       width: 400,
@@ -25,13 +19,7 @@ export default function SinharajaForestPage() {
       alt: 'Rare bird species',
      
     },
-    {
-      src: '/wildlife/ceylon.jpg',
-      width: 400,
-      height: 400,
-      alt: 'Waterfall in the forest',
-      
-    },
+   
     {
       src: '/wildlife/mag.jpg',
       width: 400,
@@ -114,15 +102,17 @@ export default function SinharajaForestPage() {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900 p-8">
       <Card className="max-w-4xl mx-auto overflow-hidden">
-        <div className="relative h-72 w-full">
+      <CardImage>
+      <div className=" w-full h-72">
           <Image
-            src="/images/sinharaja.jpg"
+            src="https://res.cloudinary.com/dfxolekjs/image/upload/v1745402712/testsin2_yugyqg.jpg"
             alt="Sinharaja Forest"
-            width={750}
-            height={700}
-            className="object-cover"
+             layout="fill" 
+        objectFit="cover"
           />
+     
         </div>
+        </CardImage>
         
         <CardHeader>
           <CardTitle className="text-3xl">Sinharaja Forest Reserve</CardTitle>
@@ -136,30 +126,28 @@ export default function SinharajaForestPage() {
               ecosystem, it is home to numerous endemic flora and fauna species.
             </p>
 
-            {/* Image Gallery */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold flex items-center gap-2">
-                <Camera className="w-5 h-5" />
-                Forest Gallery
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {imageGallery.map((image, index) => (
-                  <div key={index} className="relative group">
-                    <div className="aspect-square relative overflow-hidden rounded-lg">
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        width={image.width}
-                        height={image.height}
-                        className="object-cover transition-transform group-hover:scale-105"
-                      />
-                    </div>
-                    <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
-                     </p>
-                  </div>
-                ))}
-              </div>
-            </div>
+          {/* Image Gallery */}
+<div className="space-y-4">
+  <h3 className="text-xl font-semibold flex items-center gap-2">
+    <Camera className="w-5 h-5" />
+    Forest Gallery
+  </h3>
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+    {imageGallery.map((image, index) => (
+      <div key={index} className="relative group aspect-square">
+        <div className="h-full w-full overflow-hidden rounded-lg">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            sizes="(max-width: 768px) 50vw, 33vw"
+            className="object-cover w-full h-full transition-transform group-hover:scale-105"
+          />
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
 
             {/* Recent Wildlife Sightings */}
             

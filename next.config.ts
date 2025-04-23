@@ -13,7 +13,7 @@ const nextConfig: NextConfig = {
     return [
       {
        
-        source: '/culture/:path*',
+        source: '/hero/:path*',
         headers: [
           {
             key: 'Cache-Control',

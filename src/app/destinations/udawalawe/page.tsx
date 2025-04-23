@@ -30,43 +30,7 @@ export default function UdawalaweNationalParkPage() {
       height: 400,
       alt: 'Scenic landscape of Udawalawe',
     },
-    {
-      src: '/wildlife/Elephant (3).jpg',
-      width: 400,
-      height: 400,
-      alt: 'Elephants in Udawalawe',
-    },
-    {
-      src: '/wildlife/Elephant (4).jpg',
-      width: 400,
-      height: 400,
-      alt: 'Elephants in Udawalawe',
-    },
-    {
-      src: '/wildlife/Malabar Pied Hornbill (2).jpg',
-      width: 400,
-      height: 400,
-      alt: 'Birdwatching at Udawalawe',
-    },
-    {
-      src: '/wildlife/Sirkeer Malkoha (2).jpg',
-      width: 400,
-      height: 400,
-      alt: 'Scenic landscape of Udawalawe',
-    },
-    {
-      src: '/wildlife/Malabar Pied Hornbill (3).jpg',
-      width: 400,
-      height: 400,
-      alt: 'Birdwatching at Udawalawe',
-    },
-    {
-      src: '/wildlife/Malabar Pied Hornbill (4).jpg',
-      width: 400,
-      height: 400,
-      alt: 'Birdwatching at Udawalawe',
-    },
-
+   
   ];
 
   const highlights = [
@@ -155,11 +119,10 @@ export default function UdawalaweNationalParkPage() {
       <Card className="max-w-4xl mx-auto overflow-hidden">
         <div className="relative h-72 w-full">
           <Image
-            src="/images/udawala.jpg"
+            src="https://res.cloudinary.com/dfxolekjs/image/upload/v1745402866/udawtest_txo0nn.jpg"
             alt="Udawalawe National Park"
-            width={450}
-            height={400}
-            className="object-cover"
+            layout="fill" 
+        objectFit="cover"
           />
         </div>
 
@@ -174,27 +137,27 @@ export default function UdawalaweNationalParkPage() {
             </p>
 
             {/* Image Gallery */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold flex items-center gap-2">
-                <Camera className="w-5 h-5" />
-                Wildlife Gallery
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {imageGallery.map((image, index) => (
-                  <div key={index} className="relative group">
-                    <div className="aspect-square relative overflow-hidden rounded-lg">
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        width={image.width}
-                        height={image.height}
-                        className="object-cover transition-transform group-hover:scale-105"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+<div className="space-y-4">
+  <h3 className="text-xl font-semibold flex items-center gap-2">
+    <Camera className="w-5 h-5" />
+   WildLife Gallery
+  </h3>
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+    {imageGallery.map((image, index) => (
+      <div key={index} className="relative group aspect-square">
+        <div className="h-full w-full overflow-hidden rounded-lg">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            sizes="(max-width: 768px) 50vw, 33vw"
+            className="object-cover w-full h-full transition-transform group-hover:scale-105"
+          />
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
 
             {/* Highlights Section */}
             <div className="space-y-4">

@@ -18,97 +18,14 @@ export default function YalaNationalParkPage() {
       height: 400,
       alt: 'Elephant in Yala National Park',
     },
-    {
-      src: '/wildlife/Leopard (4).jpg',
-      width: 400,
-      height: 400,
-      alt: 'Leopard in the wild',
-    },
-    {
-        src: '/wildlife/Leopard (5).jpg',
-        width: 400,
-        height: 400,
-        alt: 'Leopard in the wild',
-      },
-      {
-        src: '/wildlife/Leopard (6).jpg',
-        width: 400,
-        height: 400,
-        alt: 'Leopard in the wild',
-      },
-    {
-      src: '/wildlife/HooPoo.jpg',
-      width: 400,
-      height: 400,
-      alt: 'Waterhole with wildlife',
-    },
-    {
-        src: '/wildlife/Leopard (7).jpg',
-        width: 400,
-        height: 400,
-        alt: 'Leopard in the wild',
-      },
+   
     {
       src: '/wildlife/Sloth Bear (1).jpg',
       width: 400,
       height: 400,
       alt: 'Scenic view of Yala',
     },
-    {
-        src: '/wildlife/Leopard (8).jpg',
-        width: 400,
-        height: 400,
-        alt: 'Leopard in the wild',
-      },
-      {
-        src: '/wildlife/Leopard (9).jpg',
-        width: 400,
-        height: 400,
-        alt: 'Leopard in the wild',
-      },
-      {
-        src: '/wildlife/Leopard (10).jpg',
-        width: 400,
-        height: 400,
-        alt: 'Leopard in the wild',
-      },
-      {
-        src: '/wildlife/Leopard (11).jpg',
-        width: 400,
-        height: 400,
-        alt: 'Leopard in the wild',
-      },
-      {
-        src: '/wildlife/Leopard (12).jpg',
-        width: 400,
-        height: 400,
-        alt: 'Leopard in the wild',
-      },
-      {
-        src: '/wildlife/Leopard (13).jpg',
-        width: 400,
-        height: 400,
-        alt: 'Leopard in the wild',
-      },
-      
-      {
-        src: '/wildlife/Leopard (15).jpg',
-        width: 400,
-        height: 400,
-        alt: 'Leopard in the wild',
-      },
-      {
-        src: '/wildlife/Leopard (16).jpg',
-        width: 400,
-        height: 400,
-        alt: 'Leopard in the wild',
-      },
-      {
-        src: '/wildlife/Leopard (17).jpg',
-        width: 400,
-        height: 400,
-        alt: 'Leopard in the wild',
-      },
+   
       {
         src: '/wildlife/Leopard (18).jpg',
         width: 400,
@@ -205,11 +122,10 @@ export default function YalaNationalParkPage() {
       <Card className="max-w-4xl mx-auto overflow-hidden">
         <div className="relative h-72 w-full">
           <Image
-            src="/images/yala.jpg"
+            src="/images/yal.jpg"
             alt="Yala National Park"
-            width={520}
-            height={400}
-            className="object-cover"
+            layout="fill" 
+        objectFit="cover"
           />
         </div>
 
@@ -226,27 +142,27 @@ export default function YalaNationalParkPage() {
             </p>
 
             {/* Image Gallery */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold flex items-center gap-2">
-                <Camera className="w-5 h-5" />
-                Wildlife Gallery
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {imageGallery.map((image, index) => (
-                  <div key={index} className="relative group">
-                    <div className="aspect-square relative overflow-hidden rounded-lg">
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        width={image.width}
-                        height={image.height}
-                        className="object-cover transition-transform group-hover:scale-105"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+<div className="space-y-4">
+  <h3 className="text-xl font-semibold flex items-center gap-2">
+    <Camera className="w-5 h-5" />
+    WildLife Gallery
+  </h3>
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+    {imageGallery.map((image, index) => (
+      <div key={index} className="relative group aspect-square">
+        <div className="h-full w-full overflow-hidden rounded-lg">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            sizes="(max-width: 768px) 50vw, 33vw"
+            className="object-cover w-full h-full transition-transform group-hover:scale-105"
+          />
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
 
             {/* Highlights Section */}
             <div className="space-y-4">

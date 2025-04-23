@@ -17,30 +17,14 @@ export default function LunugamweheraNationalParkPage() {
       height: 400,
       alt: 'Elephants in Lunugamwehera',
     },
-    {
-      src: '/wildlife/Adjutant (2).jpg',
-      width: 400,
-      height: 400,
-      alt: 'Elephants in Lunugamwehera',
-    },
+   
     {
       src: '/wildlife/Brown Fish Owl (1).jpg',
       width: 400,
       height: 400,
       alt: 'Wetlands in the park',
     },
-    {
-      src: '/wildlife/Brown Fish Owl (2).jpg',
-      width: 400,
-      height: 400,
-      alt: 'Wetlands in the park',
-    },
-    {
-      src: '/wildlife/Marshell (1).jpg',
-      width: 400,
-      height: 400,
-      alt: 'Wetlands in the park',
-    },
+   
     {
       src: '/wildlife/Marshell (2).jpg',
       width: 400,
@@ -131,11 +115,10 @@ export default function LunugamweheraNationalParkPage() {
       <Card className="max-w-4xl mx-auto overflow-hidden">
         <div className="relative h-72 w-full">
           <Image
-            src="/images/lunugamvehera.jpg"
+            src="https://res.cloudinary.com/dfxolekjs/image/upload/v1745403029/lunutest_xdyltg.jpg"
             alt="Lunugamwehera National Park"
-            width={425}
-            height={400}
-            className="object-cover"
+           layout="fill" 
+        objectFit="cover"
           />
         </div>
 
@@ -151,29 +134,28 @@ export default function LunugamweheraNationalParkPage() {
               Its blend of wetlands and forests makes it a unique sanctuary for
               animals and birds.
             </p>
-
-            {/* Image Gallery */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold flex items-center gap-2">
-                <Camera className="w-5 h-5" />
-                Park Gallery
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {imageGallery.map((image, index) => (
-                  <div key={index} className="relative group">
-                    <div className="aspect-square relative overflow-hidden rounded-lg">
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        width={image.width}
-                        height={image.height}
-                        className="object-cover transition-transform group-hover:scale-105"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+{/* Image Gallery */}
+<div className="space-y-4">
+  <h3 className="text-xl font-semibold flex items-center gap-2">
+    <Camera className="w-5 h-5" />
+    Park Gallery
+  </h3>
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+    {imageGallery.map((image, index) => (
+      <div key={index} className="relative group aspect-square">
+        <div className="h-full w-full overflow-hidden rounded-lg">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            sizes="(max-width: 768px) 50vw, 33vw"
+            className="object-cover w-full h-full transition-transform group-hover:scale-105"
+          />
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
 
             {/* Highlights Section */}
             <div className="space-y-4">

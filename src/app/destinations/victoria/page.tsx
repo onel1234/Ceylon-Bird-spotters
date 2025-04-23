@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardContent } from '@/app/Ui/Card';
 import { Camera, Eye } from 'lucide-react';
@@ -30,18 +31,7 @@ export default function VictoriaNationalParkPage() {
       height: 400,
       alt: 'A serene lake within the park',
     },
-    {
-      src: '/wildlife/vic4.jpg',
-      width: 400,
-      height: 400,
-      alt: 'Rare bird species sighted in Victoria Park',
-    },
-    {
-      src: '/wildlife/vic5.jpg',
-      width: 400,
-      height: 400,
-      alt: 'Rare bird species sighted in Victoria Park',
-    }
+   
   ];
 
   const highlights = [
@@ -70,57 +60,58 @@ export default function VictoriaNationalParkPage() {
     'Sri Lanka Scimitar-Babbler',
     'Indian Pitta',
     'Yellow-eared Bulbul',
-  
-
   ];
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 p-8">
+    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 p-8 font-[Poppins]">
       <Card className="max-w-4xl mx-auto overflow-hidden">
-        <div className="relative h-72 w-full">
-          <Image
-            src="/images/victoria2.webp"
-            alt="Victoria National Park"
-            width={450}
-            height={400}
-            className="object-cover"
-          />
+        {/* Fix for header image - make it span the full width of the card */}
+        <div className="w-full">
+          <div className="relative w-full h-72">
+            <Image
+              src="/images/vi.jpg"
+              alt="Victoria National Park"
+              layout="fill"
+              objectFit="cover"
+              className="w-full"
+            />
+          </div>
         </div>
 
         <CardHeader>
-          <CardTitle className="text-3xl">Victoria Park - Nuwara Eliya</CardTitle>
+          <CardTitle className="text-3xl font-[Poppins]">Victoria Park - Nuwara Eliya</CardTitle>
         </CardHeader>
 
-        <CardContent>
+        <CardContent className="font-[Poppins]">
           <div className="space-y-8">
             <p className="text-lg">
               Victoria National Park, located near Nuwara Eliya, is a haven of biodiversity and a stunning example of
-              Sri Lanka’s montane ecosystems. Its cool climate and scenic beauty make it a popular destination for
+              Sri Lanka's montane ecosystems. Its cool climate and scenic beauty make it a popular destination for
               nature enthusiasts and birdwatchers.
             </p>
 
-            {/* Image Gallery */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold flex items-center gap-2">
-                <Camera className="w-5 h-5" />
-                Park Gallery
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {imageGallery.map((image, index) => (
-                  <div key={index} className="relative group">
-                    <div className="aspect-square relative overflow-hidden rounded-lg">
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        width={image.width}
-                        height={image.height}
-                        className="object-cover transition-transform group-hover:scale-105"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+           {/* Image Gallery */}
+<div className="space-y-4">
+  <h3 className="text-xl font-semibold flex items-center gap-2">
+    <Camera className="w-5 h-5" />
+   Park Gallery
+  </h3>
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+    {imageGallery.map((image, index) => (
+      <div key={index} className="relative group aspect-square">
+        <div className="h-full w-full overflow-hidden rounded-lg">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            sizes="(max-width: 768px) 50vw, 33vw"
+            className="object-cover w-full h-full transition-transform group-hover:scale-105"
+          />
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
 
             {/* Highlights Section */}
             <div className="space-y-4">

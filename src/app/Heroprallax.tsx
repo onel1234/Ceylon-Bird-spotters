@@ -1,309 +1,179 @@
-/* eslint-disable react/no-unescaped-entities */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence, useAnimate, useInView, stagger } from "framer-motion";
+/* eslint-disable react/no-unescaped-entities */
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
-
-const TypewriterEffect = ({
-  words,
-  className,
-  cursorClassName,
-}: {
-  words: {
-    text: string;
-    className?: string;
-  }[];
-  className?: string;
-  cursorClassName?: string;
-}) => {
-  const wordsArray = words.map((word) => ({
-    ...word,
-    text: word.text.split(""),
-  }));
-
-  const [scope, animate] = useAnimate();
-  const isInView = useInView(scope);
-  
-  useEffect(() => {
-    if (isInView) {
-      animate(
-        "span",
-        {
-          display: "inline-block",
-          opacity: 1,
-          width: "fit-content",
-        },
-        {
-          duration: 0.3,
-          delay: stagger(0.1),
-          ease: "easeInOut",
-        }
-      );
-    }
-  }, [isInView, animate]);
-
-  const renderWords = () => (
-    <motion.div ref={scope} className="inline">
-      {wordsArray.map((word, idx) => (
-        <div key={`word-${idx}`} className="inline-block">
-          {word.text.map((char, index) => (
-            <motion.span
-              initial={{}}
-              key={`char-${index}`}
-              className={cn(
-                `dark:text-white text-black opacity-0 hidden`,
-                word.className
-              )}
-            >
-              {char}
-            </motion.span>
-          ))}
-          &nbsp;
-        </div>
-      ))}
-    </motion.div>
-  );
-  
-  return (
-    <div className={cn("text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center", className)}>
-      {renderWords()}
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{
-          duration: 0.8,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-        className={cn("inline-block rounded-sm w-[4px] h-6 md:h-8 lg:h-10 text-teal-700", cursorClassName)}
-      />
-    </div>
-  );
-};
-
-const ImagesSlider = ({
-  images,
-  children,
-  overlay = true,
-  overlayClassName,
-  className,
-  autoplay = true,
-  direction = "up",
-}: {
-  images: Array<{src: string, alt: string}>;
-  children: React.ReactNode;
-  overlay?: boolean; // Changed from React.ReactNode to boolean
-  overlayClassName?: string;
-  className?: string;
-  autoplay?: boolean;
-  direction?: "up" | "down";
-}) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex + 1 === images.length ? 0 : prevIndex + 1
-    );
-  };
-
-  const handlePrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex - 1 < 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-  
-  // Preload all images and set loaded state
-  useEffect(() => {
-    // Set a small delay to allow component to mount
-    const timer = setTimeout(() => {
-      setImagesLoaded(true);
-    }, 100);
-    
-    return () => clearTimeout(timer);
-  }, []);
-
- 
-  useEffect(() => {
-    const nextIndex = (currentIndex + 1) % images.length;
-    const prefetchImage = document.createElement("img");
-    prefetchImage.src = images[nextIndex].src;
-  }, [currentIndex, images]);
-
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "ArrowRight") {
-        handleNext();
-      } else if (event.key === "ArrowLeft") {
-        handlePrevious();
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-
-    let interval: any;
-    if (autoplay) {
-      interval = setInterval(() => {
-        handleNext();
-      }, 5000);
-    }
-
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown);
-      clearInterval(interval);
-    };
-  }, [autoplay]);
-
-  const slideVariants = {
-    initial: {
-      scale: 0,
-      opacity: 0,
-      rotateX: 45,
-    },
-    visible: {
-      scale: 1,
-      rotateX: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: [0.645, 0.045, 0.355, 1.0],
-      },
-    },
-    upExit: {
-      opacity: 1,
-      y: "-150%",
-      transition: {
-        duration: 1,
-      },
-    },
-    downExit: {
-      opacity: 1,
-      y: "150%",
-      transition: {
-        duration: 1,
-      },
-    },
-  };
-
-  return (
-    <div
-      className={cn(
-        "overflow-hidden h-full w-full relative flex items-center justify-center",
-        className
-      )}
-      style={{
-        perspective: "1000px",
-      }}
-    >
-      {imagesLoaded && children}
-      {imagesLoaded && overlay && (
-        <div
-          className={cn("absolute inset-0 bg-black/60 z-40", overlayClassName)}
-        />
-      )}
-      {imagesLoaded && (
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIndex}
-            initial="initial"
-            animate="visible"
-            exit={direction === "up" ? "upExit" : "downExit"}
-            variants={slideVariants}
-            className="image h-full w-full absolute inset-0"
-          >
-            <Image
-              src={images[currentIndex].src}
-              alt={images[currentIndex].alt}
-              fill
-              priority={currentIndex === 0} // Priority loading for first image
-              sizes="100vw"
-              quality={90}
-              className="object-cover object-center"
-              onLoadingComplete={(result) => {
-                if (result.naturalWidth === 0) {
-                  // Image failed to load
-                  console.error(`Failed to load image: ${images[currentIndex].src}`);
-                }
-              }}
-            />
-          </motion.div>
-        </AnimatePresence>
-      )}
-    </div>
-  );
-};
+import TypewriterEffect from "./TypeWriterEffect";
+import ImagesSlider, { SlideImage } from "./ImagesSlider"; 
 
 const HeroSection = () => {
-  const images = [
-    { 
-      src: "/culture/slide2.webp", 
-      alt: "wildlife tours in Sri Lanka" 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const images: SlideImage[] = [
+    {
+      src: "/hero/cnslide22.webp",
+      alt: "wildlife tours in Sri Lanka",
+      heading: {
+        text: "Explore Sri Lanka's Wild Heart",
+        position: isMobile ? { x: "5%", y: "45%", align: "left" } : { x: "10%", y: "50%", align: "left" }
+      },
+      subheading: {
+        text: "Personalized journeys with local guides",
+        position: isMobile ? { x: "5%", y: "80%", align: "left" } : { x: "10%", y: "68%", align: "left" }
+      },
+      button: {
+        text: "About Us",
+        href: "/about",
+        position: isMobile ? { x: "5%", y: "87%", align: "left" } : { x: "10%", y: "87%", align: "left" }
+      }
     },
-    { 
-      src: "/culture/cnslide11.webp", 
-      alt: "Ceylon Naturalist tour guide showcasing Sri Lankan wildlife" 
+    {
+      src: "/hero/2.webp",
+      alt: "Morning Light meats golden eyes The wild doesnt need to roar to be felt",
+      heading: {
+        text: "Morning Light meets golden eyes",
+        position: isMobile ? { x: "5%", y: "48%", align: "left" } : { x: "53%", y: "55%", align: "right" }
+      },
+      
+      button: {
+        text: "Big Game Tours",
+        href: "/tour-packages?tab=coastal",
+        position: isMobile ? { x: "5%", y: "87%", align: "left" } : { x: "50%", y: "85%", align: "center" }
+      }
     },
-    { 
-      src: "/culture/cnslide22.webp", 
-      alt: "Beautiful Sri Lankan landscape with endemic birds" 
+    {
+      src: "/hero/3-1.jpg",
+      alt: "Beautiful Sri Lankan landscape with endemic birds",
+      heading: {
+        text: "A splash of emerald and elegance",
+        position: isMobile ? { x: "5%", y: "40%", align: "left" } : { x: "5%", y: "55%", align: "left" }
+      },
+      
+      button: {
+        text: "Photography Tour",
+        href: "/tour-packages?tab=photography",
+        position: isMobile ? { x: "5%", y: "78%", align: "left" } : { x: "5%", y: "87%", align: "right" }
+      }
+    },
+    {
+      src: "/hero/Land4.jpg",
+      alt: "Morning Light meats golden eyes The wild doesnt need to roar to be felt",
+      heading: {
+        text: "Chasing endemics in Sinharaja",
+        position: isMobile ? { x: "5%", y: "40%", align: "left" } : { x: "50%", y: "55%", align: "right" }
+      },
+      
+      button: {
+        text: "Endemic Species Tours",
+        href: "/tour-packages?tab=mountain",
+        position: isMobile ? { x: "5%", y: "80%", align: "left" } : { x: "65%", y: "85%", align: "center" }
+      }
+    },
+    {
+      src: "/hero/5.jpg",
+      alt: "Morning Light meats golden eyes The wild doesnt need to roar to be felt",
+      heading: {
+        text: "Echoes of a timeless past",
+        position: isMobile ? { x: "5%", y: "55%", align: "left" } : { x: "30%", y: "70%", align: "center" }
+      },
+      
+      button: {
+        text: "Tailor-made Holidays",
+        href: "/tour-packages?tab=tailor",
+        position: isMobile ? { x: "5%", y: "80%", align: "left" } : { x: "40.5%", y: "85%", align: "center" }
+      }
+    },
+    {
+      src: "/hero/6.jpg",
+      alt: "Where giants roam and wild journeys begins… ",
+      heading: {
+        text: "Where giants roam",
+        position: isMobile ? { x: "5%", y: "57%", align: "left" } : { x: "53%", y: "66%", align: "right" }
+      },
+      
+      button: {
+        text: "Sri Lanka",
+        href: "/sri-lanka",
+        position: isMobile ? { x: "5%", y: "80%", align: "left" } : { x: "84%", y: "85%", align: "center" }
+      }
     },
   ];
 
   return (
-    <section aria-label="Hero section featuring Sri Lankan wildlife" className="flex flex-col gap-16">
-      <div className="h-[600px]">
-        <ImagesSlider images={images}>
-          <motion.div
-            initial={{
-              opacity: 0,
-              y: -80,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            transition={{
-              duration: 0.6,
-            }}
-            className="z-50 flex flex-col justify-center items-center"
-          >
-            <motion.div className="font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
-              <h1 className="text-xl md:text-6xl block mb-2">Discover Nature's Wonders</h1>
-              <p className="text-base md:text-2xl">Embark on your avian journey with Ceylon Naturalist</p>
-            </motion.div>
-          </motion.div>
-        </ImagesSlider>
+    <section aria-label="Hero section featuring Sri Lankan wildlife" className="flex flex-col gap-6 md:gap-16">
+      <div className="h-[400px] md:h-[600px]">
+        <ImagesSlider images={images} />
       </div>
-
-      <div className="max-w-7xl mx-auto w-full px-6">
-        <div className="flex flex-col items-center space-y-8">
-          <p className="text-neutral-600 dark:text-neutral-200 text-lg">
-            The road to freedom starts from here
+      <div className="max-w-7xl mx-auto w-full px-4 md:px-6">
+        <div className="flex flex-col space-y-6 md:space-y-8 items-center text-center">
+          <p className="text-neutral-800 dark:text-neutral-100 font-[Poppins] font-semibold text-base md:text-lg">
+            Welcome to the Wild Heart of Sri Lanka
           </p>
-          <TypewriterEffect
-            words={[
-              { text: "Discover" },
-              { text: "Sri" },
-              { text: "Lanka" },
-              { text: "with" },
-              { text: "Ceylon Naturalist", className: "text-teal-700" },
-            ]}
-          />
-          <div className="flex flex-col md:flex-row gap-4 mt-4">
-            <Link href="/contact" aria-label="Contact Ceylon Naturalist">
-              <button className="w-48 h-12 rounded-xl bg-teal-700 text-white text-base hover:bg-teal-700 transition-colors">
+          
+          <p className="text-neutral-600 dark:text-neutral-200 font-[Poppins] text-base md:text-lg max-w-4xl">
+            At CeylonNaturalist, we gently guide you into the wonders of Sri Lanka's wildlife, landscapes, and cultural treasures. With years of field experience and a deep love for nature, we create moments that are both enriching and personal—designed with care, led with heart.
+          </p>
+          
+          <div>
+            <TypewriterEffect
+              words={[
+                { text: "Discover" },
+                { text: "Sri" },
+                { text: "Lanka" },
+                { text: "with" },
+                { text: "Ceylon Naturalist", className: "text-teal-700" },
+              ]}
+            />
+          </div>
+          
+          <div className="flex flex-col w-full md:flex-row gap-4 mt-2 md:mt-4 items-center justify-center">
+            <Link href="/contact" className="w-full md:w-auto">
+              <button 
+                className="w-full md:w-48 h-12 rounded-xl font-[Poppins] bg-teal-700 text-white text-base hover:bg-teal-700 transition-colors"
+                aria-label="Contact us for more information"
+              >
                 Contact us
               </button>
             </Link>
-            <Link href="/tour-packages" aria-label="View our tour packages">
-              <button className="w-48 h-12 rounded-xl bg-teal-700 text-white text-base hover:bg-teal-700 transition-colors">
-                Tour packages
+            <Link href="/tour-packages" className="w-full md:w-auto">
+              <button 
+                className="w-full md:w-48 h-12 rounded-xl bg-teal-700 font-[Poppins] text-white text-base hover:bg-teal-700 transition-colors"
+                aria-label="Explore our tour packages"
+              >
+                Tour Packages 
               </button>
             </Link>
+          </div>
+          
+          <div className="flex flex-col space-y-4 md:space-y-6 mt-6 md:mt-8 items-center">
+            <h2 className="text-neutral-800 dark:text-neutral-100 font-[Poppins] text-xl md:text-2xl font-semibold">
+              What Makes Our Journeys Special?
+            </h2>
+            
+            <div className="space-y-4 flex flex-col items-center">
+              <p className="text-neutral-600 dark:text-neutral-200 font-[Poppins] text-base md:text-lg max-w-3xl">
+                <strong>Personalized & Flexible</strong> - Every tour is thoughtfully crafted to match your interests—no rush, no pressure, just the joy of discovery.
+              </p>
+              
+              <p className="text-neutral-600 dark:text-neutral-200 font-[Poppins] text-base md:text-lg max-w-3xl">
+                <strong>Expert-Led Adventures</strong> - From the rainforest canopy to ancient ruins, our experienced naturalists know the land like an old friend.
+              </p>
+              
+              <p className="text-neutral-600 dark:text-neutral-200 font-[Poppins] text-base md:text-lg max-w-3xl">
+                <strong>Gentle, Responsible Travel</strong> - We travel with kindness—to wildlife, to people, and to the environment we all share.
+              </p>
+            </div>
           </div>
         </div>
       </div>

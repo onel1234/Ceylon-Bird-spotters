@@ -35,7 +35,7 @@ const GalleryFilter: React.FC<GalleryFilterProps> = ({ activeCategory, onCategor
         {/* Floating Action Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-14 h-14 rounded-full bg-teal-700 text-white shadow-lg hover:bg-teal-700 transition-colors duration-200 flex items-center justify-center"
+          className="w-14 h-14 rounded-full bg-teal-700 text-white font-[Poppins] shadow-lg hover:bg-teal-700 transition-colors duration-200 flex items-center justify-center"
           aria-label="Toggle filter menu"
         >
           <motion.div

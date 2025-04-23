@@ -56,7 +56,7 @@ const Team: React.FC = ()  => {
       name: 'Kalinga Abesinghe',
       role: '',
       description: [
-        'Kalinga Abeysinghe, an experienced naturalist tour guide from the captivating city of Kandy, deeply connects with the vibrant landscapes of Sri Lanka. Holding a prestigious tourist guide lecturer license from the Tourism Development Authority of Sri Lanka, Kalinga stands out as an expert in naturalist guiding..',
+        'Kalinga Abeysinghe, an experienced naturalist tour guide from the captivating city of Kandy, deeply connects with the vibrant landscapes of Sri Lanka. Holding a prestigious tourist guide lecturer license from the Tourism Development Authority of Sri Lanka, Kalinga stands out as an expert in naturalist guiding.Certified as a tourist guide lecturer by the Sri Lanka Tourism Development Authority.',
         'With over a decade of dedicated service to well-known tour companies, Kalinga’s wealth of experience shines through in his insightful interpretation of the country’s diverse ecosystems. His roots in the picturesque city of Kandy not only add a personal touch to his narrative but also highlight his intimate knowledge of the local terrain.',
         'Kalinga’s commitment to showcasing the beauty of Sri Lanka goes beyond his professional expertise; it reflects a genuine passion for the rich biodiversity that graces this island nation. As a naturalist tour guide, Kalinga Abeysinghe invites travelers to embark on an immersive journey, unlocking the secrets of Sri Lanka’s natural wonders under his expert guidance.',
       ],
@@ -66,7 +66,7 @@ const Team: React.FC = ()  => {
       name: 'Tiran Abeywardana',
       role: '',
       description: [
-        'Tiran’s academic journey diverged from his undergraduate studies in Archaeology, Social Science, and Mass Communication to a fulfilling career guided by an instinctive love for nature and wildlife. His transformative path began with the Young Zoologists Association of Sri Lanka, where he laid the foundation for his wildlife knowledge. Building upon this, Tiran pursued a Diploma in Biodiversity Management, honing his expertise in the intricate web of biodiversity.',
+        'Tiran’s academic journey diverged from his undergraduate studies in Archaeology, Social Science, and Mass Communication to a fulfilling career guided by an instinctive love for nature and wildlife. His transformative path began with the Young Zoologists Association of Sri Lanka, where he laid the foundation for his wildlife knowledge. Building upon this, Tiran pursued a Diploma in Biodiversity Management, honing his expertise in the intricate web of biodiversity.Certified as a national tourist guide lecturer by the Sri Lanka Tourism Development Authority.',
         'As a field researcher and ecologist, Tiran actively contributed to significant research projects, including the national review on Sri Lankan flora conducted by IUCN, as well as the protected area management and wildlife conservation project. His notable involvement in the biodiversity baseline survey led by the Department of Wildlife Conservation and the University of Colombo showcases his commitment to understanding and preserving the rich ecosystems of Sri Lanka.',
         'What sets Tiran apart is his unique blend of knowledge in both archaeology and biodiversity. This distinctive combination allows him to offer a different dimension of experience, guiding others through a captivating interpretation of the natural world. Tiran’s journey exemplifies a harmonious fusion of academic disciplines, a passion for wildlife, and dedicated contributions to the understanding and conservation of Sri Lanka’s diverse ecosystems.',
       ],
@@ -108,7 +108,7 @@ const Team: React.FC = ()  => {
             className="space-y-16"
           >
             <motion.div variants={itemVariants} className="text-center">
-              <h2 className="text-4xl font-bold mb-4">Our Team</h2>
+              <h2 className="text-4xl font-[Poppins] font-bold mb-4">Our Team</h2>
               <div className="h-1 w-24 bg-teal-700 mx-auto"></div>
             </motion.div>
 
@@ -131,13 +131,13 @@ const Team: React.FC = ()  => {
                   
                   <div className="p-6 space-y-4">
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900">{member.name}</h3>
+                      <h3 className="text-xl font-[Poppins] font-bold text-gray-900">{member.name}</h3>
                       {member.role && (
-                        <p className="text-blue-600 font-medium mt-1">{member.role}</p>
+                        <p className="text-blue-600 font-[Poppins] font-medium mt-1">{member.role}</p>
                       )}
                     </div>
                     
-                    <div className="space-y-3 text-gray-600 text-sm">
+                    <div className="space-y-3 font-[Poppins] text-gray-600 text-sm">
                       {member.description.map((paragraph, i) => (
                         <p key={i} className="leading-relaxed">
                           {paragraph}

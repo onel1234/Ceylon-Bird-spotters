@@ -17,42 +17,17 @@ export default function BundalaNationalParkPage() {
       height: 400,
       alt: 'Flock of flamingos at Bundala',
     },
-    {
-      src: '/wildlife/Bundala (2).jpg',
-      width: 400,
-      height: 400,
-      alt: 'Salt pans in Bundala',
-    },
-    {
-      src: '/wildlife/Mugger Croc (1).jpg',
-      width: 400,
-      height: 400,
-      alt: 'Migratory birds in Bundala',
-    },
+    
+   
     {
       src: '/wildlife/Mugger Croc (2).jpg',
       width: 400,
       height: 400,
       alt: 'Crocodile near the water',
     },
-    {
-      src: '/wildlife/Watercock (1).jpg',
-      width: 400,
-      height: 400,
-      alt: 'Scenic view of Bundala',
-    },
-    {
-      src: '/wildlife/Watercock (2).jpg',
-      width: 400,
-      height: 400,
-      alt: 'Scenic view of Bundala',
-    },
-    {
-      src: '/wildlife/Small Pratincole (1).jpg',
-      width: 400,
-      height: 400,
-      alt: 'Scenic view of Bundala',
-    },
+   
+    
+    
     {
       src: '/wildlife/Small Pratincole (2).jpg',
       width: 400,
@@ -148,11 +123,10 @@ export default function BundalaNationalParkPage() {
       <Card className="max-w-4xl mx-auto overflow-hidden">
         <div className="relative h-72 w-full">
           <Image
-            src="/images/bundala.jpg"
+            src="/culture/head1.jpg"
             alt="Bundala National Park"
-            width={400}
-            height={400}
-            className="object-cover"
+            layout="fill" 
+        objectFit="cover"
           />
         </div>
 
@@ -168,29 +142,28 @@ export default function BundalaNationalParkPage() {
               Bundala offers visitors the chance to explore lagoons, marshes, and dunes while witnessing 
               a vibrant array of wildlife.
             </p>
-
-            {/* Image Gallery */}
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold flex items-center gap-2">
-                <Camera className="w-5 h-5" />
-                Park Gallery
-              </h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {imageGallery.map((image, index) => (
-                  <div key={index} className="relative group">
-                    <div className="aspect-square relative overflow-hidden rounded-lg">
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        width={image.width}
-                        height={image.height}
-                        className="object-cover transition-transform group-hover:scale-105"
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+{/* Image Gallery */}
+<div className="space-y-4">
+  <h3 className="text-xl font-semibold flex items-center gap-2">
+    <Camera className="w-5 h-5" />
+    Park Gallery
+  </h3>
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+    {imageGallery.map((image, index) => (
+      <div key={index} className="relative group aspect-square">
+        <div className="h-full w-full overflow-hidden rounded-lg">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            fill
+            sizes="(max-width: 768px) 50vw, 33vw"
+            className="object-cover w-full h-full transition-transform group-hover:scale-105"
+          />
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
 
             {/* Highlights Section */}
             <div className="space-y-4">
