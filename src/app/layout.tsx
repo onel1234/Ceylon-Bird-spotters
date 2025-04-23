@@ -12,16 +12,16 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Ceylon Naturalist",
   description: "Bird watching and wildlife tours in Sri Lanka",
-  keywords: "Ceylon Naturalist, Bird watching in Sri Lanka, Wildlife tours in Sri Lanka, Sri Lanka, Nature tours, Eco tourism, Adventure travel",
+  keywords: "Ceylon Naturalist,Bird watching tours in Sri Lanka, Bird watching in Sri Lanka, Wildlife tours in Sri Lanka, Sri Lanka, Nature tours, Eco tourism, Adventure travel, Sri lanka Photography tours",
   icons: {
     icon: [
-      { url: '/images/webicon.jpg', sizes: 'any' }
+      { url: '/images/Round.svg', sizes: 'any' }
     ],
     apple: [
-      { url: '/images/webicon.jpg', sizes: '90x90' }
+      { url: '/images/Round.svg', sizes: '90x90' }
     ],
     shortcut: [
-      { url: '/images/webicon.jpg' }
+      { url: '/images/Round.svg' }
     ],
   }
 };
