@@ -68,7 +68,7 @@ export default function MirissaPage() {
       <Card className="max-w-4xl mx-auto overflow-hidden">
         <div className="relative h-72 w-full">
           <Image
-            src="/images/mirissa.jpg"
+            src="https://res.cloudinary.com/dfxolekjs/image/upload/v1745403215/testmi_bmswps.jpg"
             alt="Mirissa Beach"
             layout="fill" 
         objectFit="cover"

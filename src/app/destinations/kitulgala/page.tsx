@@ -97,7 +97,7 @@ export default function KitulgalaForestPage() {
       <Card className="max-w-4xl mx-auto overflow-hidden">
         <div className="relative h-72 w-full">
           <Image
-            src="/images/kitulgala.jpg"
+            src="/images/kitul.jpg"
             alt="Kitulgala-Kelani Valley Forest"
             layout="fill" 
         objectFit="cover"

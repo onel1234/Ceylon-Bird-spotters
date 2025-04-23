@@ -69,7 +69,7 @@ export default function VictoriaNationalParkPage() {
         <div className="w-full">
           <div className="relative w-full h-72">
             <Image
-              src="/images/victoria2.webp"
+              src="/images/vi.jpg"
               alt="Victoria National Park"
               layout="fill"
               objectFit="cover"

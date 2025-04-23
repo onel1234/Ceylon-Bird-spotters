@@ -88,7 +88,7 @@ const ImageSlide: React.FC<ImageSlideProps> = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className={cn(
-            "absolute text-white font-[Poppins] font-bold text-xl sm:text-2xl md:text-4xl lg:text-6xl max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg",
+            "absolute text-white font-[Poppins] font-semibold text-4xl sm:text-4xl md:text-4xl lg:text-lgs max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg",
             heading.className
           )}
           style={{

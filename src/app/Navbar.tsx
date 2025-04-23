@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu as MenuIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 const transition = {
   type: "spring",
@@ -26,6 +26,7 @@ interface MenuItemProps {
   isMobile?: boolean;
   hasScrolled?: boolean;
   isLast?: boolean;
+  isTransparentRoute?: boolean;
 }
 
 export const MenuItem = ({
@@ -36,6 +37,7 @@ export const MenuItem = ({
   isMobile,
   hasScrolled,
   isLast,
+  isTransparentRoute,
 }: MenuItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
   
@@ -51,8 +53,13 @@ export const MenuItem = ({
           className="px-4 py-2 rounded-md relative"
           initial={false}
           animate={{
-            backgroundColor: isHovered ? "#0f766e" : "transparent", // teal-700
-            color: isHovered ? "white" : hasScrolled ? "black" : "white"
+            color: isHovered 
+              ? "#0f766e" // teal-700 text on hover
+              : hasScrolled || !isTransparentRoute
+                ? "black" 
+                : isMobile 
+                  ? "black" // Always black text for mobile items
+                  : "white"
           }}
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
@@ -86,7 +93,7 @@ export const MenuItem = ({
         )}
       </div>
       {!isMobile && !isLast && (
-        <div className={`h-6 w-px ${hasScrolled ? 'bg-gray-400' : 'bg-white bg-opacity-50'}`}></div>
+        <div className={`h-6 w-px ${hasScrolled || !isTransparentRoute ? 'bg-gray-400' : 'bg-white bg-opacity-50'}`}></div>
       )}
     </div>
   );
@@ -102,9 +109,13 @@ export const Menu = ({ setActive, children }: MenuProps) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
+  
+
+  const isTransparentRoute = pathname === '/' || pathname === '/sri-lanka';
 
   useEffect(() => {
-    // Import Poppins font
+    
     const linkElement = document.createElement('link');
     linkElement.rel = 'stylesheet';
     linkElement.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap';
@@ -130,14 +141,23 @@ export const Menu = ({ setActive, children }: MenuProps) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Check if page has scrolled more than 50px
-      const scrolled = window.scrollY > 50;
-      setHasScrolled(scrolled);
+      // Only check scroll on routes that should have transparent navbar
+      if (isTransparentRoute) {
+        // Check if page has scrolled more than 50px
+        const scrolled = window.scrollY > 50;
+        setHasScrolled(scrolled);
+      } else {
+        // For non-transparent routes, always set hasScrolled to true to keep solid background
+        setHasScrolled(true);
+      }
     };
+    
+    // Initial check
+    handleScroll();
     
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isTransparentRoute]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -162,7 +182,8 @@ export const Menu = ({ setActive, children }: MenuProps) => {
       return React.cloneElement(child, {
         ...child.props,
         hasScrolled,
-        isLast: index === childrenWithProps.length - 1
+        isLast: index === childrenWithProps.length - 1,
+        isTransparentRoute
       });
     }
     return child;
@@ -172,7 +193,7 @@ export const Menu = ({ setActive, children }: MenuProps) => {
     <motion.nav
       id="main-nav"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out font-poppins ${
-        hasScrolled 
+        hasScrolled || !isTransparentRoute
           ? "bg-white border border-gray-200 shadow-lg text-black" 
           : "bg-transparent text-white"
       }`}
@@ -193,7 +214,7 @@ export const Menu = ({ setActive, children }: MenuProps) => {
         </div>
 
         <button
-          className={`md:hidden hover:text-teal-700 ${hasScrolled ? 'text-black' : 'text-white'} font-bold`}
+          className={`md:hidden hover:text-teal-700 ${hasScrolled || !isTransparentRoute ? 'text-black' : 'text-white'} font-bold`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >
@@ -206,7 +227,7 @@ export const Menu = ({ setActive, children }: MenuProps) => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className={`md:hidden px-8 py-4 ${hasScrolled ? 'bg-white' : 'bg-white bg-opacity-90 backdrop-blur-sm'} border-t border-gray-200`}
+          className="md:hidden px-8 py-4 bg-white border-t border-gray-200"
         >
           <div className="flex flex-col space-y-4">
             {React.Children.map(children, (child, index) => {
@@ -214,8 +235,9 @@ export const Menu = ({ setActive, children }: MenuProps) => {
                 return React.cloneElement(child, {
                   ...child.props,
                   isMobile: true,
-                  hasScrolled,
-                  isLast: index === childrenWithProps.length - 1
+                  hasScrolled: true, // Always pass hasScrolled as true for mobile menu items
+                  isLast: index === childrenWithProps.length - 1,
+                  isTransparentRoute
                 });
               }
               return child;
@@ -266,22 +288,23 @@ interface HoveredLinkProps {
   href: string;
   className?: string;
   hasScrolled?: boolean;
+  isTransparentRoute?: boolean;
   [key: string]: any;
 }
 
-export const HoveredLink = ({ children, hasScrolled, ...rest }: HoveredLinkProps) => {
+export const HoveredLink = ({ children, hasScrolled, isTransparentRoute, ...rest }: HoveredLinkProps) => {
   const [isHovered, setIsHovered] = useState(false);
   
   return (
     <Link
       {...rest}
-      className={`font-bold font-poppins ${hasScrolled ? "text-gray-600 hover:text-black" : "text-white hover:text-gray-200"}`}
+      className={`font-bold font-poppins ${hasScrolled || !isTransparentRoute ? "text-gray-600 hover:text-black" : "text-white hover:text-gray-200"}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <motion.span
         animate={{
-          color: isHovered ? (hasScrolled ? "black" : "white") : "inherit"
+          color: isHovered ? (hasScrolled || !isTransparentRoute ? "black" : "white") : "inherit"
         }}
         transition={{ duration: 0.3 }}
       >

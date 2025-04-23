@@ -123,7 +123,7 @@ export default function BundalaNationalParkPage() {
       <Card className="max-w-4xl mx-auto overflow-hidden">
         <div className="relative h-72 w-full">
           <Image
-            src="/images/bundala.jpg"
+            src="/culture/head1.jpg"
             alt="Bundala National Park"
             layout="fill" 
         objectFit="cover"

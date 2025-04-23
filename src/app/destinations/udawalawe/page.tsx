@@ -119,7 +119,7 @@ export default function UdawalaweNationalParkPage() {
       <Card className="max-w-4xl mx-auto overflow-hidden">
         <div className="relative h-72 w-full">
           <Image
-            src="/images/udawala.jpg"
+            src="https://res.cloudinary.com/dfxolekjs/image/upload/v1745402866/udawtest_txo0nn.jpg"
             alt="Udawalawe National Park"
             layout="fill" 
         objectFit="cover"

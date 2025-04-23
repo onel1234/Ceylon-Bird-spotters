@@ -79,7 +79,7 @@ export default function HortonPlainsPage() {
       <Card className="max-w-4xl mx-auto overflow-hidden">
         <div className="relative h-72 w-full">
           <Image
-            src="/images/hortonplains.jpg"
+            src="/images/horton.jpg"
             alt="Horton Plains Landscape"
            layout="fill" 
         objectFit="cover"

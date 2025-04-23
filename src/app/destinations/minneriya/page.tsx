@@ -80,7 +80,7 @@ export default function MinneriyaNationalParkPage() {
       <Card className="max-w-4xl mx-auto overflow-hidden">
         <div className="relative h-72 w-full">
           <Image
-            src="/images/minneriya.jpg"
+            src="https://res.cloudinary.com/dfxolekjs/image/upload/v1745402479/test_fu7spf.jpg"
             alt="Minneriya National Park"
             layout="fill" 
         objectFit="cover"

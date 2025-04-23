@@ -17,7 +17,7 @@ const Footer = () => {
         <nav className="flex gap-6">
           <Link
             href="/tour-packages"
-            className="text-gray-300 hover:text-white font-[Poppins]  transition-colors"
+            className="text-gray-300 hover:text-white font-[Poppins] transition-colors"
           >
             Tour Packages
           </Link>
@@ -29,7 +29,7 @@ const Footer = () => {
           </Link>
           <Link
             href="/about"
-            className="text-gray-300 hover:text-white font-[Poppins]  transition-colors"
+            className="text-gray-300 hover:text-white font-[Poppins] transition-colors"
           >
             About
           </Link>
@@ -75,6 +75,13 @@ const Footer = () => {
             <Linkedin size={20} />
           </a>
         </div>
+      </div>
+      
+      {/* Copyright Section */}
+      <div className="max-w-6xl mx-auto px-4 mt-6 pt-4 border-t border-gray-800">
+        <p className="text-gray-400 text-xs text-center">
+          © 2025 Ceylon Naturalist. All rights reserved. | Developed by Wathila Onel | Design & Illustrations by Suneth Bashitha | Photos by Danny Claeysier, Katrien Vanhouteghem & Susa Weerappuli | Edited by Dilshan Weerappuli | Words by Gayomini Panagoda
+        </p>
       </div>
     </footer>
   );

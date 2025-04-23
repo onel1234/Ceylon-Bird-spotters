@@ -90,7 +90,7 @@ export default function AnawilundawaSanctuaryPage() {
       <Card className="max-w-4xl mx-auto overflow-hidden">
         <div className="relative h-72 w-full">
           <Image
-            src="/images/anawilundawa.jpg"
+            src="/images/ana.jpg"
             alt="Anawilundawa Sanctuary"
            layout="fill" 
         objectFit="cover"

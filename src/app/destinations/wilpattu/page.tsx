@@ -68,7 +68,7 @@ export default function WilpattuNationalParkPage() {
       <div className="w-full">
       <div className="relative w-full h-72">
           <Image
-            src="/images/wil5.jpg"
+            src="/images/wilpat.jpg"
             alt="Wilpattu National Park"
            layout="fill" 
         objectFit="cover"

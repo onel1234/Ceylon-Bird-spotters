@@ -105,7 +105,7 @@ export default function SinharajaForestPage() {
       <CardImage>
       <div className=" w-full h-72">
           <Image
-            src="/images/sinharaja.jpg"
+            src="https://res.cloudinary.com/dfxolekjs/image/upload/v1745402712/testsin2_yugyqg.jpg"
             alt="Sinharaja Forest"
              layout="fill" 
         objectFit="cover"

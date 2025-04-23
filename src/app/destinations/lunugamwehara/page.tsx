@@ -115,7 +115,7 @@ export default function LunugamweheraNationalParkPage() {
       <Card className="max-w-4xl mx-auto overflow-hidden">
         <div className="relative h-72 w-full">
           <Image
-            src="/images/lunugamvehera.jpg"
+            src="https://res.cloudinary.com/dfxolekjs/image/upload/v1745403029/lunutest_xdyltg.jpg"
             alt="Lunugamwehera National Park"
            layout="fill" 
         objectFit="cover"
