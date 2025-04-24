@@ -480,7 +480,7 @@ fullWidthImage: "/images/Tour2.png",
       day: 16,
       location: "Whale-watching excursion at Mirissa",
       pageRoute: "/destinations/mirissa",
-      image: "/wildlife/mirissa3.jpg",
+      image: "/images/mi.jpg",
     },
     {
       day: 17,
