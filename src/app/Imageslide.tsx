@@ -12,6 +12,7 @@ export interface TextPosition {
   align?: TextAlignment;
 }
 
+
 export interface ButtonConfig {
   text: string;
   href: string;
@@ -108,13 +109,13 @@ const ImageSlide: React.FC<ImageSlideProps> = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className={cn(
-            "absolute text-white font-poppins font-medium text-sm sm:text-base md:text-xl lg:text-2xl max-w-xs sm:max-w-sm md:max-w-md",
+            "absolute text-white font-poppins font-medium text-sm sm:text-base md:text-xl lg:text-2xl max-w-sm sm:max-w-md md:max-w-lg lg:max-w-3xl",
             subheading.className
           )}
           style={{
             left: subheading.position.x,
             top: subheading.position.y,
-            textAlign: subheading.position.align || "center",
+            textAlign: subheading.position.align || "left",
             textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
           }}
         >
