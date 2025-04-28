@@ -100,15 +100,17 @@ export default function SinharajaForestPage() {
   
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 p-8">
+    <div className="min-h-fit bg-gray-100 dark:bg-gray-900 p-8">
       <Card className="max-w-4xl mx-auto overflow-hidden">
       <CardImage>
       <div className=" w-full h-72">
           <Image
             src="https://res.cloudinary.com/dfxolekjs/image/upload/v1745402712/testsin2_yugyqg.jpg"
             alt="Sinharaja Forest"
-             layout="fill" 
+              
         objectFit="cover"
+        height={1000}
+        width={900}
           />
      
         </div>
