@@ -30,13 +30,13 @@ const HeroSection = () => {
       },
       subheading: {
         text: "Personalized journeys through Nature, Culture & Adventure with Passionate Local Guides.",
-        position: isMobile ? { x: "5%", y: "80%", align: "left" } : { x: "10%", y: "66%" , align: "left" }  
+        position: isMobile ? { x: "5%", y: "70%", align: "left" } : { x: "10%", y: "66cc%" , align: "left" }  
       
       },
       button: {
         text: "About Us",
         href: "/about",
-        position: isMobile ? { x: "5%", y: "87%", align: "left" } : { x: "10%", y: "80%", align: "left" }
+        position: isMobile ? { x: "5%", y: "82%", align: "left" } : { x: "10%", y: "80%", align: "left" }
       }
     },
     {
@@ -50,7 +50,7 @@ const HeroSection = () => {
       button: {
         text: "Big Game Tours",
         href: "/tour-packages?tab=coastal",
-        position: isMobile ? { x: "5%", y: "87%", align: "left" } : { x: "79%", y: "85%", align: "center" }
+        position: isMobile ? { x: "5%", y: "87%", align: "left" } : { x: "70%", y: "85%", align: "center" }
       }
     },
     {
