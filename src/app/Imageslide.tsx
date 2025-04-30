@@ -89,7 +89,7 @@ const ImageSlide: React.FC<ImageSlideProps> = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className={cn(
-            "absolute text-white font-[Poppins] font-semibold text-2xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-5xl max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg",
+            "absolute text-white font-[Poppins] font-semibold text-2xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-lgs max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg",
             heading.className
           )}
           style={{
@@ -109,7 +109,7 @@ const ImageSlide: React.FC<ImageSlideProps> = ({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className={cn(
-            "absolute text-white font-poppins font-medium text-xs xs:text-sm sm:text-base md:text-xl lg:text-2xl max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-3xl",
+            "absolute text-white font-poppins font-medium text-xs xs:text-sm sm:text-base md:text-xl lg:text-2xl max-w-xs sm:max-w-md md:max-w-lg lg:max-w-3xl",
             subheading.className
           )}
           style={{

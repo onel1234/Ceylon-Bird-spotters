@@ -26,11 +26,11 @@ const HeroSection = () => {
       alt: "wildlife tours in Sri Lanka",
       heading: {
         text: "Explore Sri Lanka's Wild Heart with Ceylon Naturalist",
-        position: isMobile ? { x: "5%", y: "45%", align: "left" } : { x: "10%", y: "45%", align: "left" }
+        position: isMobile ? { x: "5%", y: "45%", align: "left" } : { x: "10%", y: "40%", align: "left" }
       },
       subheading: {
         text: "Personalized journeys through Nature, Culture & Adventure with Passionate Local Guides.",
-        position: isMobile ? { x: "5%", y: "70%", align: "left" } : { x: "10%", y: "66cc%" , align: "left" }  
+        position: isMobile ? { x: "5%", y: "70%", align: "left" } : { x: "10%", y: "66%" , align: "left" }  
       
       },
       button: {
