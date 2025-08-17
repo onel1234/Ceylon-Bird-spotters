@@ -172,7 +172,7 @@ const TOUR_DATA: Record<string, {
 }> =  {
   mountain: {
     title: "Endemics, Migrants, and Big Game",
-    imageUrl: "/culture/head1.jpg",
+    imageUrl: "https://res.cloudinary.com/dfxolekjs/image/upload/v1755409030/newimage_shijew.webp",
     description: `The main focus of this tour is to showcase 35 bird species endemics to Sri Lanka, along with winter migrants and subcontinental specialties. In Yala and Lunugamvehera National Parks, you’ll have the chance to encounter iconic wildlife such as the elusive Sri Lankan Leopard and the Sloth Bear. Udawalawe National Park, renowned for its large population of Asian Elephants, also serves as a reliable backup location to spot any dry-zone species you may have missed in Yala or Lunugamvehera.
 With your consent, we offer a whale-watching extension on Day 14, giving you the opportunity to see the largest mammal ever to live on Earth—the Blue Whale—alongside other cetaceans in the tropical waters of the Indian Ocean.
 This is an intensive birdwatching tour that provides excellent chances to observe Sri Lanka’s endemics. If you’re eager to experience the island’s rich biodiversity and breathtaking natural beauty.
