@@ -43,7 +43,7 @@ const HeroSection = () => {
       src: "/hero/2.webp",
       alt: "Morning Light meats golden eyes The wild doesnt need to roar to be felt",
       heading: {
-        text: "Morning Light meets golden eyes – The wild doesn’t need to roar to be felt",
+        text: "Morning Light meets golden eyes – The wild doesn't need to roar to be felt",
         position: isMobile ? { x: "5%", y: "48%", align: "left" } : { x: "53%", y: "60%", align: "right" }
       },
       
@@ -116,18 +116,52 @@ const HeroSection = () => {
       <div className="h-[400px] md:h-[600px]">
         <ImagesSlider images={images} />
       </div>
+      
       <div className="max-w-7xl mx-auto w-full px-4 md:px-6">
-        <div className="flex flex-col space-y-6 md:space-y-8 items-center text-center">
-          <p className="text-neutral-800 dark:text-neutral-100 font-[Poppins] font-semibold text-base md:text-lg">
-            Welcome to the Wild Heart of Sri Lanka
-          </p>
+        <div className="flex flex-col items-center text-center">
           
-          <p className="text-neutral-600 dark:text-neutral-200 font-[Poppins] text-base md:text-lg max-w-4xl">
-            At CeylonNaturalist, we gently guide you into the wonders of Sri Lanka's wildlife, landscapes, and cultural treasures. With years of field experience and a deep love for nature, we create moments that are both enriching and personal—designed with care, led with heart.
-          </p>
-          <p className="text-neutral-600 dark:text-neutral-200 font-[Poppins] font-bold text-base md:text-lg max-w-4xl">
-          Whether you're a keen birder, a wildlife enthusiast, or simply curious about the island's hidden gems, we’re here to help you connect with the wild, one unforgettable journey at a time.
-          </p>
+          {/* Welcome Section */}
+          <div className="mb-8 md:mb-12">
+            <p className="text-neutral-800 dark:text-neutral-100 font-[Poppins] font-semibold text-lg md:text-xl mb-4">
+              Welcome to the Best Birdwatching & Wildlife Tours in Sri Lanka
+            </p>
+            
+            <p className="text-neutral-600 dark:text-neutral-200 font-[Poppins] text-base md:text-lg max-w-4xl leading-relaxed">
+              Discover the island's extraordinary biodiversity with Ceylon Naturalist, your specialist for authentic birdwatching tours, mammal watching adventures, wildlife safaris, and nature photography in Sri Lanka.
+            </p>
+          </div>
+
+          {/* Experience Section */}
+          <div className="mb-8 md:mb-12">
+            <p className="text-neutral-800 dark:text-neutral-100 font-[Poppins] font-semibold text-lg md:text-xl mb-6">
+              Experience Sri Lanka's Wild Heart
+            </p>
+            
+            <div className="space-y-6">
+              <p className="text-neutral-600 dark:text-neutral-200 font-[Poppins] text-base md:text-lg max-w-4xl leading-relaxed">
+                With over three decades of field expertise, I guide international travelers into the island's richest habitats – from the lowland rainforests of Sinharaja to the leopard territory of Yala, the wetlands of Bundala and Anawilundawa, the dry zone forest of Wilpattu, and the montane grasslands of Horton Plains.
+              </p>
+              
+              <p className="text-neutral-600 dark:text-neutral-200 font-[Poppins] text-base md:text-lg max-w-4xl leading-relaxed">
+                Sri Lanka is one of the world's richest biodiversity hotspots, home to 35 endemic bird species such as the Sri Lanka blue magpie, Serendib scops owl, and Sri Lanka spurfowl, alongside iconic mammals including the Sri Lankan leopard, Asian elephant, and Sloth Bear.
+              </p>
+              
+              <p className="text-neutral-600 dark:text-neutral-200 font-[Poppins] text-base md:text-lg max-w-4xl leading-relaxed">
+                Whether your dream is to join a private birdwatching tour in Sri Lanka, capture the elusive endemic birds through your lens, or witness the spectacular elephant gatherings of Minneriya, I design immersive journeys that combine scientific accuracy, conservation awareness, and unforgettable wildlife encounters.
+              </p>
+            </div>
+          </div>
+
+          {/* Join Me Section */}
+          <div className="mb-8 md:mb-12">
+            <p className="text-neutral-600 dark:text-neutral-200 font-[Poppins] font-bold text-base md:text-lg max-w-4xl leading-relaxed mb-6">
+              Every tour is crafted with care for both serious birders and curious nature lovers, blending science with storytelling to bring Sri Lanka's wilderness alive. Let me show you why this island is one of Asia's most rewarding destinations for birdwatching, wildlife photography, and mammal watching.
+            </p>
+            
+            <p className="text-neutral-800 dark:text-neutral-100 font-[Poppins] font-semibold text-lg md:text-xl">
+              🌏 Your adventure begins here
+            </p>
+          </div>
           
           <div>
             <TypewriterEffect

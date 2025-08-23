@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Ceylon Naturalist",
+  title: "Ceylon Naturalist - Bird Watching & Wildlife Tours in Sri Lanka",
   description: "Bird watching and wildlife tours in Sri Lanka",
   keywords: "Ceylon Naturalist,Bird watching tours in Sri Lanka, Bird watching in Sri Lanka, Wildlife tours in Sri Lanka, Sri Lanka, Nature tours, Eco tourism, Adventure travel, Sri lanka Photography tours",
   icons: {
