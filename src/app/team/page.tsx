@@ -72,6 +72,16 @@ const Team: React.FC = ()  => {
       ],
       imageUrl: '/images/Tiran.jpg',
     },
+     {
+      name: 'Dilshan Weerappuli',
+      role: '',
+      description: [
+        'I began birdwatching at the age of eight, which sparked a lifelong fascination with Sri Lanka’s diverse wildlife. I’m currently studying Biology for my Advanced Levels, while also pursuing courses in Ornithology at the University of Colombo and Herpetology at the National Zoological Gardens.',
+        'I’m an active member of the Field Ornithology Group of Sri Lanka (FOGSL) and the Young Zoologists’ Association (YZA), where I regularly take part in field activities and research programs. Alongside my studies, I pursue wildlife photography as a passion and have received awards for my work in wildlife photography competitions.',
+         'My main interests lie in ornithology, wildlife photography, and Sri Lanka’s native fauna. I continue to build my experience as a naturalist and citizen scientist through hands-on fieldwork and conservation efforts.',
+      ],
+      imageUrl: 'https://res.cloudinary.com/dfxolekjs/image/upload/v1760420454/dilshan_weerappuli_ldveqo.jpg',
+    }
   ];
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
